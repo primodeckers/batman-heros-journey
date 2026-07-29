@@ -88,7 +88,7 @@ Pesquisei fontes reais pra cada um. Resumo no final.
 
 ---
 
-## Tema E — Pegada ambiental da IA
+## Tema E — Pegada ambiental da IA (aprofundado)
 
 ### O que existe de dado real
 - **[IEA — Key Questions on Energy and AI](https://www.iea.org/reports/key-questions-on-energy-and-ai)**
@@ -98,55 +98,105 @@ Pesquisei fontes reais pra cada um. Resumo no final.
   emissões de data centers ~0,5% do CO2 global hoje, mas crescendo — dobra
   até 2035 (~350 milhões de toneladas); pegada de água estimada em
   312,5–764,6 bilhões de litros em 2025.
-- **Ressalva importante:** os números de consumo específico de IA são
-  **estimativas de modelo do próprio IEA**, não medição direta — não existe
-  medidor global de energia só-de-IA ainda. Precisa deixar isso explícito
-  no dashboard (é inclusive um bom ponto narrativo: "isto é estimativa,
-  ninguém sabe o número exato").
-- **OWID — [CO2 and Greenhouse Gas Emissions](https://ourworldindata.org/co2-emissions)**
-  e [Energy](https://ourworldindata.org/energy) — pra contextualizar contra
-  emissões totais/de outros setores.
+- **[IEA .Stat Data Explorer](https://www.iea.org/data-and-statistics/data-explorers)**
+  — dá pra exportar em CSV/Excel direto (precisa de conta gratuita). Tem o
+  gráfico-base "Electricity consumption by data centres, 2020-2035"
+  (cenário Base Case) já pronto pra virar um dos gráficos do dashboard.
+- **[Epoch AI — AI Data Centers](https://epoch.ai/data/ai-data-centers)** —
+  ⭐ achado novo e forte: banco de dados granular (não é só um número
+  agregado) rastreando **346 data centers de IA no mundo**, por país e por
+  ano de anúncio. EUA lidera disparado (84 instalações), depois Alemanha e
+  Índia (11 cada). Epoch AI é referência séria em dado aberto de IA — dá
+  pra fazer um mapa/ranking de "onde a IA realmente mora fisicamente".
+- **[Kaggle — LLM Energy Consumption Dataset](https://www.kaggle.com/datasets/nitishkumar2k01/llms-energy-consumption-dataset)**
+  ("The Hidden Cost of AI") — CSV pronto, mais focado em consumo por
+  modelo/inferência individual (bom pra um ângulo "quanto custa 1 prompt").
+- **Ressalva importante, e também um ponto de virada narrativo:** não existe
+  um dataset global consolidado de consumo/emissão de data centers — poucos
+  governos exigem esse reporte. Os números de IA especificamente são
+  **estimativas de modelo** (IEA, Carbon Brief) com faixas largas — ex.
+  servidores de IA nos EUA usaram entre 53-76 TWh em 2024, com projeção de
+  165-326 TWh até 2028 (faixa de quase o dobro de incerteza). Isso é
+  ótimo material pra um gráfico "de faixa de incerteza" (uma visualização
+  que a maioria dos colegas não vai pensar em fazer).
 
-### Pergunta central candidata
-- "Quanto custa pro planeta o ChatGPT que você usa todo dia — e por que
-  ninguém sabe o número exato?"
-- "Em 2030, a IA vai consumir mais eletricidade que quantos países
-  inteiros?"
+### Ângulos de pergunta central (mais específicos que antes)
+- "Onde a IA realmente mora? Um mapa dos data centers que estão redesenhando
+  o consumo de energia do planeta" (foco geográfico, usa Epoch AI)
+- "Ninguém sabe quanto a IA gasta de energia — só a faixa de incerteza"
+  (foco na limitação do dado, vira parte da própria história)
+- "Em 2030 a IA vai consumir mais eletricidade que a Alemanha inteira?"
+  (foco comparativo/escala, fácil de visualizar com um KPI de destaque)
+
+### Sugestão de 4 visualizações
+1. **Destaque:** linha do tempo 2020→2035 do consumo de eletricidade de
+   data centers (IEA), com a faixa de projeção
+2. Mapa/ranking de países por nº de data centers de IA (Epoch AI)
+3. Comparação do consumo projetado de 2030 vs. consumo elétrico de
+   países reais (OWID Energy) — "equivale a X países"
+4. Faixa de incerteza das estimativas de consumo de IA (mín-máx, várias
+   fontes) — reforça o ponto "isto é estimativa"
 
 ### Avaliação
 | Critério | Nota |
 | --- | --- |
-| Dado real baixável | Alta (com ressalva: são estimativas do IEA, não medição bruta) |
+| Dado real baixável | Alta (IEA .Stat + Epoch AI + Kaggle; ressalva: estimativas, não medição bruta) |
 | Riqueza narrativa | Alta — liga tech (seu interesse) com meio ambiente, ângulo pouco explorado |
 | Viável em 3 semanas | Alta |
 
 ---
 
-## Tema G — Migração forçada / refugiados
+## Tema G — Migração forçada / refugiados (aprofundado)
 
 ### O que existe de dado real
-- **[UNHCR Refugee Data Finder](https://www.unhcr.org/refugee-statistics)**
-  — dataset oficial, baixável, cobrindo refugiados/deslocados internos/
-  apátridas por país de origem e de asilo.
+- **[UNHCR Refugee Statistics API](https://api.unhcr.org/docs/refugee-statistics.html)**
+  — API pública, sem necessidade de conta paga; suporta `download=true` pra
+  já devolver CSV direto. Filtra por país de origem/asilo (código ISO3),
+  ano, tipo de população (refugiado, deslocado interno, apátrida etc).
+  Dado desagregado por ano + país de asilo + país de origem — dá pra montar
+  fluxo de origem→destino (bom pra Sankey, item que já está no nosso
+  `selecao-de-graficos.md`).
+- **Mirrors no Kaggle** (caso a API dê trabalho): [UNHCR Refugee Data](https://www.kaggle.com/datasets/unitednations/refugee-data),
+  [UNHCR Refugee Dataset](https://www.kaggle.com/datasets/alfabraham/unhcr-refugee-dataset),
+  [Refugees 2010-2022](https://www.kaggle.com/datasets/sujaykapadnis/refugees).
 - **[Forced displacement flow dataset](https://www.unhcr.org/refugee-statistics/insights/explainers/forcibly-displaced-flow-data.html)**
-  — série histórica de pessoas forçadas a fugir **desde 1962**, ótima pra
-  gráfico de linha do tempo longo.
-- **[Global Trends Report](https://www.unhcr.org/global-trends)** (edição
-  mais recente: jun/2026) — relatório anual com os números-chave já
-  analisados, bom pra citar conclusões e cruzar com o dataset bruto.
+  — série histórica **desde 1962**, ótima pra linha do tempo longa.
+- **[Global Trends Report](https://www.unhcr.org/global-trends)** (jun/2026)
+  — números-chave já analisados, bom pra citar conclusões.
+- **⭐ Achado novo — conexão direta com o Brasil:** [ACNUR Brasil — Dados](https://www.acnur.org/br/dados-refugiados-no-brasil-e-no-mundo)
+  + CONARE (Comitê Nacional para Refugiados). Em 2025 o Brasil reconheceu
+  165.774 pessoas como refugiadas (+5,9% vs. 2024); desde 1985 já são ~60 mil
+  reconhecidas, sendo 48.789 (81%) da Venezuela; em 2024 as solicitações
+  bateram recorde (68.159, +16,3%), com a Venezuela concentrando 93,1% dos
+  reconhecimentos, seguida por Afeganistão, Colômbia e Síria. Isso permite
+  fechar a história "do mundo pro seu país": tendência global de UNHCR →
+  recorte específico do Brasil como destino real de refugiados.
 
-### Pergunta central candidata
-- "De onde e pra onde o mundo é forçado a se mover — e por quê?"
+### Ângulos de pergunta central (mais específicos que antes)
+- "De onde e pra onde o mundo é forçado a se mover — e o Brasil virou
+  destino?" (combina dado global UNHCR + CONARE/ACNUR Brasil)
+- "9 em cada 10 refugiados reconhecidos no Brasil vêm de um só país — por
+  quê?" (foco na concentração venezuelana, título já quase pronto)
 - "Existem mais pessoas deslocadas por guerra hoje do que em qualquer
-  outro momento da história registrada?"
+  outro momento desde 1962?" (foco na série histórica longa)
+
+### Sugestão de 4 visualizações
+1. **Destaque:** linha do tempo de pessoas deslocadas à força no mundo,
+   1962→hoje (Forced displacement flow dataset)
+2. Fluxo origem→destino dos principais países de origem dos refugiados
+   reconhecidos no Brasil (Sankey ou barras, dado CONARE/ACNUR)
+3. Comparação de solicitações vs. reconhecimentos no Brasil ao longo dos
+   últimos anos (crescimento de 16,3% em 2024, por ex.)
+4. Ranking dos países de origem no Brasil (Venezuela 93,1%, depois
+   Afeganistão/Colômbia/Síria) — reforça o título "9 em cada 10"
 
 ### Avaliação
 | Critério | Nota |
 | --- | --- |
-| Dado real baixável | Muito alta (dataset histórico robusto desde 1962) |
-| Riqueza narrativa | Muito alta — gancho humano forte |
+| Dado real baixável | Muito alta (API oficial com CSV direto + mirrors Kaggle + dado brasileiro do ACNUR/CONARE) |
+| Riqueza narrativa | Muito alta — gancho humano forte, e agora com fechamento nacional (Brasil) |
 | Viável em 3 semanas | Alta |
-| Observação | **Combina muito bem com o Tema B** (guerra → deslocamento é uma continuação natural da mesma história: conflito → economia → gente que precisa fugir) |
+| Observação | **Combina muito bem com o Tema B** (guerra → deslocamento é uma continuação natural da mesma história: conflito → economia → gente que precisa fugir), e agora tem um final "chegando no Brasil" que nenhum dos outros temas tem |
 
 ---
 
