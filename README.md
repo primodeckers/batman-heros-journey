@@ -8,7 +8,11 @@ requisitos completos da entrega.
 
 ## Stack
 Vite + React + TypeScript · [Visx](https://airbnb.io/visx/) (D3) ·
-Framer Motion · Tailwind CSS v4
+Framer Motion · Tailwind CSS v4 · shadcn/ui (Radix)
+
+## Layout
+Bento em tela única, sem menu/sidebar — um card de destaque maior cercado
+de cards menores (ver `src/components/layout/DashboardShell.tsx`).
 
 Ver [`docs/architecture.md`](./docs/architecture.md) para detalhes e
 justificativa das escolhas técnicas.

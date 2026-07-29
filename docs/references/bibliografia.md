@@ -2,10 +2,12 @@
 
 ## Storytelling de dados
 - Cole Nussbaumer Knaflic — *Storytelling with Data* (2015)
+- Nancy Duarte — *DataStory: Explain Data and Inspire Action Through Story* (2019) — foco em estruturar a narrativa dos dados (contexto → conflito → resolução), muito alinhado ao arco pedido em `WORK_RULES.md`
 - Alberto Cairo — *The Truthful Art* (2016) e *How Charts Lie* (2019)
 - Edward Tufte — *The Visual Display of Quantitative Information* (1983)
 
 ## Seleção e design de gráficos
+- Storytelling with Data (Cole Nussbaumer Knaflic) — [Chart Guide](https://www.storytellingwithdata.com/chart-guide) — guia com 25+ tipos de gráfico, cada um com página própria sobre quando/como usar; bom complemento ao `selecao-de-graficos.md` deste projeto
 - Financial Times — [Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)
 - Datawrapper Academy — [blog.datawrapper.de](https://blog.datawrapper.de/category/academy/)
 - From Data to Viz — [data-to-viz.com](https://www.data-to-viz.com/)

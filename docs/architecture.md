@@ -12,9 +12,33 @@
 - **d3-scale / d3-scale-chromatic / d3-color / culori** — escalas de cor
   (categóricas, sequenciais perceptualmente uniformes) e verificação de
   contraste/acessibilidade.
-- **Tailwind CSS v4** (via `@tailwindcss/vite`) — só para layout/grid/
-  tipografia do shell do dashboard; os gráficos em si não usam classes
-  utilitárias, são SVG construído via Visx.
+- **Tailwind CSS v4** (via `@tailwindcss/vite`) — layout/grid/tipografia do
+  shell do dashboard; os gráficos em si não usam classes utilitárias, são
+  SVG construído via Visx.
+- **shadcn/ui** (Radix UI + CVA) — componentes de UI (`Card`, `Badge`,
+  `Button`) copiados para `src/components/ui/`, não instalados como
+  dependência fechada — dá controle total pra customizar depois. Configurado
+  manualmente (ver nota abaixo) em vez de via `npx shadcn add`.
+
+## Layout: bento em tela única
+
+Decisão de layout (ver conversa do projeto): **sem menu/sidebar**. O
+dashboard é montado como um grid "bento" — um card de destaque maior (a
+visualização mais importante da narrativa) cercado de cards menores — tudo
+visível numa tela só, sem scroll pesado. Implementado em
+`src/components/layout/DashboardShell.tsx` + `BentoGrid.tsx`.
+
+## Nota: shadcn CLI quebra neste ambiente (Windows)
+
+`npx shadcn add ...` falha com `EPERM: operation not permitted, scandir
+'...\Documents\Meus Vídeos'` — a pasta é uma junction protegida do Windows
+(ACL de DENY) e o CLI do shadcn faz uma varredura que tromba nela. Não
+mexer na ACL dessa pasta (é proteção do próprio Windows). Enquanto isso não
+for corrigido upstream, novos componentes shadcn devem ser adicionados
+manualmente: copiar o código-fonte do componente (do repositório oficial
+ui.shadcn.com) para `src/components/ui/`, seguindo o padrão de
+`button.tsx`/`card.tsx`/`badge.tsx` já presentes (usam `cn()` de
+`src/lib/utils.ts` e variáveis CSS de `src/index.css`).
 
 ## Estrutura de pastas
 
@@ -22,8 +46,8 @@
 src/
   components/
     charts/     # componentes de gráfico (Visx) — um arquivo por tipo
-    layout/     # shell do dashboard: header, grid de seções, footer de fontes
-    ui/         # componentes de interface reutilizáveis (KPI card, tags...)
+    layout/     # shell do dashboard: DashboardShell, BentoGrid
+    ui/         # componentes shadcn/ui (button, card, badge...)
   theme/        # paletas e tokens de cor (palette.ts)
   data/
     loaders/    # fetch/parse dos datasets em public/data/
@@ -52,4 +76,5 @@ docs/
 
 ## Decisões em aberto
 - Tema/pergunta central: **ainda não definido**.
-- Paleta final (accent + escala categórica): depende do tema.
+- Paleta final (accent + escala categórica, incluindo `--chart-1..5` em
+  `src/index.css`): depende do tema.

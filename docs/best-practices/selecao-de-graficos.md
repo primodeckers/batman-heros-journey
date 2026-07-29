@@ -41,6 +41,7 @@ O subtítulo/legenda pode conter a descrição técnica (eixo, unidade, período
 
 ## Referências
 - Alberto Cairo, *The Truthful Art* / *How Charts Lie*
+- Storytelling with Data (Cole Nussbaumer Knaflic) — [Chart Guide](https://www.storytellingwithdata.com/chart-guide)
 - Financial Times — [Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)
 - Datawrapper Academy — [Chart guides](https://blog.datawrapper.de/category/academy/)
 - From Data to Viz — [árvore de decisão de gráfico](https://www.data-to-viz.com/)
