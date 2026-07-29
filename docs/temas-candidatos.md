@@ -88,56 +88,6 @@ Pesquisei fontes reais pra cada um. Resumo no final.
 
 ---
 
-## Tema C — LLMs: o que mudou no mundo
-
-### O que existe de dado real
-- **[Stanford AI Index Report](https://aiindex.stanford.edu/)** — ⭐ a
-  melhor fonte acadêmica aberta sobre IA: adoção, investimento, benchmarks
-  de capacidade, opinião pública, por país. Dados baixáveis, muito citado
-  em papers.
-- **OWID — [Artificial Intelligence](https://ourworldindata.org/artificial-intelligence)**
-  — CSVs baixáveis: investimento em IA, papers publicados, compute usado
-  pra treinar modelos, opinião pública sobre IA.
-- Números de mercado (ChatGPT ~900M usuários semanais, adoção enterprise
-  saltando de 5% pra 80%) vêm de relatórios de mercado — citáveis, não
-  baixáveis como dataset bruto.
-
-### Pergunta central candidata
-- "As LLMs foram adotadas mais rápido que a internet ou o smartphone?"
-  (comparação de curva de adoção — boa pergunta específica e respondível)
-- Versão genérica "o que mudou no mundo" é **fraca demais** pra pergunta
-  central — precisaria de recorte.
-
-### Avaliação
-| Critério | Nota |
-| --- | --- |
-| Dado real baixável | Alta (Stanford AI Index, OWID) |
-| Riqueza narrativa | Média — tema mais abstrato, exige recorte forte |
-| Viável em 3 semanas | Média-alta |
-| Ressoa com você | Não detalhado ainda |
-
----
-
-## Tema D — Agentes de IA (mercado, adoção corporativa)
-
-### O que existe de dado real
-- Majoritariamente relatórios de mercado pagos (Grand View Research, Menlo
-  Ventures) — números citáveis (mercado de $10,9-12B em 2026, 80% das
-  empresas com IA agêntica em produção) mas **sem dataset bruto público**
-  por trás.
-- Sobrepõe muito com o Tema A (agentes de codificação) e com o Tema C
-  (Stanford AI Index também cobre agentes).
-
-### Avaliação
-| Critério | Nota |
-| --- | --- |
-| Dado real baixável | Baixa |
-| Riqueza narrativa | Média |
-| Viável em 3 semanas | Baixa-média |
-| Recomendação | Fundir com Tema A ou C em vez de ser tema próprio |
-
----
-
 ## Tema E — Pegada ambiental da IA
 
 ### O que existe de dado real
@@ -172,35 +122,6 @@ Pesquisei fontes reais pra cada um. Resumo no final.
 
 ---
 
-## Tema F — Comércio internacional / guerra tarifária
-
-### O que existe de dado real
-- **[UN Comtrade](https://comtradeplus.un.org/)** — base oficial de
-  comércio internacional, mensal desde 2000, anual desde 1988. API pública
-  gratuita mediante cadastro (até 100 mil registros por chamada, 500
-  chamadas/dia).
-- **World Bank WITS** — integrado ao Comtrade, traz tarifas por país/produto.
-- **[Tax Foundation — Tariff Tracker](https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/)**
-  — acompanha em tempo real as tarifas dos EUA de 2025-2026 (tarifa efetiva
-  média foi de 2,4% em 2024 pra 10,3% em jan/2026 — maior desde 1947).
-- Contexto: China revidou com tarifa de 84% sobre produtos americanos;
-  mais de 3.000 novas medidas de política comercial no mundo só em 2025
-  (3x a média da década anterior) — dado do WTO/relatórios citados.
-
-### Pergunta central candidata
-- "Quem ganha e quem perde na guerra tarifária de 2026?"
-- "O comércio mundial está se redesenhando: quem substituiu a China nas
-  cadeias de suprimento dos EUA?"
-
-### Avaliação
-| Critério | Nota |
-| --- | --- |
-| Dado real baixável | Alta (API pública, mas exige cadastro + trabalho de agregação) |
-| Riqueza narrativa | Alta — tema geopolítico bem quente agora em 2026 |
-| Viável em 3 semanas | Média-alta (a API tem uma curva de aprendizado maior que baixar um CSV pronto) |
-
----
-
 ## Tema G — Migração forçada / refugiados
 
 ### O que existe de dado real
@@ -231,17 +152,17 @@ Pesquisei fontes reais pra cada um. Resumo no final.
 
 ## Resumo e recomendação
 
+_Temas descartados pelo autor: LLMs no mundo, agentes de IA no mercado e
+comércio/guerra tarifária — removidos desta análise._
+
 | Tema | Dado real | Narrativa | Viabilidade | Recomendação |
 | --- | --- | --- | --- | --- |
 | A — GitHub/agentes de código | Alta | Alta | Alta | 🥇 Favorito |
 | B — Guerra/economia/cotidiano | Muito alta | Alta | Alta | 🥈 Forte alternativa |
-| C — LLMs no mundo | Alta | Média (exige recorte) | Média-alta | Viável se recortar bem |
-| D — Agentes de IA (mercado) | Baixa | Média | Baixa-média | Não recomendo como tema isolado |
 | E — Pegada ambiental da IA | Alta (estimativas IEA) | Alta | Alta | Forte, ângulo pouco explorado |
-| F — Comércio/guerra tarifária | Alta | Alta | Média-alta | Forte, mas API dá mais trabalho |
 | G — Migração forçada/refugiados | Muito alta | Muito alta | Alta | 🥇 Favorito — considerar fundir com B |
 
-**Próximo passo:** os mais fortes agora são A (GitHub/IA no código), E
+**Próximo passo:** ficaram quatro finalistas — A (GitHub/IA no código), E
 (pegada ambiental da IA) e a dupla B+G (guerra → deslocamento forçado, uma
 narrativa só). Registrar a decisão final aqui e em
 `docs/references/fontes-dados.md` assim que fechar.
