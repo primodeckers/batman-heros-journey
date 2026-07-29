@@ -172,29 +172,46 @@ Pesquisei fontes reais pra cada um. Resumo no final.
   fechar a história "do mundo pro seu país": tendência global de UNHCR →
   recorte específico do Brasil como destino real de refugiados.
 
-### Ângulos de pergunta central (mais específicos que antes)
-- "De onde e pra onde o mundo é forçado a se mover — e o Brasil virou
-  destino?" (combina dado global UNHCR + CONARE/ACNUR Brasil)
-- "9 em cada 10 refugiados reconhecidos no Brasil vêm de um só país — por
-  quê?" (foco na concentração venezuelana, título já quase pronto)
+### Ângulos de pergunta central
+
+**Globais (o tema é isso — funcionam 100% sem citar o Brasil):**
+- "De onde e pra onde o mundo é forçado a se mover — e por quê?"
 - "Existem mais pessoas deslocadas por guerra hoje do que em qualquer
   outro momento desde 1962?" (foco na série histórica longa)
+- "Quais guerras hoje geram mais deslocamento — e o mundo está prestando
+  atenção nelas?" (cruza UCDP/OWID do Tema B com volume de deslocados por
+  conflito)
 
-### Sugestão de 4 visualizações
+**Recorte opcional Brasil (só se você quiser fechar a história aterrissando
+em casa — não é obrigatório, dá pra ignorar completamente):**
+- "De onde e pra onde o mundo é forçado a se mover — e o Brasil virou
+  destino?" (painel global + uma seção final com CONARE/ACNUR)
+- "9 em cada 10 refugiados reconhecidos no Brasil vêm de um só país — por
+  quê?" (esse aqui já não é mais global, é 100% sobre o Brasil)
+
+### Sugestão de 4 visualizações — versão 100% global
 1. **Destaque:** linha do tempo de pessoas deslocadas à força no mundo,
    1962→hoje (Forced displacement flow dataset)
-2. Fluxo origem→destino dos principais países de origem dos refugiados
-   reconhecidos no Brasil (Sankey ou barras, dado CONARE/ACNUR)
-3. Comparação de solicitações vs. reconhecimentos no Brasil ao longo dos
-   últimos anos (crescimento de 16,3% em 2024, por ex.)
-4. Ranking dos países de origem no Brasil (Venezuela 93,1%, depois
-   Afeganistão/Colômbia/Síria) — reforça o título "9 em cada 10"
+2. Fluxo origem→destino dos principais corredores de deslocamento no mundo
+   (Sankey, dado UNHCR — ex. Síria→Turquia, Venezuela→Colômbia, etc.)
+3. Ranking dos países que mais recebem refugiados (não são só os "ricos" —
+   maioria fica em países vizinhos, ótimo ponto pra desconstruir uma
+   suposição comum)
+4. Comparação do número de deslocados por conflito ativo (cruza com dado
+   do Tema B/UCDP) — quais guerras deslocam mais gente
+
+### Sugestão de 4 visualizações — se incluir o recorte Brasil
+Trocar a #3 ou #4 acima por: ranking dos países de origem dos refugiados
+reconhecidos no Brasil (Venezuela 93,1%, depois Afeganistão/Colômbia/Síria)
+e/ou comparação de solicitações vs. reconhecimentos no Brasil ao longo dos
+anos (CONARE/ACNUR) — como uma seção final "e no Brasil?", não como o tema
+inteiro.
 
 ### Avaliação
 | Critério | Nota |
 | --- | --- |
-| Dado real baixável | Muito alta (API oficial com CSV direto + mirrors Kaggle + dado brasileiro do ACNUR/CONARE) |
-| Riqueza narrativa | Muito alta — gancho humano forte, e agora com fechamento nacional (Brasil) |
+| Dado real baixável | Muito alta (API oficial com CSV direto + mirrors Kaggle; dado do Brasil é bônus opcional) |
+| Riqueza narrativa | Muito alta — gancho humano forte, tema é global por natureza (Brasil é só um fechamento opcional) |
 | Viável em 3 semanas | Alta |
 | Observação | **Combina muito bem com o Tema B** (guerra → deslocamento é uma continuação natural da mesma história: conflito → economia → gente que precisa fugir), e agora tem um final "chegando no Brasil" que nenhum dos outros temas tem |
 
