@@ -138,6 +138,97 @@ Pesquisei fontes reais pra cada um. Resumo no final.
 
 ---
 
+## Tema E — Pegada ambiental da IA
+
+### O que existe de dado real
+- **[IEA — Key Questions on Energy and AI](https://www.iea.org/reports/key-questions-on-energy-and-ai)**
+  (abr/2026) — fonte mais autorizada do tema. Consumo de data centers:
+  485 TWh em 2025 → projeção de 950 TWh em 2030 (~3% da eletricidade
+  mundial); IA foi 15% da demanda elétrica de data centers em 2024;
+  emissões de data centers ~0,5% do CO2 global hoje, mas crescendo — dobra
+  até 2035 (~350 milhões de toneladas); pegada de água estimada em
+  312,5–764,6 bilhões de litros em 2025.
+- **Ressalva importante:** os números de consumo específico de IA são
+  **estimativas de modelo do próprio IEA**, não medição direta — não existe
+  medidor global de energia só-de-IA ainda. Precisa deixar isso explícito
+  no dashboard (é inclusive um bom ponto narrativo: "isto é estimativa,
+  ninguém sabe o número exato").
+- **OWID — [CO2 and Greenhouse Gas Emissions](https://ourworldindata.org/co2-emissions)**
+  e [Energy](https://ourworldindata.org/energy) — pra contextualizar contra
+  emissões totais/de outros setores.
+
+### Pergunta central candidata
+- "Quanto custa pro planeta o ChatGPT que você usa todo dia — e por que
+  ninguém sabe o número exato?"
+- "Em 2030, a IA vai consumir mais eletricidade que quantos países
+  inteiros?"
+
+### Avaliação
+| Critério | Nota |
+| --- | --- |
+| Dado real baixável | Alta (com ressalva: são estimativas do IEA, não medição bruta) |
+| Riqueza narrativa | Alta — liga tech (seu interesse) com meio ambiente, ângulo pouco explorado |
+| Viável em 3 semanas | Alta |
+
+---
+
+## Tema F — Comércio internacional / guerra tarifária
+
+### O que existe de dado real
+- **[UN Comtrade](https://comtradeplus.un.org/)** — base oficial de
+  comércio internacional, mensal desde 2000, anual desde 1988. API pública
+  gratuita mediante cadastro (até 100 mil registros por chamada, 500
+  chamadas/dia).
+- **World Bank WITS** — integrado ao Comtrade, traz tarifas por país/produto.
+- **[Tax Foundation — Tariff Tracker](https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/)**
+  — acompanha em tempo real as tarifas dos EUA de 2025-2026 (tarifa efetiva
+  média foi de 2,4% em 2024 pra 10,3% em jan/2026 — maior desde 1947).
+- Contexto: China revidou com tarifa de 84% sobre produtos americanos;
+  mais de 3.000 novas medidas de política comercial no mundo só em 2025
+  (3x a média da década anterior) — dado do WTO/relatórios citados.
+
+### Pergunta central candidata
+- "Quem ganha e quem perde na guerra tarifária de 2026?"
+- "O comércio mundial está se redesenhando: quem substituiu a China nas
+  cadeias de suprimento dos EUA?"
+
+### Avaliação
+| Critério | Nota |
+| --- | --- |
+| Dado real baixável | Alta (API pública, mas exige cadastro + trabalho de agregação) |
+| Riqueza narrativa | Alta — tema geopolítico bem quente agora em 2026 |
+| Viável em 3 semanas | Média-alta (a API tem uma curva de aprendizado maior que baixar um CSV pronto) |
+
+---
+
+## Tema G — Migração forçada / refugiados
+
+### O que existe de dado real
+- **[UNHCR Refugee Data Finder](https://www.unhcr.org/refugee-statistics)**
+  — dataset oficial, baixável, cobrindo refugiados/deslocados internos/
+  apátridas por país de origem e de asilo.
+- **[Forced displacement flow dataset](https://www.unhcr.org/refugee-statistics/insights/explainers/forcibly-displaced-flow-data.html)**
+  — série histórica de pessoas forçadas a fugir **desde 1962**, ótima pra
+  gráfico de linha do tempo longo.
+- **[Global Trends Report](https://www.unhcr.org/global-trends)** (edição
+  mais recente: jun/2026) — relatório anual com os números-chave já
+  analisados, bom pra citar conclusões e cruzar com o dataset bruto.
+
+### Pergunta central candidata
+- "De onde e pra onde o mundo é forçado a se mover — e por quê?"
+- "Existem mais pessoas deslocadas por guerra hoje do que em qualquer
+  outro momento da história registrada?"
+
+### Avaliação
+| Critério | Nota |
+| --- | --- |
+| Dado real baixável | Muito alta (dataset histórico robusto desde 1962) |
+| Riqueza narrativa | Muito alta — gancho humano forte |
+| Viável em 3 semanas | Alta |
+| Observação | **Combina muito bem com o Tema B** (guerra → deslocamento é uma continuação natural da mesma história: conflito → economia → gente que precisa fugir) |
+
+---
+
 ## Resumo e recomendação
 
 | Tema | Dado real | Narrativa | Viabilidade | Recomendação |
@@ -146,9 +237,11 @@ Pesquisei fontes reais pra cada um. Resumo no final.
 | B — Guerra/economia/cotidiano | Muito alta | Alta | Alta | 🥈 Forte alternativa |
 | C — LLMs no mundo | Alta | Média (exige recorte) | Média-alta | Viável se recortar bem |
 | D — Agentes de IA (mercado) | Baixa | Média | Baixa-média | Não recomendo como tema isolado |
+| E — Pegada ambiental da IA | Alta (estimativas IEA) | Alta | Alta | Forte, ângulo pouco explorado |
+| F — Comércio/guerra tarifária | Alta | Alta | Média-alta | Forte, mas API dá mais trabalho |
+| G — Migração forçada/refugiados | Muito alta | Muito alta | Alta | 🥇 Favorito — considerar fundir com B |
 
-**Próximo passo:** escolher entre A e B (os dois mais fortes), ou decidir
-se dá pra combinar (ex.: "como a IA mudou quem programa e o que isso
-significa pro mercado de trabalho" cruzando Stack Overflow Survey com
-Octoverse). Registrar a decisão final aqui e em
+**Próximo passo:** os mais fortes agora são A (GitHub/IA no código), E
+(pegada ambiental da IA) e a dupla B+G (guerra → deslocamento forçado, uma
+narrativa só). Registrar a decisão final aqui e em
 `docs/references/fontes-dados.md` assim que fechar.
