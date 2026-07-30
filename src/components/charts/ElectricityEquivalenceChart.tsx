@@ -4,7 +4,7 @@ import { scaleBand, scaleLinear } from '@visx/scale'
 import { motion } from 'framer-motion'
 
 import { accent, neutral } from '@/theme/palette'
-import { estimateTextWidth } from '@/utils/text'
+import { truncateToWidth } from '@/utils/text'
 import type { ElectricityComparisonRow } from '@/hooks/useElectricityEquivalence'
 
 type ChartProps = {
@@ -16,13 +16,10 @@ type ChartProps = {
 function Chart({ data, width, height }: ChartProps) {
   const fontSize = width < 220 ? 9 : 11
 
-  // Margem esquerda cabe o rótulo mais longo de verdade (não uma fração
-  // arbitrária da largura) — evita cortar texto tipo "IA (2030)" quando o
-  // card é largo mas o rótulo também é comprido. Sempre limitada a no
-  // máximo metade da largura, pra sobrar espaço pra barra mesmo em rótulos
-  // enormes.
-  const longestLabelWidth = Math.max(...data.map((d) => estimateTextWidth(d.label, fontSize)))
-  const marginLeft = Math.min(Math.max(56, longestLabelWidth + 16), width * 0.5)
+  // Margem esquerda proporcional à largura, com teto fixo — o rótulo em
+  // si é truncado com "…" pra nunca ultrapassar esse espaço (ver
+  // truncateToWidth), então não depende de adivinhar o texto mais longo.
+  const marginLeft = Math.max(56, Math.min(150, width * 0.4))
   const marginRight = Math.max(28, Math.min(48, width * 0.16))
   const margin = { top: 8, right: marginRight, bottom: 8, left: marginLeft }
 
@@ -65,7 +62,7 @@ function Chart({ data, width, height }: ChartProps) {
                 fontWeight={d.isAI ? 600 : 400}
                 fill={d.isAI ? accent[700] : neutral[600]}
               >
-                {d.label}
+                {truncateToWidth(d.label, margin.left - 16, fontSize)}
               </text>
               <motion.rect
                 initial={{ width: 0 }}

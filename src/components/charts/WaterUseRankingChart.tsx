@@ -4,7 +4,7 @@ import { scaleBand, scaleLog } from '@visx/scale'
 import { motion } from 'framer-motion'
 
 import { neutral, water } from '@/theme/palette'
-import { estimateTextWidth } from '@/utils/text'
+import { truncateToWidth } from '@/utils/text'
 import type { WaterUseRankingRow } from '@/hooks/useWaterUseRanking'
 
 type ChartProps = { data: WaterUseRankingRow[]; width: number; height: number }
@@ -17,8 +17,14 @@ function Chart({ data, width, height }: ChartProps) {
   const fontSize = width < 220 ? 9 : 11
   const captionHeight = 20
 
-  const longestLabelWidth = Math.max(...data.map((d) => estimateTextWidth(d.dataCenter, fontSize)))
-  const marginLeft = Math.min(Math.max(56, longestLabelWidth + 16), width * 0.5)
+  // Só mostra o país no rótulo se houver mais de um país nos dados —
+  // repetir "(United States)" em toda linha só desperdiça espaço.
+  const distinctCountries = new Set(data.map((d) => d.country).filter(Boolean))
+  const showCountry = distinctCountries.size > 1
+
+  // Margem proporcional com teto fixo — o rótulo é truncado com "…" pra
+  // nunca ultrapassar esse espaço (ver truncateToWidth).
+  const marginLeft = Math.max(56, Math.min(150, width * 0.4))
   const marginRight = Math.max(48, Math.min(64, width * 0.18))
   const margin = { top: 8, right: marginRight, bottom: 8, left: marginLeft }
 
@@ -55,7 +61,8 @@ function Chart({ data, width, height }: ChartProps) {
         {data.map((d, i) => {
           const barY = yScale(d.dataCenter) ?? 0
           const barWidth = xScale(d.peakWaterMgd)
-          const label = d.country ? `${d.dataCenter} (${d.country})` : d.dataCenter
+          const label =
+            showCountry && d.country ? `${d.dataCenter} (${d.country})` : d.dataCenter
           return (
             <Group key={d.dataCenter} top={barY}>
               <text
@@ -67,7 +74,7 @@ function Chart({ data, width, height }: ChartProps) {
                 fontWeight={isTop(i) ? 600 : 400}
                 fill={isTop(i) ? water[700] : neutral[600]}
               >
-                {label}
+                {truncateToWidth(label, margin.left - 16, fontSize)}
               </text>
               <motion.rect
                 initial={{ width: 0 }}
