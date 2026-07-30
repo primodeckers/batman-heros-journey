@@ -15,8 +15,10 @@ Vite + React + TypeScript · [Visx](https://airbnb.io/visx/) (D3) ·
 Framer Motion · Tailwind CSS v4 · shadcn/ui (Radix)
 
 ## Layout
-Bento em tela única, sem menu/sidebar — um card de destaque maior cercado
-de cards menores (ver `src/components/layout/DashboardShell.tsx`).
+Visualizador principal + barra de seleção — um card grande mostra o
+gráfico escolhido, e uma lista lateral (4 itens) deixa trocar qual está em
+foco. Pensado pra apresentação ao vivo (ver
+`src/components/layout/DashboardShell.tsx` + `ChartSwitcher.tsx`).
 
 Ver [`docs/architecture.md`](./docs/architecture.md) para detalhes e
 justificativa das escolhas técnicas.

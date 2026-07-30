@@ -27,13 +27,24 @@ exato?" Análise completa das fontes de dado e alternativas descartadas em
   dependência fechada — dá controle total pra customizar depois. Configurado
   manualmente (ver nota abaixo) em vez de via `npx shadcn add`.
 
-## Layout: bento em tela única
+## Layout: visualizador principal + barra de seleção
 
-Decisão de layout (ver conversa do projeto): **sem menu/sidebar**. O
-dashboard é montado como um grid "bento" — um card de destaque maior (a
-visualização mais importante da narrativa) cercado de cards menores — tudo
-visível numa tela só, sem scroll pesado. Implementado em
-`src/components/layout/DashboardShell.tsx` + `BentoGrid.tsx`.
+Primeira versão foi um grid bento (destaque + cards menores todos visíveis
+ao mesmo tempo) — abandonado porque gráficos mais elaborados (o gauge
+radial, por exemplo) ficavam ilegíveis em card pequeno. Layout atual:
+**um card grande central** mostra o gráfico selecionado, e uma **barra de
+seleção** (lateral em telas grandes, linha horizontal no mobile) com os 4
+itens permite escolher qual jogar pro centro. Pensado pra apresentação ao
+vivo — clicar, explicar, clicar no próximo — em vez de tentar mostrar tudo
+ao mesmo tempo em miniatura.
+
+Implementado em `src/components/layout/DashboardShell.tsx` (estado da
+seleção via `useState`, os 4 hooks de dado carregam em paralelo desde o
+início — trocar de aba é instantâneo) + `ChartSwitcher.tsx` (componente
+genérico da barra de seleção).
+
+Ainda sem menu/sidebar de *navegação* no sentido de páginas — é tudo uma
+página só, só o *conteúdo em foco* que muda.
 
 ## Nota: shadcn CLI quebra neste ambiente (Windows)
 
@@ -47,13 +58,25 @@ ui.shadcn.com) para `src/components/ui/`, seguindo o padrão de
 `button.tsx`/`card.tsx`/`badge.tsx` já presentes (usam `cn()` de
 `src/lib/utils.ts` e variáveis CSS de `src/index.css`).
 
+## Nota: gráficos em branco no preview automatizado
+
+Os componentes de gráfico usam `@visx/responsive`'s `ParentSize`
+(`ResizeObserver` por baixo) pra saber o tamanho disponível. Se o preview
+for inspecionado por uma ferramenta automatizada com o painel do navegador
+**não visível/não composto na tela**, o `ResizeObserver` não dispara e os
+gráficos ficam em branco (sem erro nenhum no console — os dados carregam
+normal, só o SVG não recebe dimensão). Não é bug do código: abrir/mostrar
+o painel resolve. Confirmado testando `ResizeObserver` isolado numa div
+qualquer nesse cenário — zero callbacks disparados enquanto o painel não
+está visível.
+
 ## Estrutura de pastas
 
 ```
 src/
   components/
     charts/     # componentes de gráfico (Visx) — um arquivo por tipo
-    layout/     # shell do dashboard: DashboardShell, BentoGrid
+    layout/     # shell do dashboard: DashboardShell, ChartSwitcher
     ui/         # componentes shadcn/ui (button, card, badge...)
   theme/        # paletas e tokens de cor (palette.ts)
   data/
