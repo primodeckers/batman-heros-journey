@@ -4,6 +4,7 @@ import { scaleBand, scaleLinear } from '@visx/scale'
 import { motion } from 'framer-motion'
 
 import { accent, neutral } from '@/theme/palette'
+import { estimateTextWidth } from '@/utils/text'
 import type { ElectricityComparisonRow } from '@/hooks/useElectricityEquivalence'
 
 type ChartProps = {
@@ -13,12 +14,17 @@ type ChartProps = {
 }
 
 function Chart({ data, width, height }: ChartProps) {
-  // Margens e fonte proporcionais à largura — evita que o texto "coma"
-  // o gráfico (ou se sobreponha) em cards estreitos.
-  const marginLeft = Math.max(56, Math.min(132, width * 0.42))
+  const fontSize = width < 220 ? 9 : 11
+
+  // Margem esquerda cabe o rótulo mais longo de verdade (não uma fração
+  // arbitrária da largura) — evita cortar texto tipo "IA (2030)" quando o
+  // card é largo mas o rótulo também é comprido. Sempre limitada a no
+  // máximo metade da largura, pra sobrar espaço pra barra mesmo em rótulos
+  // enormes.
+  const longestLabelWidth = Math.max(...data.map((d) => estimateTextWidth(d.label, fontSize)))
+  const marginLeft = Math.min(Math.max(56, longestLabelWidth + 16), width * 0.5)
   const marginRight = Math.max(28, Math.min(48, width * 0.16))
   const margin = { top: 8, right: marginRight, bottom: 8, left: marginLeft }
-  const fontSize = width < 220 ? 9 : 11
 
   const innerWidth = Math.max(width - margin.left - margin.right, 0)
   const innerHeight = Math.max(height - margin.top - margin.bottom, 0)

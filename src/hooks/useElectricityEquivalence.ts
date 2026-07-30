@@ -38,7 +38,7 @@ export function useElectricityEquivalence() {
             isAI: false,
           })),
           {
-            label: 'Data centers de IA (2030)',
+            label: 'IA (2030)',
             electricityDemandTwh: projection2030.valueHigh,
             isAI: true,
           },
