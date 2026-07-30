@@ -1,13 +1,17 @@
 import { ParentSize } from '@visx/responsive'
 import { motion } from 'framer-motion'
 
-import { accent, neutral } from '@/theme/palette'
+import { neutral, water } from '@/theme/palette'
 import type { IEAEstimate } from '@/types/data'
 
 const BUBBLE_COUNT = 4
 
+/** 1 piscina olímpica = 2,5 milhões de litros. Valor de IEAEstimate já
+ * vem em bilhões de litros (1e9), então piscinas = valor * (1e9/2.5e6). */
+const OLYMPIC_POOLS_PER_BILLION_LITERS = 400
+
 function Chart({ data, width, height }: { data: IEAEstimate; width: number; height: number }) {
-  const labelSpace = 34
+  const labelSpace = 52
   const gh = Math.min(height - labelSpace, width * 1.1)
   const gw = gh * 0.62
   const gx = width / 2 - gw / 2
@@ -20,9 +24,12 @@ function Chart({ data, width, height }: { data: IEAEstimate; width: number; heig
   const fillY = gy + 2 + (gh - 4 - fillHeight)
   const lowY = gy + 2 + (gh - 4) * (1 - data.valueLow / maxValue)
 
+  const poolsLow = Math.round(data.valueLow * OLYMPIC_POOLS_PER_BILLION_LITERS)
+  const poolsHigh = Math.round(data.valueHigh * OLYMPIC_POOLS_PER_BILLION_LITERS)
+
   return (
     <div className="flex h-full flex-col items-center justify-center gap-1">
-      <svg width={width} height={gh + labelSpace} role="img" aria-label={`Pegada de água estimada da IA em ${data.year}, entre ${data.valueLow} e ${data.valueHigh} ${data.unit}`}>
+      <svg width={width} height={gh + labelSpace} role="img" aria-label={`Pegada de água estimada da IA em ${data.year}, entre ${data.valueLow} e ${data.valueHigh} ${data.unit}, equivalente a entre ${poolsLow} e ${poolsHigh} piscinas olímpicas`}>
         <defs>
           <clipPath id={clipId}>
             <rect x={gx + 2} y={gy + 2} width={gw - 4} height={gh - 4} rx={radius} />
@@ -44,7 +51,7 @@ function Chart({ data, width, height }: { data: IEAEstimate; width: number; heig
           <motion.rect
             x={gx + 2}
             width={gw - 4}
-            fill={accent[400]}
+            fill={water[400]}
             initial={{ y: gy + gh, height: 0 }}
             animate={{ y: fillY, height: fillHeight }}
             transition={{ duration: 1.3, ease: 'easeOut' }}
@@ -53,7 +60,7 @@ function Chart({ data, width, height }: { data: IEAEstimate; width: number; heig
             x={gx + 2}
             width={gw - 4}
             height={3}
-            fill={accent[600]}
+            fill={water[600]}
             initial={{ y: gy + gh }}
             animate={{ y: [fillY - 1, fillY + 1, fillY - 1] }}
             transition={{
@@ -84,7 +91,7 @@ function Chart({ data, width, height }: { data: IEAEstimate; width: number; heig
           x2={gx + gw + 6}
           y1={lowY}
           y2={lowY}
-          stroke={accent[800]}
+          stroke={water[800]}
           strokeWidth={1.5}
           strokeDasharray="3 2"
           initial={{ opacity: 0 }}
@@ -92,8 +99,11 @@ function Chart({ data, width, height }: { data: IEAEstimate; width: number; heig
           transition={{ delay: 1.1, duration: 0.4 }}
         />
 
-        <text x={width / 2} y={gy + gh + 22} textAnchor="middle" fontSize={12} fontWeight={600} fill={neutral[700]}>
+        <text x={width / 2} y={gy + gh + 20} textAnchor="middle" fontSize={12} fontWeight={600} fill={neutral[700]}>
           {data.valueLow.toLocaleString('pt-BR')}–{data.valueHigh.toLocaleString('pt-BR')} {data.unit}
+        </text>
+        <text x={width / 2} y={gy + gh + 38} textAnchor="middle" fontSize={11} fill={water[700]}>
+          {poolsLow.toLocaleString('pt-BR')}–{poolsHigh.toLocaleString('pt-BR')} piscinas olímpicas
         </text>
       </svg>
     </div>

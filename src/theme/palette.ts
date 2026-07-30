@@ -38,3 +38,22 @@ export const accent = {
   800: '#92400e',
   900: '#78350f',
 } as const
+
+/**
+ * Exceção documentada ao accent único: água usa azul, porque é uma
+ * convenção forte demais (azul=água) pra brigar com ela — usada só no
+ * card "Quanto a IA bebe" (WaterGlassGauge), em nenhum outro gráfico.
+ * Escala baseada em Tailwind Blue.
+ */
+export const water = {
+  50: '#eff6ff',
+  100: '#dbeafe',
+  200: '#bfdbfe',
+  300: '#93c5fd',
+  400: '#60a5fa',
+  500: '#3b82f6',
+  600: '#2563eb',
+  700: '#1d4ed8',
+  800: '#1e40af',
+  900: '#1e3a8a',
+} as const

@@ -12,6 +12,12 @@ o ponto que a pergunta central está tentando provar.
 intencional de cor".
 - Nunca use cor só para "colorir" — se remover a cor e o gráfico ainda
 comunica a mesma coisa, a cor não tinha função.
+- **Exceção documentada deste projeto:** o dashboard usa âmbar (`accent`
+em `src/theme/palette.ts`) como destaque em todos os gráficos, exceto o
+de pegada de água (`WaterGlassGauge`), que usa azul (`water`). Água é uma
+convenção de cor forte demais pra brigar com ela — nesse caso o intuitivo
+ganha da consistência estrita. Qualquer exceção assim precisa ser
+deliberada e registrada aqui, não uma escolha aleatória por gráfico.
 
 ## 2. Contraste mínimo (WCAG)
 
