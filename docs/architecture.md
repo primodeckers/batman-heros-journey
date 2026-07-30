@@ -1,5 +1,12 @@
 # Arquitetura
 
+## Tema e pergunta central
+
+**Tema: pegada ambiental da IA.** Pergunta central: "Quanto custa pro
+planeta a explosão de data centers de IA — e por que ninguém sabe o número
+exato?" Análise completa das fontes de dado e alternativas descartadas em
+`docs/temas-candidatos.md`.
+
 ## Stack
 - **Vite + React + TypeScript** — SPA leve, sem necessidade de SSR/roteamento
   para um dashboard de página única.
@@ -75,6 +82,7 @@ docs/
   visualização "pronta".
 
 ## Decisões em aberto
-- Tema/pergunta central: **ainda não definido**.
 - Paleta final (accent + escala categórica, incluindo `--chart-1..5` em
-  `src/index.css`): depende do tema.
+  `src/index.css`): ainda não definida.
+- Datasets finais (IEA .Stat, Epoch AI, OWID Energy, Kaggle) ainda
+  precisam ser baixados/tratados — ver `docs/references/fontes-dados.md`.
