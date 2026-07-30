@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import { BarChart3, Droplet, Gauge, Globe } from 'lucide-react'
+
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { AIDataCenterMap } from '@/components/charts/AIDataCenterMap'
@@ -8,13 +11,38 @@ import { useAIDataCenterMapData } from '@/hooks/useAIDataCenterMapData'
 import { useElectricityEquivalence } from '@/hooks/useElectricityEquivalence'
 import { useEnergyUncertaintyRange } from '@/hooks/useEnergyUncertaintyRange'
 import { useWaterFootprintEstimate } from '@/hooks/useWaterFootprintEstimate'
-import { BentoGrid } from './BentoGrid'
+import { ChartSwitcher, type ChartSwitcherItem } from './ChartSwitcher'
+
+type VizId = 'map' | 'uncertainty' | 'water' | 'equivalence'
+
+const VIZ_ITEMS: ChartSwitcherItem<VizId>[] = [
+  { id: 'map', label: 'Onde a IA mora', icon: Globe },
+  { id: 'uncertainty', label: 'Ninguém sabe o número exato', icon: Gauge },
+  { id: 'water', label: 'Quanto a IA "bebe"', icon: Droplet },
+  { id: 'equivalence', label: 'Equivale a quantos países', icon: BarChart3 },
+]
+
+const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
 
 export function DashboardShell() {
+  const [selected, setSelected] = useState<VizId>('map')
+
   const { countries, bubbles } = useAIDataCenterMapData()
   const uncertaintyRange = useEnergyUncertaintyRange()
   const electricityEquivalence = useElectricityEquivalence()
   const waterFootprint = useWaterFootprintEstimate()
+
+  const content: Record<VizId, React.ReactNode> = {
+    map:
+      countries && bubbles ? <AIDataCenterMap countries={countries} bubbles={bubbles} /> : Loading,
+    uncertainty: uncertaintyRange ? <RadialUncertaintyGauge data={uncertaintyRange} /> : Loading,
+    water: waterFootprint ? <WaterGlassGauge data={waterFootprint} /> : Loading,
+    equivalence: electricityEquivalence ? (
+      <ElectricityEquivalenceChart data={electricityEquivalence} />
+    ) : (
+      Loading
+    ),
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -30,61 +58,16 @@ export function DashboardShell() {
           </p>
         </header>
 
-        <main className="flex-1">
-          <BentoGrid>
-            <Card className="lg:col-span-2 lg:row-span-2">
-              <CardHeader>
-                {/* TODO: título narrativo definitivo (depende do dado real) */}
-                <CardTitle>Onde a IA mora (TODO)</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1">
-                {countries && bubbles ? (
-                  <AIDataCenterMap countries={countries} bubbles={bubbles} />
-                ) : (
-                  <p className="text-sm text-muted-foreground">Carregando…</p>
-                )}
-              </CardContent>
-            </Card>
+        <main className="flex flex-1 flex-col gap-4 lg:flex-row">
+          <Card className="min-h-[420px] flex-1">
+            <CardHeader>
+              {/* TODO: título narrativo definitivo (depende do dado real) */}
+              <CardTitle>{VIZ_ITEMS.find((i) => i.id === selected)?.label} (TODO)</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-1">{content[selected]}</CardContent>
+          </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Ninguém sabe o número exato (TODO)</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1">
-                {uncertaintyRange ? (
-                  <RadialUncertaintyGauge data={uncertaintyRange} />
-                ) : (
-                  <p className="text-sm text-muted-foreground">Carregando…</p>
-                )}
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Quanto a IA "bebe" (TODO)</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1">
-                {waterFootprint ? (
-                  <WaterGlassGauge data={waterFootprint} />
-                ) : (
-                  <p className="text-sm text-muted-foreground">Carregando…</p>
-                )}
-              </CardContent>
-            </Card>
-
-            <Card className="lg:col-span-2">
-              <CardHeader>
-                <CardTitle>Equivale a quantos países (TODO)</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1">
-                {electricityEquivalence ? (
-                  <ElectricityEquivalenceChart data={electricityEquivalence} />
-                ) : (
-                  <p className="text-sm text-muted-foreground">Carregando…</p>
-                )}
-              </CardContent>
-            </Card>
-          </BentoGrid>
+          <ChartSwitcher items={VIZ_ITEMS} selected={selected} onSelect={setSelected} />
         </main>
 
         <footer className="flex flex-wrap items-center gap-2 border-t pt-4 text-xs text-muted-foreground">
