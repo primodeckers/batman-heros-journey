@@ -1,0 +1,2203 @@
+country,year,iso_code,electricity_demand_twh
+Afghanistan,2015,AFG,4.960
+Afghanistan,2016,AFG,5.540
+Afghanistan,2017,AFG,5.870
+Afghanistan,2018,AFG,6.160
+Afghanistan,2019,AFG,6.370
+Afghanistan,2020,AFG,6.330
+Afghanistan,2021,AFG,6.760
+Afghanistan,2022,AFG,6.840
+Afghanistan,2023,AFG,7.190
+Afghanistan,2024,AFG,6.820
+Albania,2015,ALB,7.290
+Albania,2016,ALB,7.740
+Albania,2017,ALB,7.440
+Albania,2018,ALB,7.640
+Albania,2019,ALB,7.610
+Albania,2020,ALB,7.590
+Albania,2021,ALB,8.390
+Albania,2022,ALB,7.890
+Albania,2023,ALB,8.090
+Albania,2024,ALB,8.670
+Algeria,2015,DZA,68.810
+Algeria,2016,DZA,70.790
+Algeria,2017,DZA,75.730
+Algeria,2018,DZA,76.660
+Algeria,2019,DZA,81.470
+Algeria,2020,DZA,79.310
+Algeria,2021,DZA,84.450
+Algeria,2022,DZA,88.900
+Algeria,2023,DZA,93.440
+Algeria,2024,DZA,93.840
+American Samoa,2015,ASM,0.160
+American Samoa,2016,ASM,0.170
+American Samoa,2017,ASM,0.160
+American Samoa,2018,ASM,0.160
+American Samoa,2019,ASM,0.160
+American Samoa,2020,ASM,0.170
+American Samoa,2021,ASM,0.170
+American Samoa,2022,ASM,0.180
+American Samoa,2023,ASM,0.170
+American Samoa,2024,ASM,0.180
+Angola,2015,AGO,9.780
+Angola,2016,AGO,10.980
+Angola,2017,AGO,10.810
+Angola,2018,AGO,13.140
+Angola,2019,AGO,15.820
+Angola,2020,AGO,16.810
+Angola,2021,AGO,16.850
+Angola,2022,AGO,17.310
+Angola,2023,AGO,15.750
+Angola,2024,AGO,15.590
+Antigua and Barbuda,2015,ATG,0.350
+Antigua and Barbuda,2016,ATG,0.340
+Antigua and Barbuda,2017,ATG,0.350
+Antigua and Barbuda,2018,ATG,0.360
+Antigua and Barbuda,2019,ATG,0.360
+Antigua and Barbuda,2020,ATG,0.350
+Antigua and Barbuda,2021,ATG,0.350
+Antigua and Barbuda,2022,ATG,0.360
+Antigua and Barbuda,2023,ATG,0.360
+Antigua and Barbuda,2024,ATG,0.370
+Argentina,2015,ARG,154.380
+Argentina,2016,ARG,156.700
+Argentina,2017,ARG,156.070
+Argentina,2018,ARG,156.340
+Argentina,2019,ARG,150.220
+Argentina,2020,ARG,149.350
+Argentina,2021,ARG,155.650
+Argentina,2022,ARG,158.490
+Argentina,2023,ARG,163.900
+Argentina,2024,ARG,161.680
+Argentina,2025,ARG,162.450
+Armenia,2015,ARM,6.300
+Armenia,2016,ARM,6.150
+Armenia,2017,ARM,6.410
+Armenia,2018,ARM,6.170
+Armenia,2019,ARM,6.530
+Armenia,2020,ARM,6.630
+Armenia,2021,ARM,7.090
+Armenia,2022,ARM,8.430
+Armenia,2023,ARM,7.510
+Armenia,2024,ARM,7.640
+Armenia,2025,ARM,8.140
+Aruba,2015,ABW,0.970
+Aruba,2016,ABW,0.940
+Aruba,2017,ABW,0.970
+Aruba,2018,ABW,0.970
+Aruba,2019,ABW,0.990
+Aruba,2020,ABW,0.990
+Aruba,2021,ABW,1.000
+Aruba,2022,ABW,1.000
+Aruba,2023,ABW,1.000
+Aruba,2024,ABW,1.000
+Australia,2015,AUS,253.990
+Australia,2016,AUS,258.230
+Australia,2017,AUS,258.970
+Australia,2018,AUS,262.630
+Australia,2019,AUS,265.900
+Australia,2020,AUS,265.150
+Australia,2021,AUS,267.450
+Australia,2022,AUS,272.920
+Australia,2023,AUS,273.110
+Australia,2024,AUS,281.640
+Australia,2025,AUS,286.340
+Austria,2015,AUT,71.840
+Austria,2016,AUT,72.030
+Austria,2017,AUT,73.640
+Austria,2018,AUT,73.620
+Austria,2019,AUT,73.820
+Austria,2020,AUT,71.230
+Austria,2021,AUT,74.210
+Austria,2022,AUT,73.170
+Austria,2023,AUT,70.910
+Austria,2024,AUT,71.690
+Austria,2025,AUT,75.840
+Azerbaijan,2015,AZE,24.410
+Azerbaijan,2016,AZE,23.870
+Azerbaijan,2017,AZE,23.050
+Azerbaijan,2018,AZE,23.820
+Azerbaijan,2019,AZE,24.600
+Azerbaijan,2020,AZE,24.740
+Azerbaijan,2021,AZE,26.270
+Azerbaijan,2022,AZE,26.080
+Azerbaijan,2023,AZE,26.060
+Azerbaijan,2024,AZE,26.610
+Azerbaijan,2025,AZE,27.170
+Bahamas,2015,BHS,2.000
+Bahamas,2016,BHS,1.970
+Bahamas,2017,BHS,1.990
+Bahamas,2018,BHS,2.000
+Bahamas,2019,BHS,2.010
+Bahamas,2020,BHS,2.030
+Bahamas,2021,BHS,2.040
+Bahamas,2022,BHS,2.050
+Bahamas,2023,BHS,2.210
+Bahamas,2024,BHS,2.250
+Bahrain,2015,BHR,28.480
+Bahrain,2016,BHR,28.500
+Bahrain,2017,BHR,29.270
+Bahrain,2018,BHR,29.750
+Bahrain,2019,BHR,33.190
+Bahrain,2020,BHR,33.160
+Bahrain,2021,BHR,33.930
+Bahrain,2022,BHR,35.710
+Bahrain,2023,BHR,37.950
+Bahrain,2024,BHR,38.440
+Bangladesh,2015,BGD,62.670
+Bangladesh,2016,BGD,72.910
+Bangladesh,2017,BGD,78.110
+Bangladesh,2018,BGD,83.930
+Bangladesh,2019,BGD,91.900
+Bangladesh,2020,BGD,92.130
+Bangladesh,2021,BGD,103.750
+Bangladesh,2022,BGD,109.960
+Bangladesh,2023,BGD,111.160
+Bangladesh,2024,BGD,111.740
+Bangladesh,2025,BGD,118.060
+Barbados,2015,BRB,1.040
+Barbados,2016,BRB,1.050
+Barbados,2017,BRB,1.040
+Barbados,2018,BRB,1.040
+Barbados,2019,BRB,1.060
+Barbados,2020,BRB,1.060
+Barbados,2021,BRB,1.060
+Barbados,2022,BRB,1.090
+Barbados,2023,BRB,1.100
+Barbados,2024,BRB,1.110
+Belarus,2015,BLR,36.710
+Belarus,2016,BLR,36.590
+Belarus,2017,BLR,37.100
+Belarus,2018,BLR,38.000
+Belarus,2019,BLR,38.120
+Belarus,2020,BLR,38.040
+Belarus,2021,BLR,40.950
+Belarus,2022,BLR,36.480
+Belarus,2023,BLR,41.430
+Belarus,2024,BLR,45.220
+Belarus,2025,BLR,45.470
+Belgium,2015,BEL,89.430
+Belgium,2016,BEL,90.490
+Belgium,2017,BEL,91.360
+Belgium,2018,BEL,91.200
+Belgium,2019,BEL,90.840
+Belgium,2020,BEL,87.960
+Belgium,2021,BEL,91.520
+Belgium,2022,BEL,86.800
+Belgium,2023,BEL,83.770
+Belgium,2024,BEL,86.350
+Belgium,2025,BEL,86.560
+Belize,2015,BLZ,0.610
+Belize,2016,BLZ,0.620
+Belize,2017,BLZ,0.630
+Belize,2018,BLZ,0.640
+Belize,2019,BLZ,0.900
+Belize,2020,BLZ,0.710
+Belize,2021,BLZ,0.640
+Belize,2022,BLZ,0.750
+Belize,2023,BLZ,0.730
+Belize,2024,BLZ,0.850
+Benin,2015,BEN,1.370
+Benin,2016,BEN,1.360
+Benin,2017,BEN,1.430
+Benin,2018,BEN,1.480
+Benin,2019,BEN,1.630
+Benin,2020,BEN,1.630
+Benin,2021,BEN,1.820
+Benin,2022,BEN,1.820
+Benin,2023,BEN,2.290
+Benin,2024,BEN,2.310
+Bermuda,2015,BMU,0.670
+Bermuda,2016,BMU,0.660
+Bermuda,2017,BMU,0.670
+Bermuda,2018,BMU,0.640
+Bermuda,2019,BMU,0.610
+Bermuda,2020,BMU,0.590
+Bermuda,2021,BMU,0.590
+Bermuda,2022,BMU,0.630
+Bermuda,2023,BMU,0.640
+Bermuda,2024,BMU,0.610
+Bhutan,2015,BTN,2.130
+Bhutan,2016,BTN,2.200
+Bhutan,2017,BTN,2.040
+Bhutan,2018,BTN,2.440
+Bhutan,2019,BTN,2.600
+Bhutan,2020,BTN,6.190
+Bhutan,2021,BTN,11.650
+Bhutan,2022,BTN,11.600
+Bhutan,2023,BTN,11.990
+Bhutan,2024,BTN,12.460
+Bolivia,2015,BOL,9.000
+Bolivia,2016,BOL,9.300
+Bolivia,2017,BOL,9.590
+Bolivia,2018,BOL,10.040
+Bolivia,2019,BOL,10.370
+Bolivia,2020,BOL,10.270
+Bolivia,2021,BOL,10.870
+Bolivia,2022,BOL,11.670
+Bolivia,2023,BOL,12.550
+Bolivia,2024,BOL,13.530
+Bolivia,2025,BOL,13.630
+Bosnia and Herzegovina,2015,BIH,16.430
+Bosnia and Herzegovina,2016,BIH,17.710
+Bosnia and Herzegovina,2017,BIH,16.240
+Bosnia and Herzegovina,2018,BIH,19.070
+Bosnia and Herzegovina,2019,BIH,17.420
+Bosnia and Herzegovina,2020,BIH,16.790
+Bosnia and Herzegovina,2021,BIH,18.410
+Bosnia and Herzegovina,2022,BIH,16.350
+Bosnia and Herzegovina,2023,BIH,17.180
+Bosnia and Herzegovina,2024,BIH,15.490
+Bosnia and Herzegovina,2025,BIH,14.440
+Botswana,2015,BWA,4.440
+Botswana,2016,BWA,4.360
+Botswana,2017,BWA,4.240
+Botswana,2018,BWA,3.820
+Botswana,2019,BWA,3.520
+Botswana,2020,BWA,4.230
+Botswana,2021,BWA,4.150
+Botswana,2022,BWA,4.360
+Botswana,2023,BWA,4.740
+Botswana,2024,BWA,4.670
+Brazil,2015,BRA,615.640
+Brazil,2016,BRA,619.680
+Brazil,2017,BRA,625.670
+Brazil,2018,BRA,636.370
+Brazil,2019,BRA,658.290
+Brazil,2020,BRA,653.480
+Brazil,2021,BRA,679.500
+Brazil,2022,BRA,690.070
+Brazil,2023,BRA,723.230
+Brazil,2024,BRA,757.310
+Brazil,2025,BRA,762.120
+British Virgin Islands,2015,VGB,0.210
+British Virgin Islands,2016,VGB,0.220
+British Virgin Islands,2017,VGB,0.170
+British Virgin Islands,2018,VGB,0.160
+British Virgin Islands,2019,VGB,0.160
+British Virgin Islands,2020,VGB,0.160
+British Virgin Islands,2021,VGB,0.170
+British Virgin Islands,2022,VGB,0.170
+British Virgin Islands,2023,VGB,0.170
+Brunei,2015,BRN,4.200
+Brunei,2016,BRN,4.270
+Brunei,2017,BRN,4.160
+Brunei,2018,BRN,4.300
+Brunei,2019,BRN,4.930
+Brunei,2020,BRN,5.740
+Brunei,2021,BRN,5.700
+Brunei,2022,BRN,5.600
+Brunei,2023,BRN,5.600
+Brunei,2024,BRN,5.560
+Bulgaria,2015,BGR,38.130
+Bulgaria,2016,BGR,38.160
+Bulgaria,2017,BGR,39.360
+Bulgaria,2018,BGR,38.700
+Bulgaria,2019,BGR,37.910
+Bulgaria,2020,BGR,36.730
+Bulgaria,2021,BGR,38.440
+Bulgaria,2022,BGR,38.090
+Bulgaria,2023,BGR,36.750
+Bulgaria,2024,BGR,37.310
+Bulgaria,2025,BGR,36.530
+Burkina Faso,2015,BFA,1.450
+Burkina Faso,2016,BFA,1.620
+Burkina Faso,2017,BFA,1.770
+Burkina Faso,2018,BFA,2.710
+Burkina Faso,2019,BFA,2.680
+Burkina Faso,2020,BFA,3.020
+Burkina Faso,2021,BFA,3.230
+Burkina Faso,2022,BFA,3.180
+Burkina Faso,2023,BFA,3.270
+Burkina Faso,2024,BFA,3.190
+Burundi,2015,BDI,0.280
+Burundi,2016,BDI,0.310
+Burundi,2017,BDI,0.370
+Burundi,2018,BDI,0.450
+Burundi,2019,BDI,0.490
+Burundi,2020,BDI,0.460
+Burundi,2021,BDI,0.490
+Burundi,2022,BDI,0.490
+Burundi,2023,BDI,0.600
+Burundi,2024,BDI,0.570
+Cambodia,2015,KHM,6.040
+Cambodia,2016,KHM,7.060
+Cambodia,2017,KHM,8.070
+Cambodia,2018,KHM,9.750
+Cambodia,2019,KHM,11.730
+Cambodia,2020,KHM,11.340
+Cambodia,2021,KHM,13.100
+Cambodia,2022,KHM,14.900
+Cambodia,2023,KHM,16.970
+Cambodia,2024,KHM,20.000
+Cambodia,2025,KHM,22.390
+Cameroon,2015,CMR,7.980
+Cameroon,2016,CMR,7.160
+Cameroon,2017,CMR,8.110
+Cameroon,2018,CMR,8.590
+Cameroon,2019,CMR,8.330
+Cameroon,2020,CMR,8.860
+Cameroon,2021,CMR,8.410
+Cameroon,2022,CMR,8.150
+Cameroon,2023,CMR,7.280
+Cameroon,2024,CMR,7.320
+Canada,2015,CAN,601.550
+Canada,2016,CAN,603.330
+Canada,2017,CAN,607.110
+Canada,2018,CAN,613.000
+Canada,2019,CAN,608.620
+Canada,2020,CAN,598.250
+Canada,2021,CAN,605.110
+Canada,2022,CAN,612.970
+Canada,2023,CAN,613.630
+Canada,2024,CAN,624.360
+Canada,2025,CAN,645.640
+Cape Verde,2015,CPV,0.430
+Cape Verde,2016,CPV,0.450
+Cape Verde,2017,CPV,0.430
+Cape Verde,2018,CPV,0.430
+Cape Verde,2019,CPV,0.440
+Cape Verde,2020,CPV,0.420
+Cape Verde,2021,CPV,0.430
+Cape Verde,2022,CPV,0.500
+Cape Verde,2023,CPV,0.500
+Cape Verde,2024,CPV,0.520
+Cayman Islands,2015,CYM,0.640
+Cayman Islands,2016,CYM,0.670
+Cayman Islands,2017,CYM,0.680
+Cayman Islands,2018,CYM,0.670
+Cayman Islands,2019,CYM,0.720
+Cayman Islands,2020,CYM,0.690
+Cayman Islands,2021,CYM,0.700
+Cayman Islands,2022,CYM,0.700
+Cayman Islands,2023,CYM,0.700
+Cayman Islands,2024,CYM,0.710
+Central African Republic,2015,CAF,0.170
+Central African Republic,2016,CAF,0.170
+Central African Republic,2017,CAF,0.150
+Central African Republic,2018,CAF,0.150
+Central African Republic,2019,CAF,0.150
+Central African Republic,2020,CAF,0.150
+Central African Republic,2021,CAF,0.150
+Central African Republic,2022,CAF,0.140
+Central African Republic,2023,CAF,0.140
+Chad,2015,TCD,0.300
+Chad,2016,TCD,0.310
+Chad,2017,TCD,0.320
+Chad,2018,TCD,0.340
+Chad,2019,TCD,0.350
+Chad,2020,TCD,0.350
+Chad,2021,TCD,0.430
+Chad,2022,TCD,0.390
+Chad,2023,TCD,0.360
+Chad,2024,TCD,0.370
+Chile,2015,CHL,74.910
+Chile,2016,CHL,78.830
+Chile,2017,CHL,78.890
+Chile,2018,CHL,81.760
+Chile,2019,CHL,83.980
+Chile,2020,CHL,83.580
+Chile,2021,CHL,88.100
+Chile,2022,CHL,91.040
+Chile,2023,CHL,89.230
+Chile,2024,CHL,88.620
+Chile,2025,CHL,88.500
+China,2015,CHN,5802.140
+China,2016,CHN,6120.440
+China,2017,CHN,6591.390
+China,2018,CHN,7150.920
+China,2019,CHN,7486.630
+China,2020,CHN,7762.030
+China,2021,CHN,8520.020
+China,2022,CHN,8835.760
+China,2023,CHN,9439.370
+China,2024,CHN,10069.880
+China,2025,CHN,10563.900
+Colombia,2015,COL,77.560
+Colombia,2016,COL,76.500
+Colombia,2017,COL,78.540
+Colombia,2018,COL,78.320
+Colombia,2019,COL,79.090
+Colombia,2020,COL,78.800
+Colombia,2021,COL,84.480
+Colombia,2022,COL,83.290
+Colombia,2023,COL,86.580
+Colombia,2024,COL,89.140
+Colombia,2025,COL,91.610
+Comoros,2015,COM,0.050
+Comoros,2016,COM,0.060
+Comoros,2017,COM,0.090
+Comoros,2018,COM,0.100
+Comoros,2019,COM,0.110
+Comoros,2020,COM,0.130
+Comoros,2021,COM,0.130
+Comoros,2022,COM,0.140
+Comoros,2023,COM,0.140
+Congo,2015,COG,2.770
+Congo,2016,COG,2.970
+Congo,2017,COG,2.980
+Congo,2018,COG,3.080
+Congo,2019,COG,3.870
+Congo,2020,COG,4.010
+Congo,2021,COG,4.110
+Congo,2022,COG,4.950
+Congo,2023,COG,5.310
+Congo,2024,COG,5.380
+Cook Islands,2015,COK,0.030
+Cook Islands,2016,COK,0.030
+Cook Islands,2017,COK,0.040
+Cook Islands,2018,COK,0.050
+Cook Islands,2019,COK,0.040
+Cook Islands,2020,COK,0.040
+Cook Islands,2021,COK,0.040
+Cook Islands,2022,COK,0.040
+Cook Islands,2023,COK,0.040
+Cook Islands,2024,COK,0.040
+Costa Rica,2015,CRI,10.660
+Costa Rica,2016,CRI,11.040
+Costa Rica,2017,CRI,11.080
+Costa Rica,2018,CRI,11.200
+Costa Rica,2019,CRI,11.440
+Costa Rica,2020,CRI,11.210
+Costa Rica,2021,CRI,11.730
+Costa Rica,2022,CRI,11.720
+Costa Rica,2023,CRI,12.070
+Costa Rica,2024,CRI,11.220
+Costa Rica,2025,CRI,12.450
+Cote d'Ivoire,2015,CIV,7.850
+Cote d'Ivoire,2016,CIV,9.020
+Cote d'Ivoire,2017,CIV,8.260
+Cote d'Ivoire,2018,CIV,8.990
+Cote d'Ivoire,2019,CIV,9.570
+Cote d'Ivoire,2020,CIV,10.140
+Cote d'Ivoire,2021,CIV,10.800
+Cote d'Ivoire,2022,CIV,11.850
+Cote d'Ivoire,2023,CIV,10.270
+Cote d'Ivoire,2024,CIV,10.060
+Croatia,2015,HRV,18.030
+Croatia,2016,HRV,18.130
+Croatia,2017,HRV,18.720
+Croatia,2018,HRV,18.910
+Croatia,2019,HRV,18.780
+Croatia,2020,HRV,17.870
+Croatia,2021,HRV,19.070
+Croatia,2022,HRV,18.790
+Croatia,2023,HRV,19.020
+Croatia,2024,HRV,19.650
+Croatia,2025,HRV,20.050
+Cuba,2015,CUB,20.390
+Cuba,2016,CUB,20.550
+Cuba,2017,CUB,20.570
+Cuba,2018,CUB,20.800
+Cuba,2019,CUB,20.700
+Cuba,2020,CUB,19.030
+Cuba,2021,CUB,17.830
+Cuba,2022,CUB,15.650
+Cuba,2023,CUB,19.740
+Cuba,2024,CUB,19.430
+Cyprus,2015,CYP,4.540
+Cyprus,2016,CYP,4.890
+Cyprus,2017,CYP,5.000
+Cyprus,2018,CYP,5.060
+Cyprus,2019,CYP,5.150
+Cyprus,2020,CYP,4.850
+Cyprus,2021,CYP,5.120
+Cyprus,2022,CYP,5.260
+Cyprus,2023,CYP,5.330
+Cyprus,2024,CYP,5.790
+Cyprus,2025,CYP,5.910
+Czechia,2015,CZE,69.980
+Czechia,2016,CZE,71.030
+Czechia,2017,CZE,72.720
+Czechia,2018,CZE,72.930
+Czechia,2019,CZE,72.620
+Czechia,2020,CZE,69.950
+Czechia,2021,CZE,72.580
+Czechia,2022,CZE,70.200
+Czechia,2023,CZE,66.620
+Czechia,2024,CZE,66.150
+Czechia,2025,CZE,68.040
+Democratic Republic of Congo,2015,COD,9.900
+Democratic Republic of Congo,2016,COD,9.730
+Democratic Republic of Congo,2017,COD,10.150
+Democratic Republic of Congo,2018,COD,11.190
+Democratic Republic of Congo,2019,COD,12.710
+Democratic Republic of Congo,2020,COD,13.630
+Democratic Republic of Congo,2021,COD,15.600
+Democratic Republic of Congo,2022,COD,16.640
+Democratic Republic of Congo,2023,COD,17.070
+Democratic Republic of Congo,2024,COD,17.360
+Denmark,2015,DNK,34.690
+Denmark,2016,DNK,35.460
+Denmark,2017,DNK,35.460
+Denmark,2018,DNK,35.430
+Denmark,2019,DNK,35.180
+Denmark,2020,DNK,35.460
+Denmark,2021,DNK,37.790
+Denmark,2022,DNK,36.520
+Denmark,2023,DNK,37.020
+Denmark,2024,DNK,38.770
+Denmark,2025,DNK,40.670
+Djibouti,2015,DJI,0.490
+Djibouti,2016,DJI,0.540
+Djibouti,2017,DJI,0.570
+Djibouti,2018,DJI,0.580
+Djibouti,2019,DJI,0.600
+Djibouti,2020,DJI,0.630
+Djibouti,2021,DJI,0.710
+Djibouti,2022,DJI,0.710
+Djibouti,2023,DJI,0.710
+Djibouti,2024,DJI,0.800
+Dominica,2015,DMA,0.150
+Dominica,2016,DMA,0.160
+Dominica,2017,DMA,0.130
+Dominica,2018,DMA,0.110
+Dominica,2019,DMA,0.140
+Dominica,2020,DMA,0.140
+Dominica,2021,DMA,0.140
+Dominica,2022,DMA,0.150
+Dominica,2023,DMA,0.150
+Dominican Republic,2015,DOM,18.000
+Dominican Republic,2016,DOM,18.780
+Dominican Republic,2017,DOM,19.200
+Dominican Republic,2018,DOM,19.600
+Dominican Republic,2019,DOM,21.280
+Dominican Republic,2020,DOM,19.490
+Dominican Republic,2021,DOM,21.430
+Dominican Republic,2022,DOM,22.170
+Dominican Republic,2023,DOM,24.560
+Dominican Republic,2024,DOM,24.030
+Dominican Republic,2025,DOM,22.680
+East Timor,2015,TLS,0.350
+East Timor,2016,TLS,0.410
+East Timor,2017,TLS,0.430
+East Timor,2018,TLS,0.450
+East Timor,2019,TLS,0.520
+East Timor,2020,TLS,0.500
+East Timor,2021,TLS,0.510
+East Timor,2022,TLS,0.510
+East Timor,2023,TLS,0.510
+East Timor,2024,TLS,0.510
+Ecuador,2015,ECU,26.300
+Ecuador,2016,ECU,26.840
+Ecuador,2017,ECU,27.640
+Ecuador,2018,ECU,29.080
+Ecuador,2019,ECU,30.630
+Ecuador,2020,ECU,30.200
+Ecuador,2021,ECU,31.960
+Ecuador,2022,ECU,33.330
+Ecuador,2023,ECU,36.600
+Ecuador,2024,ECU,33.360
+Ecuador,2025,ECU,36.640
+Egypt,2015,EGY,181.140
+Egypt,2016,EGY,187.920
+Egypt,2017,EGY,192.870
+Egypt,2018,EGY,198.820
+Egypt,2019,EGY,199.780
+Egypt,2020,EGY,197.180
+Egypt,2021,EGY,208.190
+Egypt,2022,EGY,215.150
+Egypt,2023,EGY,220.530
+Egypt,2024,EGY,235.990
+Egypt,2025,EGY,244.310
+El Salvador,2015,SLV,6.970
+El Salvador,2016,SLV,7.150
+El Salvador,2017,SLV,7.140
+El Salvador,2018,SLV,7.200
+El Salvador,2019,SLV,7.460
+El Salvador,2020,SLV,7.070
+El Salvador,2021,SLV,8.370
+El Salvador,2022,SLV,7.250
+El Salvador,2023,SLV,5.590
+El Salvador,2024,SLV,6.200
+El Salvador,2025,SLV,6.270
+Equatorial Guinea,2015,GNQ,1.300
+Equatorial Guinea,2016,GNQ,1.400
+Equatorial Guinea,2017,GNQ,1.340
+Equatorial Guinea,2018,GNQ,1.350
+Equatorial Guinea,2019,GNQ,1.400
+Equatorial Guinea,2020,GNQ,1.410
+Equatorial Guinea,2021,GNQ,1.430
+Equatorial Guinea,2022,GNQ,1.510
+Equatorial Guinea,2023,GNQ,1.430
+Equatorial Guinea,2024,GNQ,1.490
+Eritrea,2015,ERI,0.260
+Eritrea,2016,ERI,0.270
+Eritrea,2017,ERI,0.340
+Eritrea,2018,ERI,0.390
+Eritrea,2019,ERI,0.400
+Eritrea,2020,ERI,0.410
+Eritrea,2021,ERI,0.420
+Eritrea,2022,ERI,0.440
+Eritrea,2023,ERI,0.490
+Eritrea,2024,ERI,0.450
+Estonia,2015,EST,9.230
+Estonia,2016,EST,10.130
+Estonia,2017,EST,10.430
+Estonia,2018,EST,10.470
+Estonia,2019,EST,9.770
+Estonia,2020,EST,9.720
+Estonia,2021,EST,9.820
+Estonia,2022,EST,9.950
+Estonia,2023,EST,9.040
+Estonia,2024,EST,9.180
+Estonia,2025,EST,9.340
+Eswatini,2015,SWZ,1.460
+Eswatini,2016,SWZ,1.420
+Eswatini,2017,SWZ,1.450
+Eswatini,2018,SWZ,1.430
+Eswatini,2019,SWZ,1.530
+Eswatini,2020,SWZ,1.400
+Eswatini,2021,SWZ,1.410
+Eswatini,2022,SWZ,1.470
+Eswatini,2023,SWZ,1.700
+Eswatini,2024,SWZ,1.650
+Ethiopia,2015,ETH,9.690
+Ethiopia,2016,ETH,11.170
+Ethiopia,2017,ETH,11.690
+Ethiopia,2018,ETH,13.230
+Ethiopia,2019,ETH,14.170
+Ethiopia,2020,ETH,13.980
+Ethiopia,2021,ETH,14.120
+Ethiopia,2022,ETH,15.660
+Ethiopia,2023,ETH,15.990
+Ethiopia,2024,ETH,23.440
+Ethiopia,2025,ETH,31.020
+Falkland Islands,2015,FLK,0.020
+Falkland Islands,2016,FLK,0.020
+Falkland Islands,2017,FLK,0.010
+Falkland Islands,2018,FLK,0.010
+Falkland Islands,2019,FLK,0.010
+Falkland Islands,2020,FLK,0.010
+Falkland Islands,2021,FLK,0.010
+Falkland Islands,2022,FLK,0.010
+Falkland Islands,2023,FLK,0.010
+Faroe Islands,2015,FRO,0.320
+Faroe Islands,2016,FRO,0.310
+Faroe Islands,2017,FRO,0.330
+Faroe Islands,2018,FRO,0.350
+Faroe Islands,2019,FRO,0.380
+Faroe Islands,2020,FRO,0.410
+Faroe Islands,2021,FRO,0.430
+Faroe Islands,2022,FRO,0.480
+Faroe Islands,2023,FRO,0.490
+Fiji,2015,FJI,0.930
+Fiji,2016,FJI,0.950
+Fiji,2017,FJI,1.020
+Fiji,2018,FJI,1.100
+Fiji,2019,FJI,1.140
+Fiji,2020,FJI,1.080
+Fiji,2021,FJI,1.060
+Fiji,2022,FJI,1.070
+Fiji,2023,FJI,1.150
+Fiji,2024,FJI,1.150
+Finland,2015,FIN,84.950
+Finland,2016,FIN,87.700
+Finland,2017,FIN,87.950
+Finland,2018,FIN,90.170
+Finland,2019,FIN,88.650
+Finland,2020,FIN,84.340
+Finland,2021,FIN,89.880
+Finland,2022,FIN,84.690
+Finland,2023,FIN,83.240
+Finland,2024,FIN,85.730
+Finland,2025,FIN,87.780
+France,2015,FRA,510.080
+France,2016,FRA,517.340
+France,2017,FRA,515.610
+France,2018,FRA,513.270
+France,2019,FRA,507.850
+France,2020,FRA,482.210
+France,2021,FRA,505.420
+France,2022,FRA,483.390
+France,2023,FRA,468.280
+France,2024,FRA,471.800
+France,2025,FRA,476.660
+French Guiana,2015,GUF,0.930
+French Guiana,2016,GUF,0.910
+French Guiana,2017,GUF,0.920
+French Guiana,2018,GUF,0.930
+French Guiana,2019,GUF,0.950
+French Guiana,2020,GUF,0.950
+French Guiana,2021,GUF,0.970
+French Guiana,2022,GUF,0.950
+French Guiana,2023,GUF,0.980
+French Polynesia,2015,PYF,0.680
+French Polynesia,2016,PYF,0.680
+French Polynesia,2017,PYF,0.690
+French Polynesia,2018,PYF,0.680
+French Polynesia,2019,PYF,0.690
+French Polynesia,2020,PYF,0.660
+French Polynesia,2021,PYF,0.660
+French Polynesia,2022,PYF,0.710
+French Polynesia,2023,PYF,0.710
+French Polynesia,2024,PYF,0.720
+Gabon,2015,GAB,2.460
+Gabon,2016,GAB,2.540
+Gabon,2017,GAB,2.700
+Gabon,2018,GAB,3.290
+Gabon,2019,GAB,3.370
+Gabon,2020,GAB,3.470
+Gabon,2021,GAB,3.490
+Gabon,2022,GAB,3.730
+Gabon,2023,GAB,3.170
+Gabon,2024,GAB,3.180
+Gambia,2015,GMB,0.280
+Gambia,2016,GMB,0.300
+Gambia,2017,GMB,0.310
+Gambia,2018,GMB,0.390
+Gambia,2019,GMB,0.460
+Gambia,2020,GMB,0.480
+Gambia,2021,GMB,0.500
+Gambia,2022,GMB,0.510
+Gambia,2023,GMB,0.510
+Gambia,2024,GMB,0.510
+Georgia,2015,GEO,10.790
+Georgia,2016,GEO,11.410
+Georgia,2017,GEO,12.250
+Georgia,2018,GEO,12.960
+Georgia,2019,GEO,13.240
+Georgia,2020,GEO,12.620
+Georgia,2021,GEO,14.260
+Georgia,2022,GEO,14.810
+Georgia,2023,GEO,13.750
+Georgia,2024,GEO,14.110
+Georgia,2025,GEO,14.700
+Germany,2015,DEU,590.890
+Germany,2016,DEU,591.000
+Germany,2017,DEU,592.000
+Germany,2018,DEU,583.540
+Germany,2019,DEU,567.420
+Germany,2020,DEU,547.720
+Germany,2021,DEU,560.250
+Germany,2022,DEU,539.620
+Germany,2023,DEU,515.940
+Germany,2024,DEU,522.260
+Germany,2025,DEU,520.270
+Ghana,2015,GHA,11.280
+Ghana,2016,GHA,13.730
+Ghana,2017,GHA,13.350
+Ghana,2018,GHA,14.310
+Ghana,2019,GHA,16.000
+Ghana,2020,GHA,17.990
+Ghana,2021,GHA,20.390
+Ghana,2022,GHA,21.050
+Ghana,2023,GHA,21.850
+Ghana,2024,GHA,21.830
+Gibraltar,2015,GIB,0.220
+Gibraltar,2016,GIB,0.210
+Gibraltar,2017,GIB,0.210
+Gibraltar,2018,GIB,0.220
+Gibraltar,2019,GIB,0.220
+Gibraltar,2020,GIB,0.210
+Gibraltar,2021,GIB,0.230
+Gibraltar,2022,GIB,0.210
+Gibraltar,2023,GIB,0.230
+Gibraltar,2024,GIB,0.220
+Greece,2015,GRC,60.660
+Greece,2016,GRC,62.640
+Greece,2017,GRC,61.040
+Greece,2018,GRC,58.890
+Greece,2019,GRC,57.890
+Greece,2020,GRC,56.370
+Greece,2021,GRC,57.920
+Greece,2022,GRC,55.120
+Greece,2023,GRC,53.840
+Greece,2024,GRC,56.770
+Greece,2025,GRC,55.560
+Greenland,2015,GRL,0.510
+Greenland,2016,GRL,0.480
+Greenland,2017,GRL,0.500
+Greenland,2018,GRL,0.520
+Greenland,2019,GRL,0.490
+Greenland,2020,GRL,0.520
+Greenland,2021,GRL,0.510
+Greenland,2022,GRL,0.540
+Greenland,2023,GRL,0.610
+Greenland,2024,GRL,0.600
+Grenada,2015,GRD,0.210
+Grenada,2016,GRD,0.220
+Grenada,2017,GRD,0.230
+Grenada,2018,GRD,0.230
+Grenada,2019,GRD,0.240
+Grenada,2020,GRD,0.220
+Grenada,2021,GRD,0.230
+Grenada,2022,GRD,0.240
+Grenada,2023,GRD,0.240
+Grenada,2024,GRD,0.240
+Guadeloupe,2015,GLP,1.760
+Guadeloupe,2016,GLP,1.770
+Guadeloupe,2017,GLP,1.760
+Guadeloupe,2018,GLP,1.710
+Guadeloupe,2019,GLP,1.720
+Guadeloupe,2020,GLP,1.700
+Guadeloupe,2021,GLP,1.660
+Guadeloupe,2022,GLP,1.640
+Guadeloupe,2023,GLP,1.670
+Guam,2015,GUM,1.710
+Guam,2016,GUM,1.740
+Guam,2017,GUM,1.770
+Guam,2018,GUM,1.730
+Guam,2019,GUM,1.750
+Guam,2020,GUM,1.710
+Guam,2021,GUM,1.740
+Guam,2022,GUM,1.800
+Guam,2023,GUM,1.800
+Guam,2024,GUM,1.860
+Guatemala,2015,GTM,10.670
+Guatemala,2016,GTM,11.270
+Guatemala,2017,GTM,11.370
+Guatemala,2018,GTM,11.580
+Guatemala,2019,GTM,11.650
+Guatemala,2020,GTM,12.350
+Guatemala,2021,GTM,15.500
+Guatemala,2022,GTM,13.860
+Guatemala,2023,GTM,15.790
+Guatemala,2024,GTM,16.350
+Guinea,2015,GIN,1.140
+Guinea,2016,GIN,1.610
+Guinea,2017,GIN,1.770
+Guinea,2018,GIN,1.940
+Guinea,2019,GIN,2.050
+Guinea,2020,GIN,2.480
+Guinea,2021,GIN,3.640
+Guinea,2022,GIN,4.000
+Guinea,2023,GIN,4.000
+Guinea,2024,GIN,4.030
+Guinea-Bissau,2015,GNB,0.060
+Guinea-Bissau,2016,GNB,0.080
+Guinea-Bissau,2017,GNB,0.080
+Guinea-Bissau,2018,GNB,0.080
+Guinea-Bissau,2019,GNB,0.080
+Guinea-Bissau,2020,GNB,0.080
+Guinea-Bissau,2021,GNB,0.080
+Guinea-Bissau,2022,GNB,0.080
+Guinea-Bissau,2023,GNB,0.080
+Guinea-Bissau,2024,GNB,0.080
+Guyana,2015,GUY,1.010
+Guyana,2016,GUY,1.100
+Guyana,2017,GUY,1.120
+Guyana,2018,GUY,1.140
+Guyana,2019,GUY,1.150
+Guyana,2020,GUY,1.140
+Guyana,2021,GUY,1.140
+Guyana,2022,GUY,1.280
+Guyana,2023,GUY,1.380
+Guyana,2024,GUY,1.380
+Haiti,2015,HTI,1.030
+Haiti,2016,HTI,1.080
+Haiti,2017,HTI,1.060
+Haiti,2018,HTI,1.040
+Haiti,2019,HTI,1.060
+Haiti,2020,HTI,1.020
+Haiti,2021,HTI,1.030
+Haiti,2022,HTI,1.010
+Haiti,2023,HTI,0.850
+Haiti,2024,HTI,0.860
+Honduras,2015,HND,9.160
+Honduras,2016,HND,9.600
+Honduras,2017,HND,9.800
+Honduras,2018,HND,10.070
+Honduras,2019,HND,10.910
+Honduras,2020,HND,10.420
+Honduras,2021,HND,11.320
+Honduras,2022,HND,11.520
+Honduras,2023,HND,12.630
+Honduras,2024,HND,12.630
+Hong Kong,2015,HKG,48.420
+Hong Kong,2016,HKG,48.540
+Hong Kong,2017,HKG,48.170
+Hong Kong,2018,HKG,48.610
+Hong Kong,2019,HKG,49.320
+Hong Kong,2020,HKG,47.050
+Hong Kong,2021,HKG,48.780
+Hong Kong,2022,HKG,48.450
+Hong Kong,2023,HKG,49.340
+Hong Kong,2024,HKG,48.810
+Hungary,2015,HUN,44.020
+Hungary,2016,HUN,44.590
+Hungary,2017,HUN,45.800
+Hungary,2018,HUN,46.400
+Hungary,2019,HUN,46.860
+Hungary,2020,HUN,46.600
+Hungary,2021,HUN,48.850
+Hungary,2022,HUN,47.930
+Hungary,2023,HUN,46.640
+Hungary,2024,HUN,48.730
+Hungary,2025,HUN,48.900
+Iceland,2015,ISL,18.550
+Iceland,2016,ISL,18.170
+Iceland,2017,ISL,19.070
+Iceland,2018,ISL,19.690
+Iceland,2019,ISL,19.360
+Iceland,2020,ISL,18.890
+Iceland,2021,ISL,19.390
+Iceland,2022,ISL,19.870
+Iceland,2023,ISL,19.810
+Iceland,2024,ISL,19.050
+India,2015,IND,1310.650
+India,2016,IND,1393.840
+India,2017,IND,1460.800
+India,2018,IND,1567.810
+India,2019,IND,1597.840
+India,2020,IND,1563.320
+India,2021,IND,1678.690
+India,2022,IND,1802.880
+India,2023,IND,1916.200
+India,2024,IND,2034.220
+India,2025,IND,2082.820
+Indonesia,2015,IDN,243.290
+Indonesia,2016,IDN,258.240
+Indonesia,2017,IDN,266.950
+Indonesia,2018,IDN,285.290
+Indonesia,2019,IDN,297.120
+Indonesia,2020,IDN,293.370
+Indonesia,2021,IDN,310.330
+Indonesia,2022,IDN,334.340
+Indonesia,2023,IDN,351.490
+Indonesia,2024,IDN,372.500
+Iran,2015,IRN,277.570
+Iran,2016,IRN,283.670
+Iran,2017,IRN,300.850
+Iran,2018,IRN,308.640
+Iran,2019,IRN,312.020
+Iran,2020,IRN,330.410
+Iran,2021,IRN,349.610
+Iran,2022,IRN,360.610
+Iran,2023,IRN,375.290
+Iran,2024,IRN,393.390
+Iran,2025,IRN,395.600
+Iraq,2015,IRQ,79.810
+Iraq,2016,IRQ,90.070
+Iraq,2017,IRQ,99.220
+Iraq,2018,IRQ,103.090
+Iraq,2019,IRQ,121.760
+Iraq,2020,IRQ,124.570
+Iraq,2021,IRQ,125.560
+Iraq,2022,IRQ,137.390
+Iraq,2023,IRQ,151.830
+Iraq,2024,IRQ,156.830
+Ireland,2015,IRL,28.830
+Ireland,2016,IRL,29.590
+Ireland,2017,IRL,30.110
+Ireland,2018,IRL,31.010
+Ireland,2019,IRL,31.510
+Ireland,2020,IRL,32.010
+Ireland,2021,IRL,33.330
+Ireland,2022,IRL,34.040
+Ireland,2023,IRL,34.820
+Ireland,2024,IRL,36.140
+Ireland,2025,IRL,37.640
+Israel,2015,ISR,59.030
+Israel,2016,ISR,61.460
+Israel,2017,ISR,61.790
+Israel,2018,ISR,63.160
+Israel,2019,ISR,66.400
+Israel,2020,ISR,66.500
+Israel,2021,ISR,67.600
+Israel,2022,ISR,69.950
+Israel,2023,ISR,70.500
+Israel,2024,ISR,74.000
+Israel,2025,ISR,75.700
+Italy,2015,ITA,326.080
+Italy,2016,ITA,322.980
+Italy,2017,ITA,329.850
+Italy,2018,ITA,329.960
+Italy,2019,ITA,328.130
+Italy,2020,ITA,309.010
+Italy,2021,ITA,328.280
+Italy,2022,ITA,323.160
+Italy,2023,ITA,312.800
+Italy,2024,ITA,318.560
+Italy,2025,ITA,311.600
+Jamaica,2015,JAM,4.280
+Jamaica,2016,JAM,4.490
+Jamaica,2017,JAM,4.380
+Jamaica,2018,JAM,3.960
+Jamaica,2019,JAM,4.640
+Jamaica,2020,JAM,4.280
+Jamaica,2021,JAM,4.350
+Jamaica,2022,JAM,4.490
+Jamaica,2023,JAM,4.770
+Jamaica,2024,JAM,4.920
+Japan,2015,JPN,1030.120
+Japan,2016,JPN,1063.700
+Japan,2017,JPN,1076.860
+Japan,2018,JPN,1082.930
+Japan,2019,JPN,1047.400
+Japan,2020,JPN,1011.030
+Japan,2021,JPN,1034.670
+Japan,2022,JPN,1040.570
+Japan,2023,JPN,1006.730
+Japan,2024,JPN,1016.390
+Japan,2025,JPN,1029.860
+Jordan,2015,JOR,19.610
+Jordan,2016,JOR,19.960
+Jordan,2017,JOR,20.770
+Jordan,2018,JOR,20.460
+Jordan,2019,JOR,20.670
+Jordan,2020,JOR,20.890
+Jordan,2021,JOR,21.580
+Jordan,2022,JOR,22.640
+Jordan,2023,JOR,23.840
+Jordan,2024,JOR,23.730
+Kazakhstan,2015,KAZ,91.650
+Kazakhstan,2016,KAZ,93.380
+Kazakhstan,2017,KAZ,98.760
+Kazakhstan,2018,KAZ,103.800
+Kazakhstan,2019,KAZ,103.420
+Kazakhstan,2020,KAZ,107.900
+Kazakhstan,2021,KAZ,114.520
+Kazakhstan,2022,KAZ,114.890
+Kazakhstan,2023,KAZ,115.660
+Kazakhstan,2024,KAZ,120.920
+Kazakhstan,2025,KAZ,126.100
+Kenya,2015,KEN,9.820
+Kenya,2016,KEN,9.730
+Kenya,2017,KEN,11.050
+Kenya,2018,KEN,11.390
+Kenya,2019,KEN,11.760
+Kenya,2020,KEN,11.800
+Kenya,2021,KEN,12.650
+Kenya,2022,KEN,13.260
+Kenya,2023,KEN,13.690
+Kenya,2024,KEN,14.750
+Kenya,2025,KEN,15.580
+Kiribati,2015,KIR,0.030
+Kiribati,2016,KIR,0.030
+Kiribati,2017,KIR,0.030
+Kiribati,2018,KIR,0.030
+Kiribati,2019,KIR,0.040
+Kiribati,2020,KIR,0.040
+Kiribati,2021,KIR,0.040
+Kiribati,2022,KIR,0.040
+Kiribati,2023,KIR,0.040
+Kiribati,2024,KIR,0.040
+Kuwait,2015,KWT,68.300
+Kuwait,2016,KWT,70.100
+Kuwait,2017,KWT,68.890
+Kuwait,2018,KWT,74.130
+Kuwait,2019,KWT,75.040
+Kuwait,2020,KWT,74.640
+Kuwait,2021,KWT,80.800
+Kuwait,2022,KWT,85.290
+Kuwait,2023,KWT,89.760
+Kuwait,2024,KWT,92.490
+Kuwait,2025,KWT,92.490
+Kyrgyzstan,2015,KGZ,13.470
+Kyrgyzstan,2016,KGZ,13.280
+Kyrgyzstan,2017,KGZ,14.150
+Kyrgyzstan,2018,KGZ,14.680
+Kyrgyzstan,2019,KGZ,14.970
+Kyrgyzstan,2020,KGZ,15.450
+Kyrgyzstan,2021,KGZ,16.270
+Kyrgyzstan,2022,KGZ,16.170
+Kyrgyzstan,2023,KGZ,16.950
+Kyrgyzstan,2024,KGZ,19.250
+Kyrgyzstan,2025,KGZ,19.310
+Laos,2015,LAO,6.660
+Laos,2016,LAO,6.700
+Laos,2017,LAO,6.670
+Laos,2018,LAO,7.510
+Laos,2019,LAO,8.470
+Laos,2020,LAO,10.590
+Laos,2021,LAO,11.530
+Laos,2022,LAO,11.950
+Laos,2023,LAO,17.100
+Laos,2024,LAO,15.610
+Latvia,2015,LVA,7.360
+Latvia,2016,LVA,7.450
+Latvia,2017,LVA,7.470
+Latvia,2018,LVA,7.630
+Latvia,2019,LVA,7.560
+Latvia,2020,LVA,7.350
+Latvia,2021,LVA,7.620
+Latvia,2022,LVA,7.340
+Latvia,2023,LVA,7.180
+Latvia,2024,LVA,7.400
+Latvia,2025,LVA,7.520
+Lebanon,2015,LBN,18.910
+Lebanon,2016,LBN,19.480
+Lebanon,2017,LBN,21.780
+Lebanon,2018,LBN,21.290
+Lebanon,2019,LBN,21.680
+Lebanon,2020,LBN,18.250
+Lebanon,2021,LBN,11.140
+Lebanon,2022,LBN,4.370
+Lebanon,2023,LBN,6.280
+Lebanon,2024,LBN,5.340
+Lesotho,2015,LSO,0.790
+Lesotho,2016,LSO,0.890
+Lesotho,2017,LSO,0.930
+Lesotho,2018,LSO,0.910
+Lesotho,2019,LSO,0.930
+Lesotho,2020,LSO,0.870
+Lesotho,2021,LSO,0.960
+Lesotho,2022,LSO,0.910
+Lesotho,2023,LSO,0.450
+Lesotho,2024,LSO,0.580
+Liberia,2015,LBR,0.310
+Liberia,2016,LBR,0.300
+Liberia,2017,LBR,0.350
+Liberia,2018,LBR,0.410
+Liberia,2019,LBR,0.420
+Liberia,2020,LBR,0.450
+Liberia,2021,LBR,0.380
+Liberia,2022,LBR,0.390
+Liberia,2023,LBR,0.610
+Liberia,2024,LBR,0.570
+Libya,2015,LBY,37.510
+Libya,2016,LBY,31.800
+Libya,2017,LBY,33.580
+Libya,2018,LBY,34.650
+Libya,2019,LBY,35.410
+Libya,2020,LBY,30.760
+Libya,2021,LBY,35.570
+Libya,2022,LBY,35.830
+Libya,2023,LBY,33.750
+Libya,2024,LBY,34.590
+Lithuania,2015,LTU,11.440
+Lithuania,2016,LTU,11.900
+Lithuania,2017,LTU,12.240
+Lithuania,2018,LTU,12.550
+Lithuania,2019,LTU,12.680
+Lithuania,2020,LTU,12.610
+Lithuania,2021,LTU,13.340
+Lithuania,2022,LTU,12.610
+Lithuania,2023,LTU,12.230
+Lithuania,2024,LTU,12.790
+Lithuania,2025,LTU,12.320
+Luxembourg,2015,LUX,6.940
+Luxembourg,2016,LUX,7.090
+Luxembourg,2017,LUX,7.080
+Luxembourg,2018,LUX,7.120
+Luxembourg,2019,LUX,6.950
+Luxembourg,2020,LUX,6.680
+Luxembourg,2021,LUX,6.950
+Luxembourg,2022,LUX,6.720
+Luxembourg,2023,LUX,6.610
+Luxembourg,2024,LUX,6.760
+Luxembourg,2025,LUX,6.700
+Macao,2015,MAC,5.000
+Macao,2016,MAC,5.300
+Macao,2017,MAC,5.420
+Macao,2018,MAC,5.560
+Macao,2019,MAC,5.820
+Macao,2020,MAC,5.410
+Macao,2021,MAC,5.690
+Macao,2022,MAC,5.360
+Macao,2023,MAC,5.990
+Macao,2024,MAC,6.280
+Madagascar,2015,MDG,1.790
+Madagascar,2016,MDG,1.900
+Madagascar,2017,MDG,1.980
+Madagascar,2018,MDG,2.380
+Madagascar,2019,MDG,2.470
+Madagascar,2020,MDG,2.160
+Madagascar,2021,MDG,2.530
+Madagascar,2022,MDG,2.640
+Madagascar,2023,MDG,2.480
+Madagascar,2024,MDG,2.430
+Malawi,2015,MWI,2.150
+Malawi,2016,MWI,2.130
+Malawi,2017,MWI,1.890
+Malawi,2018,MWI,1.790
+Malawi,2019,MWI,1.780
+Malawi,2020,MWI,1.730
+Malawi,2021,MWI,1.810
+Malawi,2022,MWI,1.810
+Malawi,2023,MWI,1.810
+Malawi,2024,MWI,1.810
+Malaysia,2015,MYS,150.120
+Malaysia,2016,MYS,155.990
+Malaysia,2017,MYS,159.520
+Malaysia,2018,MYS,169.090
+Malaysia,2019,MYS,176.840
+Malaysia,2020,MYS,172.460
+Malaysia,2021,MYS,174.270
+Malaysia,2022,MYS,182.250
+Malaysia,2023,MYS,186.700
+Malaysia,2024,MYS,197.040
+Malaysia,2025,MYS,199.910
+Maldives,2015,MDV,0.620
+Maldives,2016,MDV,0.670
+Maldives,2017,MDV,0.730
+Maldives,2018,MDV,0.790
+Maldives,2019,MDV,0.810
+Maldives,2020,MDV,0.820
+Maldives,2021,MDV,0.840
+Maldives,2022,MDV,0.850
+Maldives,2023,MDV,0.850
+Maldives,2024,MDV,0.850
+Mali,2015,MLI,2.640
+Mali,2016,MLI,2.670
+Mali,2017,MLI,3.190
+Mali,2018,MLI,3.480
+Mali,2019,MLI,3.860
+Mali,2020,MLI,4.090
+Mali,2021,MLI,4.100
+Mali,2022,MLI,4.610
+Mali,2023,MLI,5.290
+Mali,2024,MLI,5.460
+Malta,2015,MLT,2.350
+Malta,2016,MLT,2.390
+Malta,2017,MLT,2.510
+Malta,2018,MLT,2.590
+Malta,2019,MLT,2.710
+Malta,2020,MLT,2.570
+Malta,2021,MLT,2.730
+Malta,2022,MLT,2.940
+Malta,2023,MLT,2.970
+Malta,2024,MLT,3.160
+Malta,2025,MLT,3.230
+Martinique,2015,MTQ,1.560
+Martinique,2016,MTQ,1.580
+Martinique,2017,MTQ,1.560
+Martinique,2018,MTQ,1.540
+Martinique,2019,MTQ,1.550
+Martinique,2020,MTQ,1.500
+Martinique,2021,MTQ,1.510
+Martinique,2022,MTQ,1.490
+Martinique,2023,MTQ,1.510
+Mauritania,2015,MRT,1.340
+Mauritania,2016,MRT,1.380
+Mauritania,2017,MRT,1.540
+Mauritania,2018,MRT,1.660
+Mauritania,2019,MRT,1.770
+Mauritania,2020,MRT,1.850
+Mauritania,2021,MRT,1.770
+Mauritania,2022,MRT,2.020
+Mauritania,2023,MRT,2.350
+Mauritania,2024,MRT,2.370
+Mauritius,2015,MUS,2.990
+Mauritius,2016,MUS,3.050
+Mauritius,2017,MUS,3.110
+Mauritius,2018,MUS,3.120
+Mauritius,2019,MUS,3.230
+Mauritius,2020,MUS,2.900
+Mauritius,2021,MUS,2.990
+Mauritius,2022,MUS,3.120
+Mauritius,2023,MUS,3.270
+Mauritius,2024,MUS,3.410
+Mexico,2015,MEX,309.690
+Mexico,2016,MEX,320.610
+Mexico,2017,MEX,329.440
+Mexico,2018,MEX,350.540
+Mexico,2019,MEX,345.390
+Mexico,2020,MEX,329.740
+Mexico,2021,MEX,327.630
+Mexico,2022,MEX,339.880
+Mexico,2023,MEX,350.660
+Mexico,2024,MEX,354.870
+Mexico,2025,MEX,356.660
+Moldova,2015,MDA,6.060
+Moldova,2016,MDA,5.850
+Moldova,2017,MDA,6.090
+Moldova,2018,MDA,6.340
+Moldova,2019,MDA,6.330
+Moldova,2020,MDA,6.350
+Moldova,2021,MDA,6.820
+Moldova,2022,MDA,6.170
+Moldova,2023,MDA,6.430
+Moldova,2024,MDA,6.060
+Moldova,2025,MDA,6.170
+Mongolia,2015,MNG,6.880
+Mongolia,2016,MNG,7.080
+Mongolia,2017,MNG,7.580
+Mongolia,2018,MNG,8.210
+Mongolia,2019,MNG,8.640
+Mongolia,2020,MNG,8.280
+Mongolia,2021,MNG,9.240
+Mongolia,2022,MNG,9.830
+Mongolia,2023,MNG,10.680
+Mongolia,2024,MNG,11.540
+Mongolia,2025,MNG,12.410
+Montenegro,2015,MNE,3.520
+Montenegro,2016,MNE,3.440
+Montenegro,2017,MNE,3.600
+Montenegro,2018,MNE,3.600
+Montenegro,2019,MNE,3.680
+Montenegro,2020,MNE,3.470
+Montenegro,2021,MNE,3.600
+Montenegro,2022,MNE,3.180
+Montenegro,2023,MNE,3.320
+Montenegro,2024,MNE,3.370
+Montenegro,2025,MNE,4.340
+Montserrat,2015,MSR,0.010
+Montserrat,2016,MSR,0.010
+Montserrat,2017,MSR,0.010
+Montserrat,2018,MSR,0.010
+Montserrat,2019,MSR,0.010
+Montserrat,2020,MSR,0.010
+Montserrat,2021,MSR,0.010
+Montserrat,2022,MSR,0.010
+Montserrat,2023,MSR,0.010
+Montserrat,2024,MSR,0.010
+Morocco,2015,MAR,34.880
+Morocco,2016,MAR,36.020
+Morocco,2017,MAR,37.840
+Morocco,2018,MAR,37.930
+Morocco,2019,MAR,39.450
+Morocco,2020,MAR,39.030
+Morocco,2021,MAR,41.140
+Morocco,2022,MAR,42.810
+Morocco,2023,MAR,44.310
+Morocco,2024,MAR,44.940
+Morocco,2025,MAR,48.230
+Mozambique,2015,MOZ,15.080
+Mozambique,2016,MOZ,15.530
+Mozambique,2017,MOZ,15.920
+Mozambique,2018,MOZ,15.730
+Mozambique,2019,MOZ,16.500
+Mozambique,2020,MOZ,15.610
+Mozambique,2021,MOZ,15.900
+Mozambique,2022,MOZ,16.370
+Mozambique,2023,MOZ,16.500
+Mozambique,2024,MOZ,16.490
+Myanmar,2015,MMR,16.200
+Myanmar,2016,MMR,15.740
+Myanmar,2017,MMR,19.650
+Myanmar,2018,MMR,20.210
+Myanmar,2019,MMR,18.050
+Myanmar,2020,MMR,17.540
+Myanmar,2021,MMR,18.660
+Myanmar,2022,MMR,23.050
+Myanmar,2023,MMR,21.690
+Myanmar,2024,MMR,21.920
+Namibia,2015,NAM,4.170
+Namibia,2016,NAM,4.450
+Namibia,2017,NAM,4.580
+Namibia,2018,NAM,4.630
+Namibia,2019,NAM,4.420
+Namibia,2020,NAM,4.190
+Namibia,2021,NAM,3.950
+Namibia,2022,NAM,4.070
+Namibia,2023,NAM,4.180
+Namibia,2024,NAM,4.040
+Nauru,2015,NRU,0.030
+Nauru,2016,NRU,0.030
+Nauru,2017,NRU,0.030
+Nauru,2018,NRU,0.040
+Nauru,2019,NRU,0.040
+Nauru,2020,NRU,0.040
+Nauru,2021,NRU,0.040
+Nauru,2022,NRU,0.040
+Nauru,2023,NRU,0.040
+Nauru,2024,NRU,0.050
+Nepal,2015,NPL,5.230
+Nepal,2016,NPL,6.350
+Nepal,2017,NPL,7.160
+Nepal,2018,NPL,7.620
+Nepal,2019,NPL,7.770
+Nepal,2020,NPL,8.950
+Nepal,2021,NPL,10.680
+Nepal,2022,NPL,11.190
+Nepal,2023,NPL,10.650
+Nepal,2024,NPL,11.030
+Netherlands,2015,NLD,117.740
+Netherlands,2016,NLD,118.870
+Netherlands,2017,NLD,119.550
+Netherlands,2018,NLD,121.070
+Netherlands,2019,NLD,120.910
+Netherlands,2020,NLD,119.300
+Netherlands,2021,NLD,121.140
+Netherlands,2022,NLD,115.690
+Netherlands,2023,NLD,114.300
+Netherlands,2024,NLD,118.110
+Netherlands,2025,NLD,121.110
+New Caledonia,2015,NCL,2.900
+New Caledonia,2016,NCL,3.140
+New Caledonia,2017,NCL,3.230
+New Caledonia,2018,NCL,3.500
+New Caledonia,2019,NCL,3.330
+New Caledonia,2020,NCL,3.240
+New Caledonia,2021,NCL,2.910
+New Caledonia,2022,NCL,3.090
+New Caledonia,2023,NCL,3.090
+New Caledonia,2024,NCL,3.120
+New Zealand,2015,NZL,43.570
+New Zealand,2016,NZL,43.150
+New Zealand,2017,NZL,43.660
+New Zealand,2018,NZL,43.730
+New Zealand,2019,NZL,43.750
+New Zealand,2020,NZL,43.350
+New Zealand,2021,NZL,43.550
+New Zealand,2022,NZL,43.250
+New Zealand,2023,NZL,42.890
+New Zealand,2024,NZL,44.010
+New Zealand,2025,NZL,43.340
+Nicaragua,2015,NIC,4.600
+Nicaragua,2016,NIC,4.780
+Nicaragua,2017,NIC,4.850
+Nicaragua,2018,NIC,4.850
+Nicaragua,2019,NIC,5.010
+Nicaragua,2020,NIC,4.860
+Nicaragua,2021,NIC,5.210
+Nicaragua,2022,NIC,5.380
+Nicaragua,2023,NIC,5.340
+Nicaragua,2024,NIC,5.420
+Niger,2015,NER,1.320
+Niger,2016,NER,1.480
+Niger,2017,NER,1.410
+Niger,2018,NER,1.520
+Niger,2019,NER,1.730
+Niger,2020,NER,1.780
+Niger,2021,NER,1.830
+Niger,2022,NER,1.950
+Niger,2023,NER,2.210
+Niger,2024,NER,2.150
+Nigeria,2015,NGA,33.170
+Nigeria,2016,NGA,34.600
+Nigeria,2017,NGA,29.780
+Nigeria,2018,NGA,33.710
+Nigeria,2019,NGA,34.130
+Nigeria,2020,NGA,34.990
+Nigeria,2021,NGA,36.140
+Nigeria,2022,NGA,35.570
+Nigeria,2023,NGA,38.600
+Nigeria,2024,NGA,35.260
+Nigeria,2025,NGA,39.240
+Niue,2015,NIU,0.000
+Niue,2016,NIU,0.000
+Niue,2017,NIU,0.000
+Niue,2018,NIU,0.000
+Niue,2019,NIU,0.000
+Niue,2020,NIU,0.000
+Niue,2021,NIU,0.000
+Niue,2022,NIU,0.000
+Niue,2023,NIU,0.000
+North Korea,2015,PRK,18.930
+North Korea,2016,PRK,23.810
+North Korea,2017,PRK,23.430
+North Korea,2018,PRK,24.830
+North Korea,2019,PRK,23.880
+North Korea,2020,PRK,24.100
+North Korea,2021,PRK,25.630
+North Korea,2022,PRK,26.550
+North Korea,2023,PRK,26.720
+North Korea,2024,PRK,27.100
+North Macedonia,2015,MKD,8.160
+North Macedonia,2016,MKD,7.660
+North Macedonia,2017,MKD,7.580
+North Macedonia,2018,MKD,7.530
+North Macedonia,2019,MKD,7.700
+North Macedonia,2020,MKD,7.670
+North Macedonia,2021,MKD,8.010
+North Macedonia,2022,MKD,7.350
+North Macedonia,2023,MKD,7.040
+North Macedonia,2024,MKD,7.020
+North Macedonia,2025,MKD,8.350
+Norway,2015,NOR,128.350
+Norway,2016,NOR,131.620
+Norway,2017,NOR,133.110
+Norway,2018,NOR,135.790
+Norway,2019,NOR,133.870
+Norway,2020,NOR,133.850
+Norway,2021,NOR,139.550
+Norway,2022,NOR,132.900
+Norway,2023,NOR,135.890
+Norway,2024,NOR,138.670
+Norway,2025,NOR,137.710
+Oman,2015,OMN,32.750
+Oman,2016,OMN,34.230
+Oman,2017,OMN,36.150
+Oman,2018,OMN,37.760
+Oman,2019,OMN,38.890
+Oman,2020,OMN,38.200
+Oman,2021,OMN,41.000
+Oman,2022,OMN,42.400
+Oman,2023,OMN,45.000
+Oman,2024,OMN,49.100
+Oman,2025,OMN,52.840
+Pakistan,2015,PAK,113.250
+Pakistan,2016,PAK,123.400
+Pakistan,2017,PAK,130.920
+Pakistan,2018,PAK,129.510
+Pakistan,2019,PAK,135.480
+Pakistan,2020,PAK,146.660
+Pakistan,2021,PAK,163.710
+Pakistan,2022,PAK,176.430
+Pakistan,2023,PAK,172.450
+Pakistan,2024,PAK,175.440
+Pakistan,2025,PAK,195.510
+Palestine,2015,PSE,5.930
+Palestine,2016,PSE,6.000
+Palestine,2017,PSE,6.130
+Palestine,2018,PSE,6.340
+Palestine,2019,PSE,7.060
+Palestine,2020,PSE,7.360
+Palestine,2021,PSE,7.590
+Palestine,2022,PSE,7.720
+Palestine,2023,PSE,7.920
+Palestine,2024,PSE,7.990
+Panama,2015,PAN,10.180
+Panama,2016,PAN,10.510
+Panama,2017,PAN,10.730
+Panama,2018,PAN,10.890
+Panama,2019,PAN,11.290
+Panama,2020,PAN,10.490
+Panama,2021,PAN,11.670
+Panama,2022,PAN,11.930
+Panama,2023,PAN,12.970
+Panama,2024,PAN,13.290
+Papua New Guinea,2015,PNG,4.530
+Papua New Guinea,2016,PNG,4.770
+Papua New Guinea,2017,PNG,4.350
+Papua New Guinea,2018,PNG,4.360
+Papua New Guinea,2019,PNG,4.280
+Papua New Guinea,2020,PNG,4.100
+Papua New Guinea,2021,PNG,4.530
+Papua New Guinea,2022,PNG,4.590
+Papua New Guinea,2023,PNG,4.730
+Papua New Guinea,2024,PNG,4.730
+Paraguay,2015,PRY,14.760
+Paraguay,2016,PRY,15.520
+Paraguay,2017,PRY,16.190
+Paraguay,2018,PRY,17.130
+Paraguay,2019,PRY,17.840
+Paraguay,2020,PRY,18.630
+Paraguay,2021,PRY,19.120
+Paraguay,2022,PRY,20.160
+Paraguay,2023,PRY,22.650
+Paraguay,2024,PRY,26.410
+Paraguay,2025,PRY,29.650
+Peru,2015,PER,48.220
+Peru,2016,PER,51.610
+Peru,2017,PER,52.730
+Peru,2018,PER,54.640
+Peru,2019,PER,56.930
+Peru,2020,PER,53.030
+Peru,2021,PER,57.030
+Peru,2022,PER,59.940
+Peru,2023,PER,60.900
+Peru,2024,PER,59.320
+Peru,2025,PER,60.470
+Philippines,2015,PHL,82.400
+Philippines,2016,PHL,90.790
+Philippines,2017,PHL,94.360
+Philippines,2018,PHL,99.740
+Philippines,2019,PHL,106.030
+Philippines,2020,PHL,101.750
+Philippines,2021,PHL,105.760
+Philippines,2022,PHL,111.550
+Philippines,2023,PHL,116.730
+Philippines,2024,PHL,124.170
+Philippines,2025,PHL,123.120
+Poland,2015,POL,163.970
+Poland,2016,POL,168.000
+Poland,2017,POL,172.200
+Poland,2018,POL,175.120
+Poland,2019,POL,173.840
+Poland,2020,POL,170.420
+Poland,2021,POL,179.680
+Poland,2022,POL,176.920
+Poland,2023,POL,169.260
+Poland,2024,POL,174.090
+Poland,2025,POL,174.310
+Portugal,2015,PRT,53.410
+Portugal,2016,PRT,53.960
+Portugal,2017,PRT,54.910
+Portugal,2018,PRT,55.690
+Portugal,2019,PRT,55.000
+Portugal,2020,PRT,52.850
+Portugal,2021,PRT,53.970
+Portugal,2022,PRT,55.580
+Portugal,2023,PRT,56.370
+Portugal,2024,PRT,57.740
+Portugal,2025,PRT,60.440
+Puerto Rico,2015,PRI,20.900
+Puerto Rico,2016,PRI,20.640
+Puerto Rico,2017,PRI,16.380
+Puerto Rico,2018,PRI,17.690
+Puerto Rico,2019,PRI,19.150
+Puerto Rico,2020,PRI,19.070
+Puerto Rico,2021,PRI,19.360
+Puerto Rico,2022,PRI,19.900
+Puerto Rico,2023,PRI,19.900
+Puerto Rico,2024,PRI,20.000
+Puerto Rico,2025,PRI,20.270
+Qatar,2015,QAT,41.630
+Qatar,2016,QAT,42.440
+Qatar,2017,QAT,45.700
+Qatar,2018,QAT,48.060
+Qatar,2019,QAT,50.000
+Qatar,2020,QAT,49.400
+Qatar,2021,QAT,51.790
+Qatar,2022,QAT,54.750
+Qatar,2023,QAT,56.380
+Qatar,2024,QAT,56.680
+Qatar,2025,QAT,56.180
+Reunion,2015,REU,2.900
+Reunion,2016,REU,2.940
+Reunion,2017,REU,2.980
+Reunion,2018,REU,2.950
+Reunion,2019,REU,3.050
+Reunion,2020,REU,3.790
+Reunion,2021,REU,3.090
+Reunion,2022,REU,3.060
+Reunion,2023,REU,3.070
+Romania,2015,ROU,58.930
+Romania,2016,ROU,59.200
+Romania,2017,ROU,60.650
+Romania,2018,ROU,61.530
+Romania,2019,ROU,60.280
+Romania,2020,ROU,58.000
+Romania,2021,ROU,60.760
+Romania,2022,ROU,55.960
+Romania,2023,ROU,53.930
+Romania,2024,ROU,55.680
+Romania,2025,ROU,54.390
+Russia,2015,RUS,1055.890
+Russia,2016,RUS,1076.470
+Russia,2017,RUS,1080.570
+Russia,2018,RUS,1096.590
+Russia,2019,RUS,1099.730
+Russia,2020,RUS,1074.680
+Russia,2021,RUS,1135.730
+Russia,2022,RUS,1150.540
+Russia,2023,RUS,1161.720
+Russia,2024,RUS,1192.910
+Russia,2025,RUS,1176.110
+Rwanda,2015,RWA,0.590
+Rwanda,2016,RWA,0.710
+Rwanda,2017,RWA,0.720
+Rwanda,2018,RWA,0.910
+Rwanda,2019,RWA,0.880
+Rwanda,2020,RWA,0.910
+Rwanda,2021,RWA,1.020
+Rwanda,2022,RWA,1.060
+Rwanda,2023,RWA,1.200
+Rwanda,2024,RWA,1.220
+Saint Helena,2015,SHN,0.010
+Saint Helena,2016,SHN,0.010
+Saint Helena,2017,SHN,0.010
+Saint Helena,2018,SHN,0.010
+Saint Helena,2019,SHN,0.010
+Saint Helena,2020,SHN,0.010
+Saint Helena,2021,SHN,0.010
+Saint Helena,2022,SHN,0.010
+Saint Helena,2023,SHN,0.010
+Saint Kitts and Nevis,2015,KNA,0.220
+Saint Kitts and Nevis,2016,KNA,0.230
+Saint Kitts and Nevis,2017,KNA,0.220
+Saint Kitts and Nevis,2018,KNA,0.230
+Saint Kitts and Nevis,2019,KNA,0.230
+Saint Kitts and Nevis,2020,KNA,0.220
+Saint Kitts and Nevis,2021,KNA,0.220
+Saint Kitts and Nevis,2022,KNA,0.220
+Saint Kitts and Nevis,2023,KNA,0.220
+Saint Kitts and Nevis,2024,KNA,0.230
+Saint Lucia,2015,LCA,0.380
+Saint Lucia,2016,LCA,0.390
+Saint Lucia,2017,LCA,0.400
+Saint Lucia,2018,LCA,0.410
+Saint Lucia,2019,LCA,0.420
+Saint Lucia,2020,LCA,0.380
+Saint Lucia,2021,LCA,0.400
+Saint Lucia,2022,LCA,0.400
+Saint Lucia,2023,LCA,0.400
+Saint Lucia,2024,LCA,0.400
+Saint Pierre and Miquelon,2015,SPM,0.050
+Saint Pierre and Miquelon,2016,SPM,0.050
+Saint Pierre and Miquelon,2017,SPM,0.050
+Saint Pierre and Miquelon,2018,SPM,0.050
+Saint Pierre and Miquelon,2019,SPM,0.050
+Saint Pierre and Miquelon,2020,SPM,0.050
+Saint Pierre and Miquelon,2021,SPM,0.050
+Saint Pierre and Miquelon,2022,SPM,0.050
+Saint Pierre and Miquelon,2023,SPM,0.050
+Saint Vincent and the Grenadines,2015,VCT,0.150
+Saint Vincent and the Grenadines,2016,VCT,0.160
+Saint Vincent and the Grenadines,2017,VCT,0.150
+Saint Vincent and the Grenadines,2018,VCT,0.150
+Saint Vincent and the Grenadines,2019,VCT,0.150
+Saint Vincent and the Grenadines,2020,VCT,0.150
+Saint Vincent and the Grenadines,2021,VCT,0.140
+Saint Vincent and the Grenadines,2022,VCT,0.150
+Saint Vincent and the Grenadines,2023,VCT,0.150
+Saint Vincent and the Grenadines,2024,VCT,0.150
+Samoa,2015,WSM,0.130
+Samoa,2016,WSM,0.150
+Samoa,2017,WSM,0.160
+Samoa,2018,WSM,0.150
+Samoa,2019,WSM,0.170
+Samoa,2020,WSM,0.180
+Samoa,2021,WSM,0.170
+Samoa,2022,WSM,0.160
+Samoa,2023,WSM,0.150
+Samoa,2024,WSM,0.160
+Sao Tome and Principe,2015,STP,0.100
+Sao Tome and Principe,2016,STP,0.110
+Sao Tome and Principe,2017,STP,0.100
+Sao Tome and Principe,2018,STP,0.100
+Sao Tome and Principe,2019,STP,0.110
+Sao Tome and Principe,2020,STP,0.110
+Sao Tome and Principe,2021,STP,0.110
+Sao Tome and Principe,2022,STP,0.090
+Sao Tome and Principe,2023,STP,0.090
+Saudi Arabia,2015,SAU,350.590
+Saudi Arabia,2016,SAU,356.940
+Saudi Arabia,2017,SAU,394.960
+Saudi Arabia,2018,SAU,374.740
+Saudi Arabia,2019,SAU,378.850
+Saudi Arabia,2020,SAU,380.530
+Saudi Arabia,2021,SAU,392.910
+Saudi Arabia,2022,SAU,409.800
+Saudi Arabia,2023,SAU,429.210
+Saudi Arabia,2024,SAU,454.590
+Senegal,2015,SEN,4.770
+Senegal,2016,SEN,5.140
+Senegal,2017,SEN,5.050
+Senegal,2018,SEN,5.260
+Senegal,2019,SEN,6.140
+Senegal,2020,SEN,6.420
+Senegal,2021,SEN,6.970
+Senegal,2022,SEN,7.650
+Senegal,2023,SEN,8.740
+Senegal,2024,SEN,8.130
+Serbia,2015,SRB,36.670
+Serbia,2016,SRB,36.690
+Serbia,2017,SRB,37.270
+Serbia,2018,SRB,36.790
+Serbia,2019,SRB,36.940
+Serbia,2020,SRB,36.570
+Serbia,2021,SRB,38.110
+Serbia,2022,SRB,37.590
+Serbia,2023,SRB,37.140
+Serbia,2024,SRB,37.480
+Serbia,2025,SRB,37.400
+Seychelles,2015,SYC,0.460
+Seychelles,2016,SYC,0.500
+Seychelles,2017,SYC,0.510
+Seychelles,2018,SYC,0.520
+Seychelles,2019,SYC,0.570
+Seychelles,2020,SYC,0.590
+Seychelles,2021,SYC,0.600
+Seychelles,2022,SYC,0.620
+Seychelles,2023,SYC,0.620
+Seychelles,2024,SYC,0.630
+Sierra Leone,2015,SLE,0.160
+Sierra Leone,2016,SLE,0.210
+Sierra Leone,2017,SLE,0.230
+Sierra Leone,2018,SLE,0.270
+Sierra Leone,2019,SLE,0.200
+Sierra Leone,2020,SLE,0.200
+Sierra Leone,2021,SLE,0.200
+Sierra Leone,2022,SLE,0.200
+Sierra Leone,2023,SLE,0.210
+Sierra Leone,2024,SLE,0.210
+Singapore,2015,SGP,50.280
+Singapore,2016,SGP,51.590
+Singapore,2017,SGP,52.280
+Singapore,2018,SGP,52.970
+Singapore,2019,SGP,54.140
+Singapore,2020,SGP,53.070
+Singapore,2021,SGP,55.790
+Singapore,2022,SGP,57.100
+Singapore,2023,SGP,57.400
+Singapore,2024,SGP,59.630
+Singapore,2025,SGP,60.440
+Slovakia,2015,SVK,29.010
+Slovakia,2016,SVK,29.450
+Slovakia,2017,SVK,30.450
+Slovakia,2018,SVK,30.340
+Slovakia,2019,SVK,29.910
+Slovakia,2020,SVK,28.830
+Slovakia,2021,SVK,30.470
+Slovakia,2022,SVK,27.950
+Slovakia,2023,SVK,26.110
+Slovakia,2024,SVK,26.570
+Slovakia,2025,SVK,26.750
+Slovenia,2015,SVN,14.750
+Slovenia,2016,SVN,15.050
+Slovenia,2017,SVN,15.530
+Slovenia,2018,SVN,15.620
+Slovenia,2019,SVN,15.570
+Slovenia,2020,SVN,14.890
+Slovenia,2021,SVN,15.320
+Slovenia,2022,SVN,14.810
+Slovenia,2023,SVN,14.040
+Slovenia,2024,SVN,14.300
+Slovenia,2025,SVN,14.310
+Solomon Islands,2015,SLB,0.090
+Solomon Islands,2016,SLB,0.100
+Solomon Islands,2017,SLB,0.100
+Solomon Islands,2018,SLB,0.100
+Solomon Islands,2019,SLB,0.100
+Solomon Islands,2020,SLB,0.100
+Solomon Islands,2021,SLB,0.100
+Solomon Islands,2022,SLB,0.110
+Solomon Islands,2023,SLB,0.110
+Solomon Islands,2024,SLB,0.110
+Somalia,2015,SOM,0.350
+Somalia,2016,SOM,0.360
+Somalia,2017,SOM,0.370
+Somalia,2018,SOM,0.370
+Somalia,2019,SOM,0.370
+Somalia,2020,SOM,0.370
+Somalia,2021,SOM,0.380
+Somalia,2022,SOM,0.420
+Somalia,2023,SOM,0.420
+Somalia,2024,SOM,0.430
+South Africa,2015,ZAF,248.500
+South Africa,2016,ZAF,246.820
+South Africa,2017,ZAF,248.510
+South Africa,2018,ZAF,251.600
+South Africa,2019,ZAF,247.900
+South Africa,2020,ZAF,236.920
+South Africa,2021,ZAF,241.890
+South Africa,2022,ZAF,237.660
+South Africa,2023,ZAF,232.400
+South Africa,2024,ZAF,246.220
+South Africa,2025,ZAF,236.840
+South Korea,2015,KOR,547.800
+South Korea,2016,KOR,560.980
+South Korea,2017,KOR,576.410
+South Korea,2018,KOR,592.910
+South Korea,2019,KOR,586.800
+South Korea,2020,KOR,577.110
+South Korea,2021,KOR,607.760
+South Korea,2022,KOR,622.590
+South Korea,2023,KOR,617.490
+South Korea,2024,KOR,625.380
+South Korea,2025,KOR,624.660
+South Sudan,2015,SSD,0.580
+South Sudan,2016,SSD,0.520
+South Sudan,2017,SSD,0.540
+South Sudan,2018,SSD,0.540
+South Sudan,2019,SSD,0.550
+South Sudan,2020,SSD,0.560
+South Sudan,2021,SSD,0.570
+South Sudan,2022,SSD,0.510
+South Sudan,2023,SSD,0.560
+South Sudan,2024,SSD,0.560
+Spain,2015,ESP,277.040
+Spain,2016,ESP,278.370
+Spain,2017,ESP,281.550
+Spain,2018,ESP,282.500
+Spain,2019,ESP,277.380
+Spain,2020,ESP,262.750
+Spain,2021,ESP,271.600
+Spain,2022,ESP,267.350
+Spain,2023,ESP,265.150
+Spain,2024,ESP,270.710
+Spain,2025,ESP,275.100
+Sri Lanka,2015,LKA,13.210
+Sri Lanka,2016,LKA,14.310
+Sri Lanka,2017,LKA,14.890
+Sri Lanka,2018,LKA,16.070
+Sri Lanka,2019,LKA,16.670
+Sri Lanka,2020,LKA,16.500
+Sri Lanka,2021,LKA,17.510
+Sri Lanka,2022,LKA,16.750
+Sri Lanka,2023,LKA,16.390
+Sri Lanka,2024,LKA,17.070
+Sri Lanka,2025,LKA,17.250
+Sudan,2015,SDN,13.220
+Sudan,2016,SDN,15.010
+Sudan,2017,SDN,16.590
+Sudan,2018,SDN,17.200
+Sudan,2019,SDN,16.430
+Sudan,2020,SDN,17.930
+Sudan,2021,SDN,18.630
+Sudan,2022,SDN,17.660
+Sudan,2023,SDN,15.160
+Sudan,2024,SDN,15.570
+Suriname,2015,SUR,1.860
+Suriname,2016,SUR,1.820
+Suriname,2017,SUR,1.810
+Suriname,2018,SUR,1.900
+Suriname,2019,SUR,2.040
+Suriname,2020,SUR,2.050
+Suriname,2021,SUR,2.090
+Suriname,2022,SUR,2.110
+Suriname,2023,SUR,1.730
+Suriname,2024,SUR,1.740
+Sweden,2015,SWE,139.400
+Sweden,2016,SWE,144.160
+Sweden,2017,SWE,145.240
+Sweden,2018,SWE,146.140
+Sweden,2019,SWE,142.260
+Sweden,2020,SWE,138.780
+Sweden,2021,SWE,146.210
+Sweden,2022,SWE,139.830
+Sweden,2023,SWE,137.560
+Sweden,2024,SWE,138.710
+Sweden,2025,SWE,137.110
+Switzerland,2015,CHE,65.040
+Switzerland,2016,CHE,65.020
+Switzerland,2017,CHE,65.700
+Switzerland,2018,CHE,64.700
+Switzerland,2019,CHE,64.310
+Switzerland,2020,CHE,62.940
+Switzerland,2021,CHE,65.500
+Switzerland,2022,CHE,64.860
+Switzerland,2023,CHE,63.680
+Switzerland,2024,CHE,63.970
+Switzerland,2025,CHE,65.120
+Syria,2015,SYR,17.750
+Syria,2016,SYR,18.100
+Syria,2017,SYR,17.900
+Syria,2018,SYR,21.780
+Syria,2019,SYR,21.970
+Syria,2020,SYR,20.710
+Syria,2021,SYR,21.360
+Syria,2022,SYR,19.720
+Syria,2023,SYR,24.380
+Syria,2024,SYR,24.280
+Taiwan,2015,TWN,258.140
+Taiwan,2016,TWN,264.120
+Taiwan,2017,TWN,270.260
+Taiwan,2018,TWN,275.530
+Taiwan,2019,TWN,274.180
+Taiwan,2020,TWN,279.990
+Taiwan,2021,TWN,291.030
+Taiwan,2022,TWN,288.190
+Taiwan,2023,TWN,282.280
+Taiwan,2024,TWN,288.560
+Taiwan,2025,TWN,288.390
+Tajikistan,2015,TJK,15.820
+Tajikistan,2016,TJK,15.910
+Tajikistan,2017,TJK,16.800
+Tajikistan,2018,TJK,17.350
+Tajikistan,2019,TJK,18.070
+Tajikistan,2020,TJK,18.610
+Tajikistan,2021,TJK,18.300
+Tajikistan,2022,TJK,18.940
+Tajikistan,2023,TJK,18.710
+Tajikistan,2024,TJK,19.600
+Tajikistan,2025,TJK,19.470
+Tanzania,2015,TZA,6.600
+Tanzania,2016,TZA,6.920
+Tanzania,2017,TZA,7.180
+Tanzania,2018,TZA,7.430
+Tanzania,2019,TZA,7.880
+Tanzania,2020,TZA,7.940
+Tanzania,2021,TZA,8.790
+Tanzania,2022,TZA,9.770
+Tanzania,2023,TZA,10.760
+Tanzania,2024,TZA,9.030
+Thailand,2015,THA,189.980
+Thailand,2016,THA,198.210
+Thailand,2017,THA,200.050
+Thailand,2018,THA,203.340
+Thailand,2019,THA,209.170
+Thailand,2020,THA,203.410
+Thailand,2021,THA,207.750
+Thailand,2022,THA,213.780
+Thailand,2023,THA,221.030
+Thailand,2024,THA,231.930
+Thailand,2025,THA,225.100
+Togo,2015,TGO,1.010
+Togo,2016,TGO,1.690
+Togo,2017,TGO,1.550
+Togo,2018,TGO,1.480
+Togo,2019,TGO,1.450
+Togo,2020,TGO,1.420
+Togo,2021,TGO,1.510
+Togo,2022,TGO,2.030
+Togo,2023,TGO,2.250
+Togo,2024,TGO,2.210
+Tonga,2015,TON,0.050
+Tonga,2016,TON,0.060
+Tonga,2017,TON,0.070
+Tonga,2018,TON,0.070
+Tonga,2019,TON,0.070
+Tonga,2020,TON,0.070
+Tonga,2021,TON,0.070
+Tonga,2022,TON,0.080
+Tonga,2023,TON,0.070
+Tonga,2024,TON,0.070
+Trinidad and Tobago,2015,TTO,9.570
+Trinidad and Tobago,2016,TTO,9.420
+Trinidad and Tobago,2017,TTO,9.320
+Trinidad and Tobago,2018,TTO,9.230
+Trinidad and Tobago,2019,TTO,9.200
+Trinidad and Tobago,2020,TTO,9.230
+Trinidad and Tobago,2021,TTO,9.270
+Trinidad and Tobago,2022,TTO,9.500
+Trinidad and Tobago,2023,TTO,9.520
+Trinidad and Tobago,2024,TTO,9.550
+Tunisia,2015,TUN,19.380
+Tunisia,2016,TUN,19.510
+Tunisia,2017,TUN,20.550
+Tunisia,2018,TUN,20.820
+Tunisia,2019,TUN,21.860
+Tunisia,2020,TUN,20.780
+Tunisia,2021,TUN,22.930
+Tunisia,2022,TUN,23.980
+Tunisia,2023,TUN,23.780
+Tunisia,2024,TUN,23.960
+Tunisia,2025,TUN,24.900
+Turkey,2015,TUR,265.710
+Turkey,2016,TUR,279.280
+Turkey,2017,TUR,296.710
+Turkey,2018,TUR,299.520
+Turkey,2019,TUR,299.600
+Turkey,2020,TUR,301.410
+Turkey,2021,TUR,326.030
+Turkey,2022,TUR,323.290
+Turkey,2023,TUR,323.810
+Turkey,2024,TUR,340.240
+Turkey,2025,TUR,351.930
+Turkmenistan,2015,TKM,19.330
+Turkmenistan,2016,TKM,19.330
+Turkmenistan,2017,TKM,20.690
+Turkmenistan,2018,TKM,22.160
+Turkmenistan,2019,TKM,19.300
+Turkmenistan,2020,TKM,22.560
+Turkmenistan,2021,TKM,25.200
+Turkmenistan,2022,TKM,23.600
+Turkmenistan,2023,TKM,23.600
+Turkmenistan,2024,TKM,24.010
+Turks and Caicos Islands,2015,TCA,0.230
+Turks and Caicos Islands,2016,TCA,0.250
+Turks and Caicos Islands,2017,TCA,0.290
+Turks and Caicos Islands,2018,TCA,0.260
+Turks and Caicos Islands,2019,TCA,0.260
+Turks and Caicos Islands,2020,TCA,0.250
+Turks and Caicos Islands,2021,TCA,0.260
+Turks and Caicos Islands,2022,TCA,0.260
+Turks and Caicos Islands,2023,TCA,0.260
+Turks and Caicos Islands,2024,TCA,0.270
+Uganda,2015,UGA,3.480
+Uganda,2016,UGA,3.650
+Uganda,2017,UGA,3.490
+Uganda,2018,UGA,4.100
+Uganda,2019,UGA,4.300
+Uganda,2020,UGA,4.400
+Uganda,2021,UGA,4.900
+Uganda,2022,UGA,5.340
+Uganda,2023,UGA,5.330
+Uganda,2024,UGA,5.370
+Ukraine,2015,UKR,162.330
+Ukraine,2016,UKR,160.830
+Ukraine,2017,UKR,150.860
+Ukraine,2018,UKR,153.790
+Ukraine,2019,UKR,150.100
+Ukraine,2020,UKR,145.370
+Ukraine,2021,UKR,154.400
+Ukraine,2022,UKR,111.610
+United Arab Emirates,2015,ARE,127.370
+United Arab Emirates,2016,ARE,130.240
+United Arab Emirates,2017,ARE,134.470
+United Arab Emirates,2018,ARE,135.980
+United Arab Emirates,2019,ARE,138.440
+United Arab Emirates,2020,ARE,137.280
+United Arab Emirates,2021,ARE,149.260
+United Arab Emirates,2022,ARE,155.310
+United Arab Emirates,2023,ARE,167.430
+United Arab Emirates,2024,ARE,177.020
+United Kingdom,2015,GBR,359.980
+United Kingdom,2016,GBR,356.930
+United Kingdom,2017,GBR,352.980
+United Kingdom,2018,GBR,352.870
+United Kingdom,2019,GBR,348.360
+United Kingdom,2020,GBR,328.550
+United Kingdom,2021,GBR,332.640
+United Kingdom,2022,GBR,320.280
+United Kingdom,2023,GBR,315.830
+United Kingdom,2024,GBR,317.350
+United Kingdom,2025,GBR,321.380
+United States,2015,USA,4150.660
+United States,2016,USA,4154.060
+United States,2017,USA,4108.620
+United States,2018,USA,4246.010
+United States,2019,USA,4197.420
+United States,2020,USA,4090.490
+United States,2021,USA,4192.930
+United States,2022,USA,4328.100
+United States,2023,USA,4272.810
+United States,2024,USA,4404.830
+United States,2025,USA,4535.810
+United States Virgin Islands,2015,VIR,0.780
+United States Virgin Islands,2016,VIR,0.770
+United States Virgin Islands,2017,VIR,0.600
+United States Virgin Islands,2018,VIR,0.620
+United States Virgin Islands,2019,VIR,0.660
+United States Virgin Islands,2020,VIR,0.640
+United States Virgin Islands,2021,VIR,0.660
+United States Virgin Islands,2022,VIR,0.680
+United States Virgin Islands,2023,VIR,0.680
+Uruguay,2015,URY,12.420
+Uruguay,2016,URY,13.120
+Uruguay,2017,URY,12.890
+Uruguay,2018,URY,13.430
+Uruguay,2019,URY,13.060
+Uruguay,2020,URY,12.940
+Uruguay,2021,URY,13.200
+Uruguay,2022,URY,13.500
+Uruguay,2023,URY,13.970
+Uruguay,2024,URY,14.520
+Uruguay,2025,URY,14.750
+Uzbekistan,2015,UZB,56.120
+Uzbekistan,2016,UZB,57.210
+Uzbekistan,2017,UZB,60.200
+Uzbekistan,2018,UZB,62.760
+Uzbekistan,2019,UZB,64.870
+Uzbekistan,2020,UZB,69.050
+Uzbekistan,2021,UZB,75.030
+Uzbekistan,2022,UZB,77.400
+Uzbekistan,2023,UZB,79.730
+Uzbekistan,2024,UZB,84.430
+Uzbekistan,2025,UZB,89.630
+Vanuatu,2015,VUT,0.060
+Vanuatu,2016,VUT,0.070
+Vanuatu,2017,VUT,0.060
+Vanuatu,2018,VUT,0.080
+Vanuatu,2019,VUT,0.090
+Vanuatu,2020,VUT,0.090
+Vanuatu,2021,VUT,0.080
+Vanuatu,2022,VUT,0.080
+Vanuatu,2023,VUT,0.080
+Venezuela,2015,VEN,126.550
+Venezuela,2016,VEN,115.830
+Venezuela,2017,VEN,102.740
+Venezuela,2018,VEN,98.690
+Venezuela,2019,VEN,84.280
+Venezuela,2020,VEN,79.860
+Venezuela,2021,VEN,82.930
+Venezuela,2022,VEN,82.360
+Venezuela,2023,VEN,71.960
+Venezuela,2024,VEN,80.130
+Vietnam,2015,VNM,162.910
+Vietnam,2016,VNM,180.500
+Vietnam,2017,VNM,195.430
+Vietnam,2018,VNM,218.800
+Vietnam,2019,VNM,238.140
+Vietnam,2020,VNM,245.510
+Vietnam,2021,VNM,254.430
+Vietnam,2022,VNM,267.430
+Vietnam,2023,VNM,280.070
+Vietnam,2024,VNM,307.180
+Vietnam,2025,VNM,313.590
+Yemen,2015,YEM,5.760
+Yemen,2016,YEM,4.810
+Yemen,2017,YEM,4.050
+Yemen,2018,YEM,3.490
+Yemen,2019,YEM,3.280
+Yemen,2020,YEM,2.940
+Yemen,2021,YEM,2.920
+Yemen,2022,YEM,3.030
+Yemen,2023,YEM,5.120
+Yemen,2024,YEM,5.250
+Zambia,2015,ZMB,13.120
+Zambia,2016,ZMB,13.160
+Zambia,2017,ZMB,14.250
+Zambia,2018,ZMB,15.210
+Zambia,2019,ZMB,14.010
+Zambia,2020,ZMB,14.020
+Zambia,2021,ZMB,15.590
+Zambia,2022,ZMB,16.430
+Zambia,2023,ZMB,16.090
+Zambia,2024,ZMB,16.600
+Zimbabwe,2015,ZWE,9.490
+Zimbabwe,2016,ZWE,9.020
+Zimbabwe,2017,ZWE,9.770
+Zimbabwe,2018,ZWE,10.450
+Zimbabwe,2019,ZWE,9.590
+Zimbabwe,2020,ZWE,8.690
+Zimbabwe,2021,ZWE,10.310
+Zimbabwe,2022,ZWE,10.850
+Zimbabwe,2023,ZWE,11.990
+Zimbabwe,2024,ZWE,12.100
