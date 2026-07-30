@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { AIDataCenterMap } from '@/components/charts/AIDataCenterMap'
 import { ElectricityEquivalenceChart } from '@/components/charts/ElectricityEquivalenceChart'
 import { RadialUncertaintyGauge } from '@/components/charts/RadialUncertaintyGauge'
-import { WaterGlassGauge } from '@/components/charts/WaterGlassGauge'
+import { WaterDropletGrid } from '@/components/charts/WaterDropletGrid'
 import { WaterUseRankingChart } from '@/components/charts/WaterUseRankingChart'
 import { useAIDataCenterMapData } from '@/hooks/useAIDataCenterMapData'
 import { useElectricityEquivalence } from '@/hooks/useElectricityEquivalence'
@@ -40,7 +40,7 @@ export function DashboardShell() {
     map:
       countries && bubbles ? <AIDataCenterMap countries={countries} bubbles={bubbles} /> : Loading,
     uncertainty: uncertaintyRange ? <RadialUncertaintyGauge data={uncertaintyRange} /> : Loading,
-    water: waterFootprint ? <WaterGlassGauge data={waterFootprint} /> : Loading,
+    water: waterFootprint ? <WaterDropletGrid data={waterFootprint} /> : Loading,
     equivalence: electricityEquivalence ? (
       <ElectricityEquivalenceChart data={electricityEquivalence} />
     ) : (
