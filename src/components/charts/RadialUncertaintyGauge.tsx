@@ -23,10 +23,13 @@ type GaugeProps = {
 }
 
 function Gauge({ estimate, maxScale, size }: GaugeProps) {
-  const r = size / 2 - 12
+  const titleHeight = size * 0.14
+  const captionHeight = size * 0.16
+  const r = size / 2 - 10
   const cx = size / 2
-  const cy = size / 2
+  const cy = titleHeight + r
   const strokeWidth = Math.max(6, size * 0.07)
+  const svgHeight = titleHeight + r + captionHeight
 
   const trackPath = describeSemicircle(cx, cy, r)
   const arcLength = Math.PI * r
@@ -38,10 +41,21 @@ function Gauge({ estimate, maxScale, size }: GaugeProps) {
   return (
     <svg
       width={size}
-      height={size / 2 + 24}
+      height={svgHeight}
       role="img"
       aria-label={`Faixa de incerteza em ${estimate.year}: entre ${estimate.valueLow} e ${estimate.valueHigh} ${estimate.unit}`}
     >
+      <text
+        x={cx}
+        y={titleHeight * 0.75}
+        textAnchor="middle"
+        fontSize={size * 0.075}
+        fontWeight={600}
+        fill={neutral[700]}
+      >
+        {estimate.year}
+      </text>
+
       <path d={trackPath} fill="none" stroke={neutral[200]} strokeWidth={strokeWidth} />
       <motion.path
         d={trackPath}
@@ -65,14 +79,26 @@ function Gauge({ estimate, maxScale, size }: GaugeProps) {
         animate={{ scale: 1 }}
         transition={{ duration: 0.4, delay: 1 }}
       />
-      <text x={cx} y={cy - 6} textAnchor="middle" fontSize={size * 0.11} fontWeight={600} fill={accent[700]}>
+
+      <text
+        x={cx}
+        y={cy - r * 0.32}
+        textAnchor="middle"
+        fontSize={size * 0.13}
+        fontWeight={600}
+        fill={accent[700]}
+      >
         {estimate.valueHigh}
       </text>
-      <text x={cx} y={cy + 12} textAnchor="middle" fontSize={size * 0.055} fill={neutral[600]}>
-        {estimate.unit} até • mín. {estimate.valueLow}
-      </text>
-      <text x={cx} y={size / 2 + 18} textAnchor="middle" fontSize={size * 0.065} fontWeight={600} fill={neutral[700]}>
-        {estimate.year}
+
+      <text
+        x={cx}
+        y={cy + captionHeight * 0.6}
+        textAnchor="middle"
+        fontSize={size * 0.06}
+        fill={neutral[600]}
+      >
+        {estimate.valueLow}–{estimate.valueHigh} {estimate.unit}
       </text>
     </svg>
   )
@@ -80,7 +106,7 @@ function Gauge({ estimate, maxScale, size }: GaugeProps) {
 
 function Chart({ data, width, height }: { data: IEAEstimate[]; width: number; height: number }) {
   const maxScale = Math.max(...data.map((d) => d.valueHigh)) * 1.05
-  const gaugeSize = Math.min(width / data.length - 12, height * 1.7)
+  const gaugeSize = Math.max(Math.min(width / data.length - 12, height * 1.15), 80)
 
   return (
     <div className="flex h-full items-center justify-center gap-4">
