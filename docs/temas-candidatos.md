@@ -137,6 +137,38 @@ Pesquisei fontes reais pra cada um. Resumo no final.
 4. Faixa de incerteza das estimativas de consumo de IA (mín-máx, várias
    fontes) — reforça o ponto "isto é estimativa"
 
+### Ideias de visualização animada (efeitos)
+
+Stack permite ir além de gráfico estático — Visx cuida da geometria, Framer
+Motion orquestra a animação, `d3-scale-chromatic` cuida da cor. Ideias
+concretas em cima dos dados acima, do mais simples ao mais ambicioso:
+
+1. **Mapa-múndi "vivo" com data centers aparecendo no tempo** (dado: Epoch
+   AI, 346 instalações com ano de anúncio) — cada data center "nasce" no
+   mapa no ano em que foi anunciado, com um pulso/glow ao aparecer. Rodando
+   em loop (2015→2026), o mapa vai se enchendo e mostra visualmente onde a
+   IA consome energia. Os mais recentes continuam pulsando discretamente
+   ("isso ainda tá acontecendo agora").
+2. **Contador de equivalência com pictograma enchendo** (dado: projeção
+   950 TWh em 2030 vs. consumo de países reais, OWID) — grid de ícones
+   (isotype/pictograma) preenchendo progressivamente (stagger no Framer
+   Motion) até um texto tipo "equivale a X países inteiros".
+3. **Faixa de incerteza "respirando"** (dado: 53-76 TWh em 2024 → 165-326
+   TWh em 2028) — a área sombreada entre mínimo e máximo pulsa devagar
+   (opacidade oscilando), reforçando visualmente "isto é uma estimativa,
+   não um número fixo" sem precisar de texto extra.
+4. **Medidor de água enchendo** (dado: pegada de água 312,5–764,6 bilhões
+   de litros) — "copo"/gauge em SVG que enche de líquido ao carregar; litros
+   são mais palpáveis que TWh.
+
+**Nota técnica:** como o layout é bento em tela única (sem scroll), essas
+animações não têm scroll pra disparar — rodam automaticamente ao carregar
+(loop lento) ou com botão "play" no card, não por scroll-trigger.
+
+**Recomendação:** #1 (mapa vivo) como card de destaque do bento + #3 (faixa
+respirando) num card menor — as duas contam a mesma história central ("a
+IA cresceu rápido e ninguém sabe o custo exato") com pouco texto.
+
 ### Avaliação
 | Critério | Nota |
 | --- | --- |
