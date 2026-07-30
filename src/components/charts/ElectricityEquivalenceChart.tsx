@@ -12,11 +12,16 @@ type ChartProps = {
   height: number
 }
 
-const MARGIN = { top: 8, right: 48, bottom: 8, left: 132 }
-
 function Chart({ data, width, height }: ChartProps) {
-  const innerWidth = Math.max(width - MARGIN.left - MARGIN.right, 0)
-  const innerHeight = Math.max(height - MARGIN.top - MARGIN.bottom, 0)
+  // Margens e fonte proporcionais à largura — evita que o texto "coma"
+  // o gráfico (ou se sobreponha) em cards estreitos.
+  const marginLeft = Math.max(56, Math.min(132, width * 0.42))
+  const marginRight = Math.max(28, Math.min(48, width * 0.16))
+  const margin = { top: 8, right: marginRight, bottom: 8, left: marginLeft }
+  const fontSize = width < 220 ? 9 : 11
+
+  const innerWidth = Math.max(width - margin.left - margin.right, 0)
+  const innerHeight = Math.max(height - margin.top - margin.bottom, 0)
 
   const yScale = scaleBand<string>({
     domain: data.map((d) => d.label),
@@ -39,7 +44,7 @@ function Chart({ data, width, height }: ChartProps) {
       role="img"
       aria-label="Comparação da projeção de consumo elétrico dos data centers de IA em 2030 contra a demanda elétrica real de países"
     >
-      <Group left={MARGIN.left} top={MARGIN.top}>
+      <Group left={margin.left} top={margin.top}>
         {data.map((d, i) => {
           const barY = yScale(d.label) ?? 0
           const barWidth = xScale(d.electricityDemandTwh)
@@ -50,7 +55,7 @@ function Chart({ data, width, height }: ChartProps) {
                 y={barHeight / 2}
                 dy=".35em"
                 textAnchor="end"
-                fontSize={11}
+                fontSize={fontSize}
                 fontWeight={d.isAI ? 600 : 400}
                 fill={d.isAI ? accent[700] : neutral[600]}
               >
@@ -68,7 +73,7 @@ function Chart({ data, width, height }: ChartProps) {
                 x={barWidth + 8}
                 y={barHeight / 2}
                 dy=".35em"
-                fontSize={11}
+                fontSize={fontSize}
                 fontWeight={d.isAI ? 600 : 400}
                 fill={d.isAI ? accent[700] : neutral[600]}
               >
