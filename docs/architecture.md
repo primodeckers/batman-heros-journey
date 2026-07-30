@@ -2,10 +2,11 @@
 
 ## Tema e pergunta central
 
-**Tema: pegada ambiental da IA.** Pergunta central: "Quanto custa pro
-planeta a explosão de data centers de IA — e por que ninguém sabe o número
-exato?" Análise completa das fontes de dado e alternativas descartadas em
-`docs/temas-candidatos.md`.
+**Tema: GitHub / agentes de código.** Pergunta central: "78% dos
+programadores já usam IA todo dia — mas a maioria não confia nela. Por
+quê?" Análise completa das fontes de dado e alternativas descartadas em
+`docs/temas-candidatos.md` (inclui o histórico do tema anterior, pegada
+ambiental da IA, abandonado em 31/07/2026 por não empolgar).
 
 ## Stack
 - **Vite + React + TypeScript** — SPA leve, sem necessidade de SSR/roteamento
@@ -33,13 +34,13 @@ Primeira versão foi um grid bento (destaque + cards menores todos visíveis
 ao mesmo tempo) — abandonado porque gráficos mais elaborados (o gauge
 radial, por exemplo) ficavam ilegíveis em card pequeno. Layout atual:
 **um card grande central** mostra o gráfico selecionado, e uma **barra de
-seleção** (lateral em telas grandes, linha horizontal no mobile) com os 4
+seleção** (lateral em telas grandes, linha horizontal no mobile) com os 5
 itens permite escolher qual jogar pro centro. Pensado pra apresentação ao
 vivo — clicar, explicar, clicar no próximo — em vez de tentar mostrar tudo
 ao mesmo tempo em miniatura.
 
 Implementado em `src/components/layout/DashboardShell.tsx` (estado da
-seleção via `useState`, os 4 hooks de dado carregam em paralelo desde o
+seleção via `useState`, os 5 hooks de dado carregam em paralelo desde o
 início — trocar de aba é instantâneo) + `ChartSwitcher.tsx` (componente
 genérico da barra de seleção).
 
@@ -105,7 +106,7 @@ docs/
   visualização "pronta".
 
 ## Decisões em aberto
-- Paleta final (accent + escala categórica, incluindo `--chart-1..5` em
-  `src/index.css`): ainda não definida.
-- Datasets finais (IEA .Stat, Epoch AI, OWID Energy, Kaggle) ainda
-  precisam ser baixados/tratados — ver `docs/references/fontes-dados.md`.
+- Títulos narrativos definitivos de cada visualização (hoje têm "(TODO)").
+- Rodapé de fontes citadas (hoje são badges "(TODO)").
+- `--chart-1..5` em `src/index.css` (variáveis do tema shadcn) ainda não
+  ajustadas pra combinar com o accent índigo de `theme/palette.ts`.

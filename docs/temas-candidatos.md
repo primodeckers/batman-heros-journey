@@ -1,14 +1,22 @@
 # Temas candidatos — análise comparativa
 
-> ## ✅ Tema escolhido: E — Pegada ambiental da IA
-> **Pergunta central:** "Quanto custa pro planeta a explosão de data
-> centers de IA — e por que ninguém sabe o número exato?"
+> ## ✅ Tema escolhido: A — GitHub / agentes de código
+> **Pergunta central:** "78% dos programadores já usam IA todo dia — mas
+> a maioria não confia nela. Por quê?"
 >
-> Arco de 3 atos: **contexto** = onde a IA mora (mapa dos data centers,
-> Epoch AI) → **evidência** = ninguém sabe o número exato (faixa de
-> incerteza das estimativas do IEA/Carbon Brief) → **conclusão** = quanto
-> isso vai pesar em 2030, comparado a países reais (OWID Energy).
-> Decidido em 29/07/2026. Detalhes completos na seção "Tema E" abaixo.
+> Arco de 3 atos: **contexto** = quase todo mundo já usa IA pra programar
+> (Stack Overflow Developer Survey 2025) → **evidência/tensão** = mesmo
+> assim, mais gente desconfia da precisão do que confia (46% vs 33%) →
+> **conclusão** = isso não impediu a explosão de TypeScript e a escolha
+> de qual IA usar (GitHub Innovation Graph + ranking de fabricantes).
+> Decidido em 31/07/2026, depois de tentar o Tema E (pegada ambiental da
+> IA) e não empolgar o suficiente. Detalhes completos na seção "Tema A"
+> abaixo.
+>
+> _Histórico: o Tema E chegou a ser implementado por completo (mapa
+> animado, gauges, pictograma de água) antes de ser abandonado — código e
+> dados removidos do projeto atual, mas o histórico do git preserva tudo
+> se for preciso consultar depois._
 
 Documento de apoio pra Fase 1 (`WORK_RULES.md`): comparar os temas em mente
 antes de fechar um. Critério principal não é "qual é mais interessante" —
@@ -61,6 +69,23 @@ registrados abaixo como histórico da decisão, não foram apagados.
 | Riqueza narrativa | Alta — arco temporal claro (antes/depois da IA) |
 | Viável em 3 semanas | Alta |
 | Ressoa com você | Alta (é a sua área) |
+
+### ✅ Implementado em 31/07/2026 — dados reais confirmados e usados
+- **Stack Overflow Developer Survey 2025** — o CSV bruto oficial não está
+  mais no site da pesquisa, mas está hospedado no repositório
+  [StackExchange/Survey](https://github.com/StackExchange/Survey) no
+  GitHub (`packages/archive/2025/results.csv`, via Git LFS, sem login).
+  49.191 respondentes, 170 colunas. Campos usados: `AISelect` (adoção),
+  `AIAcc` (confiança na precisão), `AIModelsHaveWorkedWith` (qual IA),
+  `YearsCode` (experiência).
+- **[GitHub Innovation Graph](https://github.com/github/innovationgraph)**
+  — dataset oficial do GitHub, `languages.csv`, sem login, trimestral
+  desde 2020 até hoje. Substituiu o Octoverse (que não tem dataset bruto)
+  como fonte pra tendência real de linguagens.
+- **Achado mais forte:** 78-79% dos devs usam IA (diária/semanal/mensal),
+  mas só 33% confiam na precisão do código gerado — 46% desconfiam. Essa
+  tensão adoção-vs-confiança virou a pergunta central, mais forte que a
+  hipótese original ("TypeScript ultrapassou Python").
 
 ---
 
@@ -267,12 +292,11 @@ comércio/guerra tarifária — removidos desta análise._
 
 | Tema | Dado real | Narrativa | Viabilidade | Recomendação |
 | --- | --- | --- | --- | --- |
-| A — GitHub/agentes de código | Alta | Alta | Alta | Forte alternativa, não escolhida |
+| **A — GitHub/agentes de código** | Alta (Stack Overflow Survey 2025 + GitHub Innovation Graph) | Alta | Alta | **✅ Escolhido (definitivo) — ver topo do documento** |
 | B — Guerra/economia/cotidiano | Muito alta | Alta | Alta | Forte alternativa, não escolhida |
-| **E — Pegada ambiental da IA** | Alta (estimativas IEA) | Alta | Alta | **✅ Escolhido — ver topo do documento** |
+| ~~E — Pegada ambiental da IA~~ | Alta (estimativas IEA) | Alta | Alta | Escolhido em 29/07, implementado por completo, abandonado em 31/07 — não empolgou o suficiente |
 | G — Migração forçada/refugiados | Muito alta | Muito alta | Alta | Forte alternativa, não escolhida |
 
-**Decisão final (29/07/2026): Tema E.** Próximo passo é a Fase 2 do
-`WORK_RULES.md` — baixar/consultar as fontes (IEA .Stat, Epoch AI, OWID
-Energy, Kaggle) e registrar cada uma em
+**Decisão final (31/07/2026): Tema A.** Fase 2 do `WORK_RULES.md`
+concluída — dados baixados/processados e registrados em
 `docs/references/fontes-dados.md`.
