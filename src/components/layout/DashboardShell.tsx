@@ -3,15 +3,18 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CountryRankingChart } from '@/components/charts/CountryRankingChart'
 import { ElectricityEquivalenceChart } from '@/components/charts/ElectricityEquivalenceChart'
 import { UncertaintyRangeChart } from '@/components/charts/UncertaintyRangeChart'
+import { WaterFootprintChart } from '@/components/charts/WaterFootprintChart'
 import { useCountryDataCenterRanking } from '@/hooks/useCountryDataCenterRanking'
 import { useElectricityEquivalence } from '@/hooks/useElectricityEquivalence'
 import { useEnergyUncertaintyRange } from '@/hooks/useEnergyUncertaintyRange'
+import { useWaterFootprintEstimate } from '@/hooks/useWaterFootprintEstimate'
 import { BentoGrid } from './BentoGrid'
 
 export function DashboardShell() {
   const countryRanking = useCountryDataCenterRanking()
   const uncertaintyRange = useEnergyUncertaintyRange()
   const electricityEquivalence = useElectricityEquivalence()
+  const waterFootprint = useWaterFootprintEstimate()
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -73,8 +76,12 @@ export function DashboardShell() {
               <CardHeader>
                 <CardTitle>Quanto a IA "bebe" (TODO)</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-1 items-center justify-center text-sm text-muted-foreground">
-                Pegada de água estimada (IEA)
+              <CardContent className="flex-1">
+                {waterFootprint ? (
+                  <WaterFootprintChart data={waterFootprint} />
+                ) : (
+                  <p className="text-sm text-muted-foreground">Carregando…</p>
+                )}
               </CardContent>
             </Card>
           </BentoGrid>
