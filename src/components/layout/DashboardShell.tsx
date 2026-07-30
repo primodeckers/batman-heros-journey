@@ -1,11 +1,14 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CountryRankingChart } from '@/components/charts/CountryRankingChart'
+import { UncertaintyRangeChart } from '@/components/charts/UncertaintyRangeChart'
 import { useCountryDataCenterRanking } from '@/hooks/useCountryDataCenterRanking'
+import { useEnergyUncertaintyRange } from '@/hooks/useEnergyUncertaintyRange'
 import { BentoGrid } from './BentoGrid'
 
 export function DashboardShell() {
   const countryRanking = useCountryDataCenterRanking()
+  const uncertaintyRange = useEnergyUncertaintyRange()
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -41,8 +44,12 @@ export function DashboardShell() {
               <CardHeader>
                 <CardTitle>Ninguém sabe o número exato (TODO)</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-1 items-center justify-center text-sm text-muted-foreground">
-                Faixa de incerteza do consumo de energia (IEA / Carbon Brief)
+              <CardContent className="flex-1">
+                {uncertaintyRange ? (
+                  <UncertaintyRangeChart data={uncertaintyRange} />
+                ) : (
+                  <p className="text-sm text-muted-foreground">Carregando…</p>
+                )}
               </CardContent>
             </Card>
 
