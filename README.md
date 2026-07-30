@@ -4,7 +4,11 @@ Trabalho final — dashboard com dados reais que conta uma história em torno
 de uma pergunta central. Ver [`WORK_RULES.md`](./WORK_RULES.md) para os
 requisitos completos da entrega.
 
-**Status:** tema e pergunta central ainda não definidos.
+**Tema:** pegada ambiental da IA.
+**Pergunta central:** "Quanto custa pro planeta a explosão de data centers
+de IA — e por que ninguém sabe o número exato?"
+Ver [`docs/temas-candidatos.md`](./docs/temas-candidatos.md) para a análise
+completa que levou a essa escolha.
 
 ## Stack
 Vite + React + TypeScript · [Visx](https://airbnb.io/visx/) (D3) ·
