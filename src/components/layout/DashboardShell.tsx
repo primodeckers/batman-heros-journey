@@ -2,8 +2,8 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { AIDataCenterMap } from '@/components/charts/AIDataCenterMap'
 import { ElectricityEquivalenceChart } from '@/components/charts/ElectricityEquivalenceChart'
-import { UncertaintyRangeChart } from '@/components/charts/UncertaintyRangeChart'
-import { WaterFootprintChart } from '@/components/charts/WaterFootprintChart'
+import { RadialUncertaintyGauge } from '@/components/charts/RadialUncertaintyGauge'
+import { WaterGlassGauge } from '@/components/charts/WaterGlassGauge'
 import { useAIDataCenterMapData } from '@/hooks/useAIDataCenterMapData'
 import { useElectricityEquivalence } from '@/hooks/useElectricityEquivalence'
 import { useEnergyUncertaintyRange } from '@/hooks/useEnergyUncertaintyRange'
@@ -52,7 +52,7 @@ export function DashboardShell() {
               </CardHeader>
               <CardContent className="flex-1">
                 {uncertaintyRange ? (
-                  <UncertaintyRangeChart data={uncertaintyRange} />
+                  <RadialUncertaintyGauge data={uncertaintyRange} />
                 ) : (
                   <p className="text-sm text-muted-foreground">Carregando…</p>
                 )}
@@ -61,11 +61,11 @@ export function DashboardShell() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Equivale a quantos países (TODO)</CardTitle>
+                <CardTitle>Quanto a IA "bebe" (TODO)</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
-                {electricityEquivalence ? (
-                  <ElectricityEquivalenceChart data={electricityEquivalence} />
+                {waterFootprint ? (
+                  <WaterGlassGauge data={waterFootprint} />
                 ) : (
                   <p className="text-sm text-muted-foreground">Carregando…</p>
                 )}
@@ -74,11 +74,11 @@ export function DashboardShell() {
 
             <Card className="lg:col-span-2">
               <CardHeader>
-                <CardTitle>Quanto a IA "bebe" (TODO)</CardTitle>
+                <CardTitle>Equivale a quantos países (TODO)</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
-                {waterFootprint ? (
-                  <WaterFootprintChart data={waterFootprint} />
+                {electricityEquivalence ? (
+                  <ElectricityEquivalenceChart data={electricityEquivalence} />
                 ) : (
                   <p className="text-sm text-muted-foreground">Carregando…</p>
                 )}
