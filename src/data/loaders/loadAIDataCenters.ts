@@ -19,14 +19,27 @@ export async function loadAIDataCenters(): Promise<AIDataCenter[]> {
   }))
 }
 
-/** Nº de data centers por país, ordenado do maior pro menor — pro mapa/ranking. */
-export function countDataCentersByCountry(dataCenters: AIDataCenter[]) {
-  const counts = new Map<string, number>()
+export type CountryDataCenterAggregate = {
+  country: string
+  count: number
+  totalPowerMw: number
+}
+
+/** Agrega nº de data centers e potência total por país, ordenado do maior pro menor. */
+export function aggregateDataCentersByCountry(
+  dataCenters: AIDataCenter[],
+): CountryDataCenterAggregate[] {
+  const byCountry = new Map<string, CountryDataCenterAggregate>()
   for (const dc of dataCenters) {
     if (!dc.country) continue
-    counts.set(dc.country, (counts.get(dc.country) ?? 0) + 1)
+    const current = byCountry.get(dc.country) ?? {
+      country: dc.country,
+      count: 0,
+      totalPowerMw: 0,
+    }
+    current.count += 1
+    current.totalPowerMw += dc.currentPowerMw ?? 0
+    byCountry.set(dc.country, current)
   }
-  return [...counts.entries()]
-    .map(([country, count]) => ({ country, count }))
-    .sort((a, b) => b.count - a.count)
+  return [...byCountry.values()].sort((a, b) => b.totalPowerMw - a.totalPowerMw)
 }

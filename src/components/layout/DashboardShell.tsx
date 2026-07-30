@@ -1,17 +1,17 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { CountryRankingChart } from '@/components/charts/CountryRankingChart'
+import { AIDataCenterMap } from '@/components/charts/AIDataCenterMap'
 import { ElectricityEquivalenceChart } from '@/components/charts/ElectricityEquivalenceChart'
 import { UncertaintyRangeChart } from '@/components/charts/UncertaintyRangeChart'
 import { WaterFootprintChart } from '@/components/charts/WaterFootprintChart'
-import { useCountryDataCenterRanking } from '@/hooks/useCountryDataCenterRanking'
+import { useAIDataCenterMapData } from '@/hooks/useAIDataCenterMapData'
 import { useElectricityEquivalence } from '@/hooks/useElectricityEquivalence'
 import { useEnergyUncertaintyRange } from '@/hooks/useEnergyUncertaintyRange'
 import { useWaterFootprintEstimate } from '@/hooks/useWaterFootprintEstimate'
 import { BentoGrid } from './BentoGrid'
 
 export function DashboardShell() {
-  const countryRanking = useCountryDataCenterRanking()
+  const { countries, bubbles } = useAIDataCenterMapData()
   const uncertaintyRange = useEnergyUncertaintyRange()
   const electricityEquivalence = useElectricityEquivalence()
   const waterFootprint = useWaterFootprintEstimate()
@@ -38,8 +38,8 @@ export function DashboardShell() {
                 <CardTitle>Onde a IA mora (TODO)</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
-                {countryRanking ? (
-                  <CountryRankingChart data={countryRanking} />
+                {countries && bubbles ? (
+                  <AIDataCenterMap countries={countries} bubbles={bubbles} />
                 ) : (
                   <p className="text-sm text-muted-foreground">Carregando…</p>
                 )}
