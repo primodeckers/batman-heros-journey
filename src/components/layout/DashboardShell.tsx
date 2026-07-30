@@ -1,8 +1,12 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { CountryRankingChart } from '@/components/charts/CountryRankingChart'
+import { useCountryDataCenterRanking } from '@/hooks/useCountryDataCenterRanking'
 import { BentoGrid } from './BentoGrid'
 
 export function DashboardShell() {
+  const countryRanking = useCountryDataCenterRanking()
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col gap-6 px-6 py-8">
@@ -24,8 +28,12 @@ export function DashboardShell() {
                 {/* TODO: título narrativo definitivo (depende do dado real) */}
                 <CardTitle>Onde a IA mora (TODO)</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-1 items-center justify-center text-sm text-muted-foreground">
-                Mapa animado dos data centers de IA no mundo (Epoch AI)
+              <CardContent className="flex-1">
+                {countryRanking ? (
+                  <CountryRankingChart data={countryRanking} />
+                ) : (
+                  <p className="text-sm text-muted-foreground">Carregando…</p>
+                )}
               </CardContent>
             </Card>
 
