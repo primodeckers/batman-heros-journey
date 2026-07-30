@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BarChart3, Droplet, Gauge, Globe } from 'lucide-react'
+import { BarChart3, Droplet, Gauge, Globe, ListOrdered } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -7,19 +7,22 @@ import { AIDataCenterMap } from '@/components/charts/AIDataCenterMap'
 import { ElectricityEquivalenceChart } from '@/components/charts/ElectricityEquivalenceChart'
 import { RadialUncertaintyGauge } from '@/components/charts/RadialUncertaintyGauge'
 import { WaterGlassGauge } from '@/components/charts/WaterGlassGauge'
+import { WaterUseRankingChart } from '@/components/charts/WaterUseRankingChart'
 import { useAIDataCenterMapData } from '@/hooks/useAIDataCenterMapData'
 import { useElectricityEquivalence } from '@/hooks/useElectricityEquivalence'
 import { useEnergyUncertaintyRange } from '@/hooks/useEnergyUncertaintyRange'
 import { useWaterFootprintEstimate } from '@/hooks/useWaterFootprintEstimate'
+import { useWaterUseRanking } from '@/hooks/useWaterUseRanking'
 import { ChartSwitcher, type ChartSwitcherItem } from './ChartSwitcher'
 
-type VizId = 'map' | 'uncertainty' | 'water' | 'equivalence'
+type VizId = 'map' | 'uncertainty' | 'water' | 'equivalence' | 'waterRanking'
 
 const VIZ_ITEMS: ChartSwitcherItem<VizId>[] = [
   { id: 'map', label: 'Onde a IA mora', icon: Globe },
   { id: 'uncertainty', label: 'Ninguém sabe o número exato', icon: Gauge },
   { id: 'water', label: 'Quanto a IA "bebe"', icon: Droplet },
   { id: 'equivalence', label: 'Equivale a quantos países', icon: BarChart3 },
+  { id: 'waterRanking', label: 'Quem mais "bebe" água', icon: ListOrdered },
 ]
 
 const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
@@ -31,6 +34,7 @@ export function DashboardShell() {
   const uncertaintyRange = useEnergyUncertaintyRange()
   const electricityEquivalence = useElectricityEquivalence()
   const waterFootprint = useWaterFootprintEstimate()
+  const waterRanking = useWaterUseRanking()
 
   const content: Record<VizId, React.ReactNode> = {
     map:
@@ -42,6 +46,7 @@ export function DashboardShell() {
     ) : (
       Loading
     ),
+    waterRanking: waterRanking ? <WaterUseRankingChart data={waterRanking} /> : Loading,
   }
 
   return (

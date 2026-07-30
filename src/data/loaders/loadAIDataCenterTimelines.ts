@@ -28,8 +28,17 @@ export function getFirstEntryPerDataCenter(entries: AIDataCenterTimelineEntry[])
   return [...first.values()].sort((a, b) => a.date.getTime() - b.date.getTime())
 }
 
-/** Maior uso de água (MGD) já registrado por data center, somado — pro card de pegada de água. */
-export function getTotalPeakWaterUseMgd(entries: AIDataCenterTimelineEntry[]) {
+export type DataCenterWaterUse = {
+  dataCenter: string
+  peakWaterMgd: number
+}
+
+/** Maior uso de água (MGD) já registrado por data center, um por linha —
+ * só os que têm valor > 0 (a maioria dos 75 data centers não reporta
+ * água). Ordenado do maior pro menor. */
+export function getPeakWaterUseByDataCenter(
+  entries: AIDataCenterTimelineEntry[],
+): DataCenterWaterUse[] {
   const peakByDataCenter = new Map<string, number>()
   for (const entry of entries) {
     if (entry.waterUseMgd === null) continue
@@ -38,5 +47,13 @@ export function getTotalPeakWaterUseMgd(entries: AIDataCenterTimelineEntry[]) {
       peakByDataCenter.set(entry.dataCenter, entry.waterUseMgd)
     }
   }
-  return [...peakByDataCenter.values()].reduce((sum, v) => sum + v, 0)
+  return [...peakByDataCenter.entries()]
+    .map(([dataCenter, peakWaterMgd]) => ({ dataCenter, peakWaterMgd }))
+    .filter((d) => d.peakWaterMgd > 0)
+    .sort((a, b) => b.peakWaterMgd - a.peakWaterMgd)
+}
+
+/** Maior uso de água (MGD) já registrado por data center, somado — pro card de pegada de água. */
+export function getTotalPeakWaterUseMgd(entries: AIDataCenterTimelineEntry[]) {
+  return getPeakWaterUseByDataCenter(entries).reduce((sum, d) => sum + d.peakWaterMgd, 0)
 }
