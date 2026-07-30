@@ -1,52 +1,47 @@
 import { useState } from 'react'
-import { BarChart3, Droplet, Gauge, Globe, ListOrdered } from 'lucide-react'
+import { Bot, Briefcase, ShieldQuestion, TrendingUp, Users } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { AIDataCenterMap } from '@/components/charts/AIDataCenterMap'
-import { ElectricityEquivalenceChart } from '@/components/charts/ElectricityEquivalenceChart'
-import { RadialUncertaintyGauge } from '@/components/charts/RadialUncertaintyGauge'
-import { WaterDropletGrid } from '@/components/charts/WaterDropletGrid'
-import { WaterUseRankingChart } from '@/components/charts/WaterUseRankingChart'
-import { useAIDataCenterMapData } from '@/hooks/useAIDataCenterMapData'
-import { useElectricityEquivalence } from '@/hooks/useElectricityEquivalence'
-import { useEnergyUncertaintyRange } from '@/hooks/useEnergyUncertaintyRange'
-import { useWaterFootprintEstimate } from '@/hooks/useWaterFootprintEstimate'
-import { useWaterUseRanking } from '@/hooks/useWaterUseRanking'
+import { AIAdoptionByExperienceChart } from '@/components/charts/AIAdoptionByExperienceChart'
+import { AIAdoptionPictogram } from '@/components/charts/AIAdoptionPictogram'
+import { AITrustDivergingChart } from '@/components/charts/AITrustDivergingChart'
+import { AIVendorRankingChart } from '@/components/charts/AIVendorRankingChart'
+import { LanguageTrendChart } from '@/components/charts/LanguageTrendChart'
+import { useAIAdoption } from '@/hooks/useAIAdoption'
+import { useAIAdoptionByExperience } from '@/hooks/useAIAdoptionByExperience'
+import { useAITrust } from '@/hooks/useAITrust'
+import { useAIVendors } from '@/hooks/useAIVendors'
+import { useLanguageTrend } from '@/hooks/useLanguageTrend'
 import { ChartSwitcher, type ChartSwitcherItem } from './ChartSwitcher'
 
-type VizId = 'map' | 'uncertainty' | 'water' | 'equivalence' | 'waterRanking'
+type VizId = 'adoption' | 'trust' | 'languages' | 'vendors' | 'experience'
 
 const VIZ_ITEMS: ChartSwitcherItem<VizId>[] = [
-  { id: 'map', label: 'Onde a IA mora', icon: Globe },
-  { id: 'uncertainty', label: 'Ninguém sabe o número exato', icon: Gauge },
-  { id: 'water', label: 'Quanto a IA "bebe"', icon: Droplet },
-  { id: 'equivalence', label: 'Equivale a quantos países', icon: BarChart3 },
-  { id: 'waterRanking', label: 'Quem mais "bebe" água', icon: ListOrdered },
+  { id: 'adoption', label: 'Quem já usa IA pra programar', icon: Users },
+  { id: 'trust', label: 'Ninguém confia totalmente', icon: ShieldQuestion },
+  { id: 'languages', label: 'As linguagens que dispararam', icon: TrendingUp },
+  { id: 'vendors', label: 'Qual IA os devs escolheram', icon: Bot },
+  { id: 'experience', label: 'Quem usa mais: novato ou veterano', icon: Briefcase },
 ]
 
 const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
 
 export function DashboardShell() {
-  const [selected, setSelected] = useState<VizId>('map')
+  const [selected, setSelected] = useState<VizId>('adoption')
 
-  const { countries, bubbles } = useAIDataCenterMapData()
-  const uncertaintyRange = useEnergyUncertaintyRange()
-  const electricityEquivalence = useElectricityEquivalence()
-  const waterFootprint = useWaterFootprintEstimate()
-  const waterRanking = useWaterUseRanking()
+  const adoption = useAIAdoption()
+  const trust = useAITrust()
+  const languages = useLanguageTrend()
+  const vendors = useAIVendors()
+  const experience = useAIAdoptionByExperience()
 
   const content: Record<VizId, React.ReactNode> = {
-    map:
-      countries && bubbles ? <AIDataCenterMap countries={countries} bubbles={bubbles} /> : Loading,
-    uncertainty: uncertaintyRange ? <RadialUncertaintyGauge data={uncertaintyRange} /> : Loading,
-    water: waterFootprint ? <WaterDropletGrid data={waterFootprint} /> : Loading,
-    equivalence: electricityEquivalence ? (
-      <ElectricityEquivalenceChart data={electricityEquivalence} />
-    ) : (
-      Loading
-    ),
-    waterRanking: waterRanking ? <WaterUseRankingChart data={waterRanking} /> : Loading,
+    adoption: adoption ? <AIAdoptionPictogram data={adoption} /> : Loading,
+    trust: trust ? <AITrustDivergingChart data={trust} /> : Loading,
+    languages: languages ? <LanguageTrendChart data={languages} /> : Loading,
+    vendors: vendors ? <AIVendorRankingChart data={vendors} /> : Loading,
+    experience: experience ? <AIAdoptionByExperienceChart data={experience} /> : Loading,
   }
 
   return (
@@ -54,12 +49,12 @@ export function DashboardShell() {
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col gap-6 px-6 py-8">
         <header>
           <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Quanto custa pro planeta a explosão de data centers de IA — e por
-            que ninguém sabe o número exato?
+            78% dos programadores já usam IA todo dia — mas a maioria não
+            confia nela. Por quê?
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Pegada ambiental da inteligência artificial: onde ela mora, o que
-            ela consome e o que está por vir.
+            Adoção de IA na programação: quem usa, o que mudou nas
+            linguagens, e por que a confiança não acompanhou a adoção.
           </p>
         </header>
 
@@ -78,9 +73,8 @@ export function DashboardShell() {
         <footer className="flex flex-wrap items-center gap-2 border-t pt-4 text-xs text-muted-foreground">
           <span>Fontes:</span>
           {/* TODO: preencher a partir de docs/references/fontes-dados.md */}
-          <Badge variant="outline">IEA (TODO)</Badge>
-          <Badge variant="outline">Epoch AI (TODO)</Badge>
-          <Badge variant="outline">OWID (TODO)</Badge>
+          <Badge variant="outline">Stack Overflow Developer Survey 2025 (TODO)</Badge>
+          <Badge variant="outline">GitHub Innovation Graph (TODO)</Badge>
         </footer>
       </div>
     </div>

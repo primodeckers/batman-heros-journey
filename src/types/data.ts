@@ -1,4 +1,4 @@
-// Tipos de dados do dashboard — Tema E: pegada ambiental da IA.
+// Tipos de dados do dashboard — Tema A: GitHub / agentes de código.
 
 export type DataSource = {
   name: string
@@ -6,40 +6,24 @@ export type DataSource = {
   accessedAt: string
 }
 
-/** Um data center de IA (public/data/epoch-ai-data-centers.csv) */
-export type AIDataCenter = {
-  name: string
-  country: string
-  owner: string
-  currentPowerMw: number | null
-  currentH100Equivalents: number | null
-  currentCapitalCostBillions: number | null
+/** Uma categoria de resposta com contagem (public/data/stackoverflow-ai-*.csv) */
+export type CategoryCount = {
+  category: string
+  count: number
 }
 
-/** Um marco na construção de um data center (public/data/epoch-ai-data-center-timelines.csv) */
-export type AIDataCenterTimelineEntry = {
-  dataCenter: string
-  date: Date
-  powerMw: number | null
-  h100Equivalents: number | null
-  waterUseMgd: number | null
+/** Adoção de IA por faixa de experiência (public/data/stackoverflow-ai-adoption-by-experience.csv) */
+export type AIAdoptionByExperience = {
+  experience: string
+  count: number
+  total: number
+  pct: number
 }
 
-/** Demanda elétrica de um país num ano (public/data/owid-electricity-demand-by-country.csv) */
-export type CountryElectricityDemand = {
-  country: string
-  isoCode: string
+/** Uso de linguagem por trimestre no GitHub (public/data/github-language-trend.csv) */
+export type LanguageTrendPoint = {
   year: number
-  electricityDemandTwh: number
-}
-
-/** Uma estimativa citada no relatório da IEA/Carbon Brief (public/data/iea-ai-energy-estimates.csv) */
-export type IEAEstimate = {
-  metric: string
-  year: number
-  valueLow: number
-  valueHigh: number
-  unit: string
-  source: string
-  note: string
+  quarter: number
+  language: string
+  numPushers: number
 }

@@ -5,20 +5,12 @@ import { motion } from 'framer-motion'
 
 import { accent, neutral } from '@/theme/palette'
 import { truncateToWidth } from '@/utils/text'
-import type { ElectricityComparisonRow } from '@/hooks/useElectricityEquivalence'
+import type { AIVendorCount } from '@/data/loaders/loadAIVendors'
 
-type ChartProps = {
-  data: ElectricityComparisonRow[]
-  width: number
-  height: number
-}
+type ChartProps = { data: AIVendorCount[]; width: number; height: number }
 
 function Chart({ data, width, height }: ChartProps) {
   const fontSize = width < 220 ? 9 : 11
-
-  // Margem esquerda proporcional à largura, com teto fixo — o rótulo em
-  // si é truncado com "…" pra nunca ultrapassar esse espaço (ver
-  // truncateToWidth), então não depende de adivinhar o texto mais longo.
   const marginLeft = Math.max(56, Math.min(150, width * 0.4))
   const marginRight = Math.max(28, Math.min(48, width * 0.16))
   const margin = { top: 8, right: marginRight, bottom: 8, left: marginLeft }
@@ -27,13 +19,12 @@ function Chart({ data, width, height }: ChartProps) {
   const innerHeight = Math.max(height - margin.top - margin.bottom, 0)
 
   const yScale = scaleBand<string>({
-    domain: data.map((d) => d.label),
+    domain: data.map((d) => d.vendor),
     range: [0, innerHeight],
     padding: 0.3,
   })
-
   const xScale = scaleLinear<number>({
-    domain: [0, Math.max(...data.map((d) => d.electricityDemandTwh))],
+    domain: [0, Math.max(...data.map((d) => d.count))],
     range: [0, innerWidth],
     nice: true,
   })
@@ -45,24 +36,25 @@ function Chart({ data, width, height }: ChartProps) {
       width={width}
       height={height}
       role="img"
-      aria-label="Comparação da projeção de consumo elétrico dos data centers de IA em 2030 contra a demanda elétrica real de países"
+      aria-label="Ranking de quais empresas de IA os desenvolvedores mais usam"
     >
       <Group left={margin.left} top={margin.top}>
         {data.map((d, i) => {
-          const barY = yScale(d.label) ?? 0
-          const barWidth = xScale(d.electricityDemandTwh)
+          const barY = yScale(d.vendor) ?? 0
+          const barWidth = xScale(d.count)
+          const isTop = i === 0
           return (
-            <Group key={d.label} top={barY}>
+            <Group key={d.vendor} top={barY}>
               <text
                 x={-8}
                 y={barHeight / 2}
                 dy=".35em"
                 textAnchor="end"
                 fontSize={fontSize}
-                fontWeight={d.isAI ? 600 : 400}
-                fill={d.isAI ? accent[700] : neutral[600]}
+                fontWeight={isTop ? 600 : 400}
+                fill={isTop ? accent[700] : neutral[600]}
               >
-                {truncateToWidth(d.label, margin.left - 16, fontSize)}
+                {truncateToWidth(d.vendor, margin.left - 16, fontSize)}
               </text>
               <motion.rect
                 initial={{ width: 0 }}
@@ -70,17 +62,17 @@ function Chart({ data, width, height }: ChartProps) {
                 transition={{ duration: 0.7, delay: i * 0.05, ease: 'easeOut' }}
                 height={barHeight}
                 rx={4}
-                fill={d.isAI ? accent[500] : neutral[300]}
+                fill={isTop ? accent[500] : neutral[300]}
               />
               <text
                 x={barWidth + 8}
                 y={barHeight / 2}
                 dy=".35em"
                 fontSize={fontSize}
-                fontWeight={d.isAI ? 600 : 400}
-                fill={d.isAI ? accent[700] : neutral[600]}
+                fontWeight={isTop ? 600 : 400}
+                fill={isTop ? accent[700] : neutral[600]}
               >
-                {Math.round(d.electricityDemandTwh).toLocaleString('pt-BR')}
+                {d.count.toLocaleString('pt-BR')}
               </text>
             </Group>
           )
@@ -90,7 +82,7 @@ function Chart({ data, width, height }: ChartProps) {
   )
 }
 
-export function ElectricityEquivalenceChart({ data }: { data: ElectricityComparisonRow[] }) {
+export function AIVendorRankingChart({ data }: { data: AIVendorCount[] }) {
   return (
     <ParentSize>
       {({ width, height }) =>
