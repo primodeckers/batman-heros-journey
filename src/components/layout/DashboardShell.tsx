@@ -1,14 +1,17 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CountryRankingChart } from '@/components/charts/CountryRankingChart'
+import { ElectricityEquivalenceChart } from '@/components/charts/ElectricityEquivalenceChart'
 import { UncertaintyRangeChart } from '@/components/charts/UncertaintyRangeChart'
 import { useCountryDataCenterRanking } from '@/hooks/useCountryDataCenterRanking'
+import { useElectricityEquivalence } from '@/hooks/useElectricityEquivalence'
 import { useEnergyUncertaintyRange } from '@/hooks/useEnergyUncertaintyRange'
 import { BentoGrid } from './BentoGrid'
 
 export function DashboardShell() {
   const countryRanking = useCountryDataCenterRanking()
   const uncertaintyRange = useEnergyUncertaintyRange()
+  const electricityEquivalence = useElectricityEquivalence()
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -57,8 +60,12 @@ export function DashboardShell() {
               <CardHeader>
                 <CardTitle>Equivale a quantos países (TODO)</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-1 items-center justify-center text-sm text-muted-foreground">
-                Consumo projetado 2030 vs. consumo elétrico real (OWID Energy)
+              <CardContent className="flex-1">
+                {electricityEquivalence ? (
+                  <ElectricityEquivalenceChart data={electricityEquivalence} />
+                ) : (
+                  <p className="text-sm text-muted-foreground">Carregando…</p>
+                )}
               </CardContent>
             </Card>
 
