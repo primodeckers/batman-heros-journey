@@ -1,11 +1,22 @@
 # Temas candidatos — análise comparativa
 
+> ## ✅ Tema escolhido: E — Pegada ambiental da IA
+> **Pergunta central:** "Quanto custa pro planeta a explosão de data
+> centers de IA — e por que ninguém sabe o número exato?"
+>
+> Arco de 3 atos: **contexto** = onde a IA mora (mapa dos data centers,
+> Epoch AI) → **evidência** = ninguém sabe o número exato (faixa de
+> incerteza das estimativas do IEA/Carbon Brief) → **conclusão** = quanto
+> isso vai pesar em 2030, comparado a países reais (OWID Energy).
+> Decidido em 29/07/2026. Detalhes completos na seção "Tema E" abaixo.
+
 Documento de apoio pra Fase 1 (`WORK_RULES.md`): comparar os temas em mente
 antes de fechar um. Critério principal não é "qual é mais interessante" —
 é **qual tem dado real, aberto e baixável o suficiente pra virar 4+
 visualizações em ~3 semanas** (hoje: 28/07/2026, entrega: 20/08/2026).
 
-Pesquisei fontes reais pra cada um. Resumo no final.
+Pesquisei fontes reais pra cada um. Os outros temas (A, B, G) ficam
+registrados abaixo como histórico da decisão, não foram apagados.
 
 ---
 
@@ -256,12 +267,12 @@ comércio/guerra tarifária — removidos desta análise._
 
 | Tema | Dado real | Narrativa | Viabilidade | Recomendação |
 | --- | --- | --- | --- | --- |
-| A — GitHub/agentes de código | Alta | Alta | Alta | 🥇 Favorito |
-| B — Guerra/economia/cotidiano | Muito alta | Alta | Alta | 🥈 Forte alternativa |
-| E — Pegada ambiental da IA | Alta (estimativas IEA) | Alta | Alta | Forte, ângulo pouco explorado |
-| G — Migração forçada/refugiados | Muito alta | Muito alta | Alta | 🥇 Favorito — considerar fundir com B |
+| A — GitHub/agentes de código | Alta | Alta | Alta | Forte alternativa, não escolhida |
+| B — Guerra/economia/cotidiano | Muito alta | Alta | Alta | Forte alternativa, não escolhida |
+| **E — Pegada ambiental da IA** | Alta (estimativas IEA) | Alta | Alta | **✅ Escolhido — ver topo do documento** |
+| G — Migração forçada/refugiados | Muito alta | Muito alta | Alta | Forte alternativa, não escolhida |
 
-**Próximo passo:** ficaram quatro finalistas — A (GitHub/IA no código), E
-(pegada ambiental da IA) e a dupla B+G (guerra → deslocamento forçado, uma
-narrativa só). Registrar a decisão final aqui e em
-`docs/references/fontes-dados.md` assim que fechar.
+**Decisão final (29/07/2026): Tema E.** Próximo passo é a Fase 2 do
+`WORK_RULES.md` — baixar/consultar as fontes (IEA .Stat, Epoch AI, OWID
+Energy, Kaggle) e registrar cada uma em
+`docs/references/fontes-dados.md`.
