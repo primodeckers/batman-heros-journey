@@ -3,7 +3,7 @@ import { ParentSize } from '@visx/responsive'
 import { scaleBand, scaleLog } from '@visx/scale'
 import { motion } from 'framer-motion'
 
-import { accent, neutral, water } from '@/theme/palette'
+import { neutral, water } from '@/theme/palette'
 import { estimateTextWidth } from '@/utils/text'
 import type { WaterUseRankingRow } from '@/hooks/useWaterUseRanking'
 
@@ -15,7 +15,7 @@ function formatMgd(value: number) {
 
 function Chart({ data, width, height }: ChartProps) {
   const fontSize = width < 220 ? 9 : 11
-  const captionHeight = 34
+  const captionHeight = 20
 
   const longestLabelWidth = Math.max(...data.map((d) => estimateTextWidth(d.dataCenter, fontSize)))
   const marginLeft = Math.min(Math.max(56, longestLabelWidth + 16), width * 0.5)
@@ -31,15 +31,18 @@ function Chart({ data, width, height }: ChartProps) {
     padding: 0.3,
   })
 
-  // Escala logarítmica: a Meta Kuna (70.000 MGD) é ~3.300x maior que a
-  // 2ª colocada — numa escala linear todo o resto vira uma linha
-  // invisível de tão fino. Log é a técnica honesta pra faixas assim.
+  // Escala logarítmica: mesmo sem o outlier, os valores vão de 0,1 a
+  // 21 MGD (~200x de diferença) — linear deixaria os menores invisíveis.
   const xScale = scaleLog<number>({
-    domain: [Math.min(...data.map((d) => d.peakWaterMgd)) * 0.8, Math.max(...data.map((d) => d.peakWaterMgd)) * 1.2],
+    domain: [
+      Math.min(...data.map((d) => d.peakWaterMgd)) * 0.8,
+      Math.max(...data.map((d) => d.peakWaterMgd)) * 1.2,
+    ],
     range: [0, innerWidth],
   })
 
   const barHeight = yScale.bandwidth()
+  const isTop = (i: number) => i === 0
 
   return (
     <svg
@@ -61,10 +64,9 @@ function Chart({ data, width, height }: ChartProps) {
                 dy=".35em"
                 textAnchor="end"
                 fontSize={fontSize}
-                fontWeight={d.flagged ? 600 : 400}
-                fill={d.flagged ? accent[700] : neutral[600]}
+                fontWeight={isTop(i) ? 600 : 400}
+                fill={isTop(i) ? water[700] : neutral[600]}
               >
-                {d.flagged ? '⚠ ' : ''}
                 {label}
               </text>
               <motion.rect
@@ -73,19 +75,15 @@ function Chart({ data, width, height }: ChartProps) {
                 transition={{ duration: 0.7, delay: i * 0.05, ease: 'easeOut' }}
                 height={barHeight}
                 rx={4}
-                fill={water[500]}
-                stroke={d.flagged ? accent[700] : 'none'}
-                strokeWidth={d.flagged ? 1.5 : 0}
-                strokeDasharray={d.flagged ? '4 2' : undefined}
-                fillOpacity={d.flagged ? 0.55 : 0.9}
+                fill={isTop(i) ? water[500] : water[300]}
               />
               <text
                 x={barWidth + 8}
                 y={barHeight / 2}
                 dy=".35em"
                 fontSize={fontSize}
-                fontWeight={d.flagged ? 600 : 400}
-                fill={d.flagged ? accent[700] : water[700]}
+                fontWeight={isTop(i) ? 600 : 400}
+                fill={isTop(i) ? water[700] : neutral[600]}
               >
                 {formatMgd(d.peakWaterMgd)} MGD
               </text>
@@ -102,10 +100,6 @@ function Chart({ data, width, height }: ChartProps) {
         fill={neutral[500]}
       >
         Escala logarítmica — cada intervalo representa 10x o anterior
-      </text>
-      <text x={width / 2} y={height - 6} textAnchor="middle" fontSize={10} fill={accent[700]}>
-        ⚠ Meta Kuna: valor implausível (maior que o consumo de NY inteira) — possível erro na
-        fonte, mantido por transparência
       </text>
     </svg>
   )

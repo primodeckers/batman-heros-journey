@@ -10,13 +10,11 @@ export type WaterUseRankingRow = {
   dataCenter: string
   country: string | null
   peakWaterMgd: number
-  /** Marca valores implausíveis mantidos por transparência (ver docs/temas-candidatos.md). */
-  flagged: boolean
 }
 
 /** Acima disso, o valor é maior que o consumo de água de Nova York inteira
- * por dia — quase certamente um erro na fonte, mas mantido e sinalizado
- * em vez de escondido. */
+ * por dia — implausível e sem como confirmar na fonte, então excluído em
+ * vez de exibido (ex.: "Meta Kuna" com 70.000 MGD no dataset da Epoch AI). */
 const IMPLAUSIBLE_THRESHOLD_MGD = 2000
 
 export function useWaterUseRanking() {
@@ -29,12 +27,13 @@ export function useWaterUseRanking() {
         if (cancelled) return
 
         const countryByName = new Map(dataCenters.map((dc) => [dc.name, dc.country]))
-        const ranked = getPeakWaterUseByDataCenter(timelines).map((d) => ({
-          dataCenter: d.dataCenter,
-          country: countryByName.get(d.dataCenter) ?? null,
-          peakWaterMgd: d.peakWaterMgd,
-          flagged: d.peakWaterMgd > IMPLAUSIBLE_THRESHOLD_MGD,
-        }))
+        const ranked = getPeakWaterUseByDataCenter(timelines)
+          .filter((d) => d.peakWaterMgd <= IMPLAUSIBLE_THRESHOLD_MGD)
+          .map((d) => ({
+            dataCenter: d.dataCenter,
+            country: countryByName.get(d.dataCenter) ?? null,
+            peakWaterMgd: d.peakWaterMgd,
+          }))
         setData(ranked)
       },
     )
