@@ -30,7 +30,8 @@ function Chart({ data, width, height }: ChartProps) {
   })
 
   const marginLeft = Math.max(90, Math.min(150, width * 0.35))
-  const margin = { top: 8, right: 16, bottom: 8, left: marginLeft }
+  const marginRight = Math.max(36, Math.min(56, width * 0.12))
+  const margin = { top: 8, right: marginRight, bottom: 8, left: marginLeft }
   const innerWidth = Math.max(width - margin.left - margin.right, 0)
   const innerHeight = Math.max(height - margin.top - margin.bottom, 0)
 
@@ -52,8 +53,12 @@ function Chart({ data, width, height }: ChartProps) {
           const barY = i * rowHeight + rowHeight * 0.2
           const barHeight = rowHeight * 0.6
           const x1 = xScale(r.signed)
-          const barX = Math.min(zeroX, x1)
-          const barWidth = Math.abs(x1 - zeroX)
+          // "Neutro" tem valor 0 por definição (nem confia nem desconfia) —
+          // sem essa largura mínima a barra simplesmente some, parecendo bug.
+          // Centralizada no próprio zeroX (2px pra cada lado).
+          const isNeutralRow = r.side === 'neutral'
+          const barX = isNeutralRow ? zeroX - 2 : Math.min(zeroX, x1)
+          const barWidth = isNeutralRow ? 4 : Math.abs(x1 - zeroX)
           const isDistrust = r.side === 'distrust'
           const fill = isDistrust ? accent[500] : r.side === 'trust' ? neutral[300] : neutral[200]
           return (
@@ -70,7 +75,6 @@ function Chart({ data, width, height }: ChartProps) {
                 {truncateToWidth(r.label, margin.left - 16, fontSize)}
               </text>
               <motion.rect
-                x={zeroX}
                 initial={{ width: 0, x: zeroX }}
                 animate={{ width: barWidth, x: barX }}
                 transition={{ duration: 0.6, delay: i * 0.06, ease: 'easeOut' }}

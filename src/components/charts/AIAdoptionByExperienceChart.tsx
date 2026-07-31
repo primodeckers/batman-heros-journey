@@ -50,7 +50,6 @@ function Chart({ data, width, height }: ChartProps) {
                 {d.pct}%
               </text>
               <motion.rect
-                y={innerHeight}
                 width={barWidth}
                 rx={4}
                 fill={isLowest ? accent[500] : neutral[300]}
