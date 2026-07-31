@@ -1,5 +1,15 @@
 import { useState } from 'react'
-import { Bot, Braces, Briefcase, Layers, ShieldQuestion, Trophy, TrendingUp, Users } from 'lucide-react'
+import {
+  Bot,
+  Braces,
+  Briefcase,
+  Globe2,
+  Layers,
+  ShieldQuestion,
+  Trophy,
+  TrendingUp,
+  Users,
+} from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -7,6 +17,7 @@ import { AIAdoptionByExperienceChart } from '@/components/charts/AIAdoptionByExp
 import { AIAdoptionPictogram } from '@/components/charts/AIAdoptionPictogram'
 import { AITrustDivergingChart } from '@/components/charts/AITrustDivergingChart'
 import { AIVendorRankingChart } from '@/components/charts/AIVendorRankingChart'
+import { CountryUsageChart } from '@/components/charts/CountryUsageChart'
 import { LanguageTrendChart } from '@/components/charts/LanguageTrendChart'
 import { PerceptionGapCards } from '@/components/charts/PerceptionGapCards'
 import { ProductivityAttenuationChart } from '@/components/charts/ProductivityAttenuationChart'
@@ -15,6 +26,7 @@ import { useAIAdoption } from '@/hooks/useAIAdoption'
 import { useAIAdoptionByExperience } from '@/hooks/useAIAdoptionByExperience'
 import { useAITrust } from '@/hooks/useAITrust'
 import { useAIVendors } from '@/hooks/useAIVendors'
+import { useCountryUsage } from '@/hooks/useCountryUsage'
 import { useLanguageTrend } from '@/hooks/useLanguageTrend'
 import { usePerceptionGap } from '@/hooks/usePerceptionGap'
 import { useProductivityAttenuation } from '@/hooks/useProductivityAttenuation'
@@ -30,6 +42,7 @@ type VizId =
   | 'attenuation'
   | 'toolComparison'
   | 'perceptionGap'
+  | 'countryUsage'
 
 const VIZ_ITEMS: ChartSwitcherItem<VizId>[] = [
   { id: 'adoption', label: 'Quem já usa IA pra programar', icon: Users },
@@ -40,6 +53,7 @@ const VIZ_ITEMS: ChartSwitcherItem<VizId>[] = [
   { id: 'attenuation', label: 'Escrever código não é entregar produto', icon: Layers },
   { id: 'toolComparison', label: 'Claude Code vs. Codex vs. Copilot', icon: Trophy },
   { id: 'perceptionGap', label: 'Achavam que estavam mais rápidos', icon: Braces },
+  { id: 'countryUsage', label: 'Quem mais usa IA no mundo', icon: Globe2 },
 ]
 
 const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
@@ -55,6 +69,7 @@ export function DashboardShell() {
   const attenuation = useProductivityAttenuation()
   const toolComparison = useToolComparison()
   const perceptionGap = usePerceptionGap()
+  const countryUsage = useCountryUsage()
 
   const content: Record<VizId, React.ReactNode> = {
     adoption: adoption ? <AIAdoptionPictogram data={adoption} /> : Loading,
@@ -65,6 +80,7 @@ export function DashboardShell() {
     attenuation: attenuation ? <ProductivityAttenuationChart data={attenuation} /> : Loading,
     toolComparison: toolComparison ? <ToolComparisonChart data={toolComparison} /> : Loading,
     perceptionGap: perceptionGap ? <PerceptionGapCards data={perceptionGap} /> : Loading,
+    countryUsage: countryUsage ? <CountryUsageChart data={countryUsage} /> : Loading,
   }
 
   return (

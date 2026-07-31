@@ -56,3 +56,12 @@ export type PerceptionGapPoint = {
   label: string
   effectPct: number
 }
+
+/** Uso do Claude por país, normalizado por população em idade ativa
+ * (Anthropic Economic Index) — public/data/anthropic-claude-usage-by-country.csv.
+ * Índice 1.0 = média mundial. */
+export type CountryUsageRow = {
+  rank: number
+  country: string
+  usagePerCapitaIndex: number
+}
