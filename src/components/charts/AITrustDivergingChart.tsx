@@ -29,9 +29,15 @@ function Chart({ data, width, height }: ChartProps) {
     return { ...o, count, pct, signed }
   })
 
+  const distrustPct = Math.round(
+    rows.filter((r) => r.side === 'distrust').reduce((s, r) => s + r.pct, 0),
+  )
+  const trustPct = Math.round(rows.filter((r) => r.side === 'trust').reduce((s, r) => s + r.pct, 0))
+
   const marginLeft = Math.max(90, Math.min(150, width * 0.35))
   const marginRight = Math.max(36, Math.min(56, width * 0.12))
-  const margin = { top: 8, right: marginRight, bottom: 8, left: marginLeft }
+  const legendHeight = 28
+  const margin = { top: 8 + legendHeight, right: marginRight, bottom: 8, left: marginLeft }
   const innerWidth = Math.max(width - margin.left - margin.right, 0)
   const innerHeight = Math.max(height - margin.top - margin.bottom, 0)
 
@@ -47,6 +53,27 @@ function Chart({ data, width, height }: ChartProps) {
       role="img"
       aria-label="Confiança dos desenvolvedores na precisão do código gerado por IA: mais gente desconfia do que confia"
     >
+      <text
+        x={margin.left + zeroX / 2}
+        y={margin.top - legendHeight / 2}
+        dy=".35em"
+        textAnchor="middle"
+        fontSize={fontSize}
+        fontWeight={600}
+        fill={accent[700]}
+      >
+        ← Desconfia ({distrustPct}%)
+      </text>
+      <text
+        x={margin.left + zeroX + (innerWidth - zeroX) / 2}
+        y={margin.top - legendHeight / 2}
+        dy=".35em"
+        textAnchor="middle"
+        fontSize={fontSize}
+        fill={neutral[500]}
+      >
+        Confia ({trustPct}%) →
+      </text>
       <Group left={margin.left} top={margin.top}>
         <line x1={zeroX} x2={zeroX} y1={0} y2={innerHeight} stroke={neutral[300]} strokeWidth={1} />
         {rows.map((r, i) => {
