@@ -17,7 +17,7 @@ import { AIAdoptionByExperienceChart } from '@/components/charts/AIAdoptionByExp
 import { AIAdoptionPictogram } from '@/components/charts/AIAdoptionPictogram'
 import { AITrustDivergingChart } from '@/components/charts/AITrustDivergingChart'
 import { AIVendorRankingChart } from '@/components/charts/AIVendorRankingChart'
-import { CountryUsageChart } from '@/components/charts/CountryUsageChart'
+import { AIWorldUsageMap } from '@/components/charts/AIWorldUsageMap'
 import { LanguageTrendChart } from '@/components/charts/LanguageTrendChart'
 import { PerceptionGapCards } from '@/components/charts/PerceptionGapCards'
 import { ProductivityAttenuationChart } from '@/components/charts/ProductivityAttenuationChart'
@@ -26,7 +26,7 @@ import { useAIAdoption } from '@/hooks/useAIAdoption'
 import { useAIAdoptionByExperience } from '@/hooks/useAIAdoptionByExperience'
 import { useAITrust } from '@/hooks/useAITrust'
 import { useAIVendors } from '@/hooks/useAIVendors'
-import { useCountryUsage } from '@/hooks/useCountryUsage'
+import { useAIWorldMapData } from '@/hooks/useAIWorldMapData'
 import { useLanguageTrend } from '@/hooks/useLanguageTrend'
 import { usePerceptionGap } from '@/hooks/usePerceptionGap'
 import { useProductivityAttenuation } from '@/hooks/useProductivityAttenuation'
@@ -69,7 +69,7 @@ export function DashboardShell() {
   const attenuation = useProductivityAttenuation()
   const toolComparison = useToolComparison()
   const perceptionGap = usePerceptionGap()
-  const countryUsage = useCountryUsage()
+  const { countries: worldCountries, usage: countryUsage } = useAIWorldMapData()
 
   const content: Record<VizId, React.ReactNode> = {
     adoption: adoption ? <AIAdoptionPictogram data={adoption} /> : Loading,
@@ -80,7 +80,12 @@ export function DashboardShell() {
     attenuation: attenuation ? <ProductivityAttenuationChart data={attenuation} /> : Loading,
     toolComparison: toolComparison ? <ToolComparisonChart data={toolComparison} /> : Loading,
     perceptionGap: perceptionGap ? <PerceptionGapCards data={perceptionGap} /> : Loading,
-    countryUsage: countryUsage ? <CountryUsageChart data={countryUsage} /> : Loading,
+    countryUsage:
+      worldCountries && countryUsage ? (
+        <AIWorldUsageMap countries={worldCountries} usage={countryUsage} />
+      ) : (
+        Loading
+      ),
   }
 
   return (
