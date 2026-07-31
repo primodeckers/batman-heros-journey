@@ -27,3 +27,23 @@ export type LanguageTrendPoint = {
   language: string
   numPushers: number
 }
+
+/** Atenuação do ganho de produtividade por camada de produção (Demirer, Musolff
+ * & Yang 2026, Table 5) — public/data/nber-productivity-attenuation.csv */
+export type ProductivityAttenuationPoint = {
+  toolCategory: string
+  layer: string
+  layerOrder: number
+  effectPct: number
+}
+
+/** Comparação de ferramentas de IA específicas (mesmo paper, Table 5) —
+ * public/data/nber-tool-comparison.csv */
+export type ToolComparisonRow = {
+  tool: string
+  category: string
+  linesPct: number
+  commitsPct: number
+  prsPct: number
+  releasesPct: number | null
+}

@@ -1,5 +1,8 @@
 # Bibliografia — storytelling de dados, design e acessibilidade
 
+## Pesquisa acadêmica sobre o tema
+- Mert Demirer, Leon Musolff & Liyuan Yang — [*Writing Code vs. Shipping Code: Productivity Effects Across Generations of AI Coding Tools*](https://www.nber.org/papers/w35275) (NBER Working Paper 35275, mai/2026; também em [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6843118)) — MIT/Wharton, dados de mais de 100.000 devs do GitHub com telemetria real de uso de IA (2022-2026). Achado central ("weak-link hypothesis"): o ganho de produtividade da IA é enorme na escrita de código (até +981% em linhas, Claude Code) mas atenua drasticamente até o release final (+10 a +29%), por causa de gargalos humanos (revisão, teste, aprovação). Fonte direta do gráfico "Escrever código não é entregar produto" e do comparativo Claude Code vs. Codex vs. Copilot deste dashboard (dados extraídos da Table 5 do paper). Ainda não passou por peer review (working paper).
+
 ## Storytelling de dados
 - Cole Nussbaumer Knaflic — *Storytelling with Data* (2015)
 - Nancy Duarte — *DataStory: Explain Data and Inspire Action Through Story* (2019) — foco em estruturar a narrativa dos dados (contexto → conflito → resolução), muito alinhado ao arco pedido em `WORK_RULES.md`

@@ -1,0 +1,18 @@
+tool_category,layer,layer_order,effect_pct
+Autocomplete,Linhas de código,1,228.2
+Autocomplete,Arquivos,2,50.8
+Autocomplete,Commits,3,35.9
+Autocomplete,Pull requests,4,11.0
+Autocomplete,Repositórios,5,13.6
+Autocomplete,Releases,6,10.2
+Agentes interativos,Linhas de código,1,741.3
+Agentes interativos,Arquivos,2,187.0
+Agentes interativos,Commits,3,109.1
+Agentes interativos,Pull requests,4,65.5
+Agentes interativos,Repositórios,5,25.5
+Agentes interativos,Releases,6,20.3
+Agentes autônomos,Linhas de código,1,658.3
+Agentes autônomos,Arquivos,2,52.4
+Agentes autônomos,Commits,3,33.6
+Agentes autônomos,Pull requests,4,71.8
+Agentes autônomos,Repositórios,5,13.8
