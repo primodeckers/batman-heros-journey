@@ -47,3 +47,12 @@ export type ToolComparisonRow = {
   prsPct: number
   releasesPct: number | null
 }
+
+/** Gap entre percepção e realidade sobre velocidade com IA (estudo METR
+ * 2025, RCT com devs experientes) — public/data/metr-perception-gap.csv */
+export type PerceptionGapPoint = {
+  stage: string
+  order: number
+  label: string
+  effectPct: number
+}

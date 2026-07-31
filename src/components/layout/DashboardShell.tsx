@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Bot, Briefcase, Layers, ShieldQuestion, Trophy, TrendingUp, Users } from 'lucide-react'
+import { Bot, Braces, Briefcase, Layers, ShieldQuestion, Trophy, TrendingUp, Users } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -8,6 +8,7 @@ import { AIAdoptionPictogram } from '@/components/charts/AIAdoptionPictogram'
 import { AITrustDivergingChart } from '@/components/charts/AITrustDivergingChart'
 import { AIVendorRankingChart } from '@/components/charts/AIVendorRankingChart'
 import { LanguageTrendChart } from '@/components/charts/LanguageTrendChart'
+import { PerceptionGapCards } from '@/components/charts/PerceptionGapCards'
 import { ProductivityAttenuationChart } from '@/components/charts/ProductivityAttenuationChart'
 import { ToolComparisonChart } from '@/components/charts/ToolComparisonChart'
 import { useAIAdoption } from '@/hooks/useAIAdoption'
@@ -15,6 +16,7 @@ import { useAIAdoptionByExperience } from '@/hooks/useAIAdoptionByExperience'
 import { useAITrust } from '@/hooks/useAITrust'
 import { useAIVendors } from '@/hooks/useAIVendors'
 import { useLanguageTrend } from '@/hooks/useLanguageTrend'
+import { usePerceptionGap } from '@/hooks/usePerceptionGap'
 import { useProductivityAttenuation } from '@/hooks/useProductivityAttenuation'
 import { useToolComparison } from '@/hooks/useToolComparison'
 import { ChartSwitcher, type ChartSwitcherItem } from './ChartSwitcher'
@@ -27,6 +29,7 @@ type VizId =
   | 'experience'
   | 'attenuation'
   | 'toolComparison'
+  | 'perceptionGap'
 
 const VIZ_ITEMS: ChartSwitcherItem<VizId>[] = [
   { id: 'adoption', label: 'Quem já usa IA pra programar', icon: Users },
@@ -36,6 +39,7 @@ const VIZ_ITEMS: ChartSwitcherItem<VizId>[] = [
   { id: 'experience', label: 'Quem usa mais: novato ou veterano', icon: Briefcase },
   { id: 'attenuation', label: 'Escrever código não é entregar produto', icon: Layers },
   { id: 'toolComparison', label: 'Claude Code vs. Codex vs. Copilot', icon: Trophy },
+  { id: 'perceptionGap', label: 'Achavam que estavam mais rápidos', icon: Braces },
 ]
 
 const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
@@ -50,6 +54,7 @@ export function DashboardShell() {
   const experience = useAIAdoptionByExperience()
   const attenuation = useProductivityAttenuation()
   const toolComparison = useToolComparison()
+  const perceptionGap = usePerceptionGap()
 
   const content: Record<VizId, React.ReactNode> = {
     adoption: adoption ? <AIAdoptionPictogram data={adoption} /> : Loading,
@@ -59,6 +64,7 @@ export function DashboardShell() {
     experience: experience ? <AIAdoptionByExperienceChart data={experience} /> : Loading,
     attenuation: attenuation ? <ProductivityAttenuationChart data={attenuation} /> : Loading,
     toolComparison: toolComparison ? <ToolComparisonChart data={toolComparison} /> : Loading,
+    perceptionGap: perceptionGap ? <PerceptionGapCards data={perceptionGap} /> : Loading,
   }
 
   return (
