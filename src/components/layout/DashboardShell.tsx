@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Clapperboard, History, Skull, Sparkles, Swords, TrendingUp } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -146,17 +146,14 @@ export function DashboardShell() {
         <main className="flex flex-1 flex-col gap-4 lg:flex-row">
           <Card className="comic-panel flex h-[760px] flex-1 flex-col overflow-hidden rounded-md">
             <CardHeader>
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div
-                  key={selected}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.45 }}
-                >
-                  <CardTitle>{selectedItem?.title}</CardTitle>
-                </motion.div>
-              </AnimatePresence>
+              <motion.div
+                key={selected}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35 }}
+              >
+                <CardTitle>{selectedItem?.title}</CardTitle>
+              </motion.div>
             </CardHeader>
             <div className="px-6 pb-4">
               <ChapterIndicator

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
 type ComicPageFlipProps = {
@@ -9,63 +9,36 @@ type ComicPageFlipProps = {
   className?: string
 }
 
-/** Duração bem visível do folhear (segundos). */
-const DURATION = 1.15
-
 /**
- * Folhear estilo gibi com framer-motion.
- * Mais estável que StPageFlip neste dashboard (gráficos + React):
- * a lib realista cortava a animação no meio da virada.
+ * Entrada estilo folhear de gibi — SEM `AnimatePresence`/`exit`.
+ *
+ * Versão anterior usava `AnimatePresence mode="wait"` com variante de
+ * saída (rotateY) — em teste real (não só em dev, testado numa aba
+ * nova/limpa do zero) a animação de saída as vezes nunca completava
+ * (bug real de framer-motion + troca rapida de key, não é so no
+ * StrictMode), deixando o AnimatePresence preso esperando o exit
+ * terminar pra sempre — o grafico novo nunca montava, ficava travado no
+ * grafico anterior indefinidamente. Isso e um dashboard pra
+ * apresentacao de nota, entao confiabilidade > efeito visual: troca
+ * instantanea de conteudo (React troca on demand, sem esperar nada) +
+ * só a entrada anima (sem exit pra travar).
  */
 export function ComicPageFlip({ pageKey, direction, children, className }: ComicPageFlipProps) {
-  const origin = direction >= 0 ? 'left center' : 'right center'
-
   return (
     <div className={className} style={{ perspective: 1600, position: 'relative' }}>
-      <AnimatePresence mode="wait" custom={direction} initial={false}>
-        <motion.div
-          key={pageKey}
-          custom={direction}
-          variants={{
-            enter: (dir: number) => ({
-              rotateY: dir >= 0 ? 78 : -78,
-              x: dir >= 0 ? 28 : -28,
-              opacity: 0.35,
-              boxShadow: '0 0 0 rgb(0 0 0 / 0)',
-            }),
-            center: {
-              rotateY: 0,
-              x: 0,
-              opacity: 1,
-              boxShadow: '0 0 0 rgb(0 0 0 / 0)',
-            },
-            exit: (dir: number) => ({
-              rotateY: dir >= 0 ? -78 : 78,
-              x: dir >= 0 ? -28 : 28,
-              opacity: 0.35,
-              boxShadow:
-                dir >= 0
-                  ? '-18px 0 28px rgb(0 0 0 / 28%)'
-                  : '18px 0 28px rgb(0 0 0 / 28%)',
-            }),
-          }}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            duration: DURATION,
-            ease: [0.45, 0.05, 0.25, 1],
-          }}
-          className="absolute inset-0"
-          style={{
-            transformStyle: 'preserve-3d',
-            transformOrigin: origin,
-            backfaceVisibility: 'hidden',
-          }}
-        >
-          {children}
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={pageKey}
+        initial={{
+          rotateY: direction >= 0 ? 46 : -46,
+          opacity: 0.4,
+        }}
+        animate={{ rotateY: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0"
+        style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
+      >
+        {children}
+      </motion.div>
     </div>
   )
 }

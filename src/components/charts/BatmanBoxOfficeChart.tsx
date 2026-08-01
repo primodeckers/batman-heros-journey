@@ -65,9 +65,14 @@ function Chart({ data, width, height }: ChartProps) {
                   initial={{ y: innerHeight, height: 0 }}
                   animate={{ y: barY, height: barHeight }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
-                  onMouseMove={(e) =>
-                    showTooltip({ tooltipData: d, tooltipLeft: e.clientX, tooltipTop: e.clientY })
-                  }
+                  onMouseMove={(e) => {
+                    const svgRect = e.currentTarget.ownerSVGElement?.getBoundingClientRect()
+                    showTooltip({
+                      tooltipData: d,
+                      tooltipLeft: e.clientX - (svgRect?.left ?? 0),
+                      tooltipTop: e.clientY - (svgRect?.top ?? 0),
+                    })
+                  }}
                   onMouseLeave={hideTooltip}
                 />
                 <text
@@ -96,7 +101,7 @@ function Chart({ data, width, height }: ChartProps) {
       </svg>
 
       {tooltipOpen && tooltipData && (
-        <TooltipWithBounds left={tooltipLeft} top={tooltipTop} style={{ position: 'fixed' }}>
+        <TooltipWithBounds left={(tooltipLeft ?? 0) + 12} top={(tooltipTop ?? 0) + 12}>
           <div className="text-xs">
             <p className="font-semibold">{tooltipData.title}</p>
             <p>Bilheteria mundial: {formatUsd(tooltipData.worldwideGrossUsd)}</p>

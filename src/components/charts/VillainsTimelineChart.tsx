@@ -106,9 +106,14 @@ function Chart({ data, width, height }: ChartProps) {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                onMouseMove={(e) =>
-                  showTooltip({ tooltipData: d, tooltipLeft: e.clientX, tooltipTop: e.clientY })
-                }
+                onMouseMove={(e) => {
+                  const svgRect = e.currentTarget.ownerSVGElement?.getBoundingClientRect()
+                  showTooltip({
+                    tooltipData: d,
+                    tooltipLeft: e.clientX - (svgRect?.left ?? 0),
+                    tooltipTop: e.clientY - (svgRect?.top ?? 0),
+                  })
+                }}
                 onMouseLeave={hideTooltip}
               />
             )
@@ -117,7 +122,7 @@ function Chart({ data, width, height }: ChartProps) {
       </svg>
 
       {tooltipOpen && tooltipData && (
-        <TooltipWithBounds left={tooltipLeft} top={tooltipTop} style={{ position: 'fixed' }}>
+        <TooltipWithBounds left={(tooltipLeft ?? 0) + 12} top={(tooltipTop ?? 0) + 12}>
           <div className="text-xs">
             <p className="font-semibold">
               {tooltipData.villain} ({tooltipData.year})
