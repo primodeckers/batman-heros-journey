@@ -8,6 +8,94 @@ travando.
 
 ---
 
+## 0. O arco completo de Campbell (pra você entender de verdade)
+
+Isso aqui é conteúdo **de estudo, não de apresentação** — serve pra você
+ter confiança no assunto e responder qualquer pergunta, mas na fala em
+si você usa só a versão simplificada (seção "O que você vai
+apresentar", mais abaixo).
+
+### 0.1 A versão original de Campbell — 17 estágios em 3 atos
+
+De *O Herói de Mil Faces* (1949). É a versão acadêmica completa —
+densa, cheia de arquétipos que fazem mais sentido em mito antigo do que
+em cultura pop moderna.
+
+**Ato I — Partida**
+1. Chamado à Aventura
+2. Recusa do Chamado
+3. Auxílio Sobrenatural (encontro com mentor/protetor)
+4. Travessia do Primeiro Limiar
+5. Ventre da Baleia (separação final do mundo conhecido — uma "morte simbólica" inicial)
+
+**Ato II — Iniciação**
+6. Caminho de Provas
+7. Encontro com a Deusa
+8. A Mulher como Tentação
+9. Sintonia com o Pai
+10. Apoteose (momento de iluminação/transcendência)
+11. Bênção Última (obtenção do objetivo da busca)
+
+**Ato III — Retorno**
+12. Recusa do Retorno
+13. Fuga Mágica
+14. Resgate com Auxílio Externo
+15. Travessia do Limiar de Retorno
+16. Senhor dos Dois Mundos
+17. Liberdade para Viver
+
+Repare que boa parte desses 17 (a Deusa, a Tentação, a Sintonia com o
+Pai) são arquétipos de mito antigo que **não têm equivalente razoável**
+numa história de super-herói moderna com dado real — é por isso que
+ninguém usa a versão de 17 estágios pra analisar filme/HQ na prática.
+
+### 0.2 A versão de Vogler — 12 estágios (a que praticamente todo mundo usa)
+
+De *A Jornada do Escritor* (Christopher Vogler, 1992) — ele mesmo
+reduziu os 17 estágios de Campbell pra 12, cortando os arquétipos muito
+específicos de mito antigo e deixando só a estrutura narrativa. É a
+versão usada em roteiro de Hollywood até hoje (o próprio Vogler
+trabalhou como consultor de estúdio).
+
+1. Mundo Comum
+2. Chamado à Aventura
+3. Recusa do Chamado
+4. Encontro com o Mentor
+5. Travessia do Primeiro Limiar
+6. Testes, Aliados e Inimigos
+7. Aproximação da Caverna Oculta
+8. **Provação Suprema**
+9. **Recompensa** (posse da espada/prêmio)
+10. Caminho de Volta
+11. **Ressurreição**
+12. **Retorno com o Elixir**
+
+Os 4 em negrito são os que o dashboard usa de verdade.
+
+### 0.3 O que você vai apresentar
+
+Nem os 17, nem os 12 — uma versão ainda mais enxuta, com 4 movimentos
+(o suficiente pra caber em 10 minutos e ser entendida por quem nunca
+ouviu falar de Campbell):
+
+**Mundo comum → Provação suprema → Recompensa → Retorno com o elixir**
+
+Os 6 capítulos do dashboard se distribuem nesses 4 movimentos assim:
+
+| Movimento simplificado | Capítulos do dashboard |
+| --- | --- |
+| Mundo comum | Capítulo 1 |
+| Provação suprema | Capítulos 2, 3 e 4 (a mesma provação, 3 formas: enquete → ciclo nos quadrinhos → cinema) |
+| *(testes/aliados, fora de ordem — ver nota no roteiro)* | Capítulo 5 (vilões) |
+| Recompensa + Retorno com o elixir | Capítulo 6 |
+
+Na fala, você **não cita "estágio 8" nem "Vogler"** — só usa os nomes
+dos capítulos, que já comunicam a estrutura sozinhos (ver
+`roteiro-apresentacao.md`). Esse item 0 aqui é só pra você se sentir
+seguro se alguém perguntar algo mais técnico depois.
+
+---
+
 ## 1. Cheat sheet — todos os números em um lugar só
 
 | Capítulo | Número | O que significa |
