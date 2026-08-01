@@ -8,38 +8,45 @@ const MEDIUM_ICON = { Quadrinho: BookOpen, Cinema: Film, TV: Tv } as const
 
 export function AdaptationsTimelineChart({ data }: { data: AdaptationRow[] }) {
   return (
-    <div className="flex h-full flex-col gap-2">
-      <div className="flex-1 overflow-y-auto py-2">
-        <ol className="relative border-l-2 pl-6" style={{ borderColor: neutral[200] }}>
+    <div className="flex h-full flex-col justify-center gap-2">
+      <div className="overflow-x-auto py-4">
+        <div className="flex min-w-max items-start px-2">
           {data.map((row, i) => {
             const Icon = MEDIUM_ICON[row.medium]
             const gap = i > 0 ? row.year - data[i - 1].year : null
             return (
-              <motion.li
-                key={row.year + row.title}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.08 }}
-                className="mb-6 last:mb-0"
-              >
+              <div key={row.year + row.title} className="flex items-start">
                 {gap !== null && (
-                  <p className="mb-1 text-[11px] text-muted-foreground">{gap} anos depois</p>
+                  <div className="flex w-14 shrink-0 flex-col items-center pt-[15px] sm:w-20">
+                    <span className="whitespace-nowrap text-[10px] text-muted-foreground">
+                      {gap} anos
+                    </span>
+                    <div className="h-0.5 w-full" style={{ backgroundColor: neutral[200] }} />
+                  </div>
                 )}
-                <span
-                  className="absolute -left-[13px] flex size-6 items-center justify-center rounded-full"
-                  style={{ backgroundColor: accent[500] }}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex w-32 shrink-0 flex-col items-center text-center sm:w-36"
                 >
-                  <Icon className="size-3.5 text-white" />
-                </span>
-                <p className="text-xs font-semibold" style={{ color: accent[700] }}>
-                  {row.year} · {row.title}
-                  <span className="ml-1.5 font-normal text-muted-foreground">({row.medium})</span>
-                </p>
-                <p className="text-sm">{row.note}</p>
-              </motion.li>
+                  <span
+                    className="flex size-9 items-center justify-center rounded-full border-2"
+                    style={{ borderColor: accent[500], backgroundColor: accent[50] }}
+                  >
+                    <Icon className="size-4" style={{ color: accent[700] }} />
+                  </span>
+                  <p className="mt-1.5 text-xs font-semibold" style={{ color: accent[800] }}>
+                    {row.year}
+                  </p>
+                  <p className="text-xs font-medium">{row.title}</p>
+                  <p className="text-muted-foreground text-[10px]">({row.medium})</p>
+                  <p className="text-muted-foreground mt-0.5 text-[11px]">{row.note}</p>
+                </motion.div>
+              </div>
             )
           })}
-        </ol>
+        </div>
       </div>
       <p className="text-center text-xs text-muted-foreground">
         86 anos entre a estreia em quadrinhos (1939) e o filme mais recente (2022) — poucos
