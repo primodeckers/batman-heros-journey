@@ -2,16 +2,21 @@
 
 ## Contexto e status
 
-Este é um **projeto separado** do `storytelling-dashboard` (o trabalho
-final da disciplina, que segue com o Tema A — GitHub/agentes de código
-sem alteração). A ideia nasceu de uma pergunta hipotética sobre se dava
-pra contar a jornada do herói (Joseph Campbell) de um super-herói com
-dado real, e virou projeto próprio depois que um spike de 1 gráfico
-(bilheteria do Batman) mostrou que o dado sustenta a narrativa bem.
+**Este projeto é a entrega oficial da disciplina** — decisão tomada em
+01/08/2026. A ideia nasceu de uma pergunta hipotética sobre se dava pra
+contar a jornada do herói (Joseph Campbell) de um super-herói com dado
+real; virou projeto próprio depois que um spike de 1 gráfico (bilheteria
+do Batman) mostrou que o dado sustenta a narrativa bem; e virou a entrega
+oficial depois que o professor viu as duas propostas (esta e o Tema A —
+GitHub/agentes de código, ver `storytelling-dashboard`) e sinalizou
+preferência por esta ("achei a 2 a tua cara, daria pra fazer algo
+massa"). O `storytelling-dashboard` fica arquivado como está (9 gráficos,
+mapa interativo, tudo funcional) caso seja preciso voltar atrás.
 
 Reaproveita o boilerplate técnico do `storytelling-dashboard` (Vite +
 React 19 + TS + Visx + Framer Motion + Tailwind v4 + shadcn/ui manual +
-d3-dsv), mas é um repositório e projeto próprios.
+d3-dsv), mas é um repositório e projeto próprios. Regras da disciplina em
+`WORK_RULES.md` (mesmo prazo — 20/08/2026 — e mesmos critérios do Tema A).
 
 ## Pergunta central (provisória)
 
@@ -60,11 +65,16 @@ sofisticada tecnicamente, mas 100% sustentada por dado real e verificável.
   (Gestalt, affordances, atributos pré-atentivos, linguagem/clareza),
   adaptados pros exemplos deste projeto.
 
-## Próximos passos
-1. Ver os 4 gráficos rodando num navegador de verdade (`npm run dev` →
-   `localhost:5174`) — a verificação automatizada confirmou dado e título
-   corretos, mas não substitui olhar de verdade.
-2. Decidir se o projeto vai ter apresentação/entrega própria ou fica só
-   como exploração pessoal.
-3. Opcional: gráfico bônus "o ciclo se repete" (bilheteria por ator,
-   ajustada por inflação).
+## Próximos passos (agora que é a entrega oficial)
+1. Conferir o checklist final de `WORK_RULES.md` linha por linha antes de
+   entregar (pergunta central visível ✅, ≥4 visualizações ✅ temos 6,
+   fontes citadas ✅, títulos narrativos ✅, cor intencional ✅).
+2. Escrever e ensaiar o roteiro da apresentação de 10 min em torno do
+   arco: mundo comum (86 anos) → provações (enquete, ciclos nos
+   quadrinhos) → morte no cinema → recompensa/ressurreição. Definir o
+   STAR Moment (candidato abaixo) e cronometrar.
+3. Revisão visual final (a versão em produção, não só `npm run dev`).
+4. Opcional, sem bloquear a entrega: gráfico bônus "o ciclo se repete"
+   (bilheteria por ator, ajustada por inflação) — só se sobrar tempo.
+5. Considerar criar repositório remoto (GitHub) pra entrega do link —
+   hoje o projeto só tem git local.

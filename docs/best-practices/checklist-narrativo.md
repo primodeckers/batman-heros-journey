@@ -18,6 +18,8 @@ Para o dashboard como um todo:
 - [ ] Existe ≥ 1 uso claro e intencional de cor como recurso narrativo?
 - [ ] As fontes estão visíveis no painel (não só em um documento à parte)?
 
-Para a apresentação oral, se este projeto virar apresentação:
+Para a apresentação oral (10 min, ver `WORK_RULES.md`):
 - [ ] Roteiro narra a história, não descreve o dashboard tela por tela?
+- [ ] Ensaiado com cronômetro, cabe em ~9-9,5 min (folga pro aviso de 8 min)?
 - [ ] Existe 1 STAR Moment definido (ver `linguagem-e-clareza.md`)?
+- [ ] Abre com a pergunta central e fecha com a conclusão?
