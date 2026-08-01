@@ -1,5 +1,3 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-
 import { accent, neutral } from '@/theme/palette'
 import { cn } from '@/lib/utils'
 
@@ -81,25 +79,6 @@ export function ChapterIndicator({ items, selectedIndex, onSelect }: ChapterIndi
             </button>
           )
         })}
-      </div>
-
-      <div className="mt-4 flex justify-between">
-        <button
-          type="button"
-          onClick={() => onSelect(Math.max(0, selectedIndex - 1))}
-          disabled={selectedIndex === 0}
-          className="flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground disabled:pointer-events-none disabled:opacity-30"
-        >
-          <ChevronLeft className="size-4" /> Anterior
-        </button>
-        <button
-          type="button"
-          onClick={() => onSelect(Math.min(total - 1, selectedIndex + 1))}
-          disabled={selectedIndex === total - 1}
-          className="flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground disabled:pointer-events-none disabled:opacity-30"
-        >
-          Próximo <ChevronRight className="size-4" />
-        </button>
       </div>
     </div>
   )

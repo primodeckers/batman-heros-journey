@@ -3,6 +3,7 @@ import { Clapperboard, History, Skull, Sparkles, Swords, TrendingUp } from 'luci
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { CarouselNav } from './CarouselNav'
 import { ChapterIndicator } from './ChapterIndicator'
 import { ComicBackground } from './ComicBackground'
 import { AdaptationsTimelineChart } from '@/components/charts/AdaptationsTimelineChart'
@@ -113,7 +114,8 @@ export function DashboardShell() {
   const selectedItem = VIZ_ITEMS[selectedIndex]
 
   const handleSelectIndex = (index: number) => {
-    setSelected(VIZ_ITEMS[index].id)
+    const clamped = Math.min(Math.max(index, 0), VIZ_ITEMS.length - 1)
+    setSelected(VIZ_ITEMS[clamped].id)
   }
 
   return (
@@ -142,7 +144,15 @@ export function DashboardShell() {
                 onSelect={handleSelectIndex}
               />
             </div>
-            <CardContent className="min-h-0 flex-1 overflow-hidden">{content[selected]}</CardContent>
+            <div className="group/chart relative min-h-0 flex-1 overflow-hidden">
+              <CardContent className="h-full">{content[selected]}</CardContent>
+              <CarouselNav
+                onPrev={() => handleSelectIndex(selectedIndex - 1)}
+                onNext={() => handleSelectIndex(selectedIndex + 1)}
+                hasPrev={selectedIndex > 0}
+                hasNext={selectedIndex < VIZ_ITEMS.length - 1}
+              />
+            </div>
           </Card>
 
           <ChartSwitcher items={VIZ_ITEMS} selected={selected} onSelect={setSelected} />
