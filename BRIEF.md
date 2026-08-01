@@ -23,15 +23,21 @@ provam isso?"**
 | Estágio | Dado real | Fonte | Status |
 | --- | --- | --- | --- |
 | Mundo comum / Chamado | 1ª aparição (*Detective Comics* #27, 1939) | Wikipedia | Não iniciado |
-| Provação suprema (quadrinhos) | Enquete "A Death in the Family" (1988) — 5.343 × 5.271 votos, margem de 72 | Documentado em `docs/references/fontes-dados.md` | Não iniciado |
+| Provação suprema (quadrinhos) | Enquete "A Death in the Family" (1988) — 5.343 × 5.271 votos, margem de 72 | Wikipedia / ComicBook.com / Gizmodo | **Feito** — `DeathPollChart` |
 | Morte (cinema) → Ressurreição | Bilheteria/orçamento/RT de *Batman & Robin* (1997) → *Batman Begins* (2005) | Box Office Mojo / Rotten Tomatoes | **Feito** — `BatmanBoxOfficeChart` |
-| Recompensa / Retorno com o elixir | *The Dark Knight* (2008) — bilheteria e crítica recorde | Box Office Mojo / Rotten Tomatoes | Dado já está no CSV, falta destacar narrativamente |
-| Aliados e inimigos | Rede de vilões/aliados por filme ou por era | A compilar manualmente (não existe dataset pronto pra Batman, ver `fontes-dados.md`) | Não iniciado |
+| Recompensa / Retorno com o elixir | Média de bilheteria/RT antes (1989-97) vs. depois (2005-22): +158% bilheteria, 51%→88% RT | Agregado do mesmo CSV do `BatmanBoxOfficeChart` | **Feito** — `EraComparisonCards` |
+| Aliados e inimigos | Vilão principal de cada filme + quais voltaram mais de uma vez (Coringa, Duas-Caras, Charada) | Créditos de elenco, Wikipedia | **Feito** — `VillainsTimelineChart` (linha do tempo, não rede — ver nota abaixo) |
 | Bônus: o ciclo se repete | Bilheteria de todos os atores (Keaton→Pattinson), ajustada por inflação | Box Office Mojo | Não iniciado |
 
-Mínimo de 4 visualizações distintas pra uma narrativa completa — já
-cobrimos 2 dos 6 estágios candidatos com 1 gráfico (o de bilheteria conta
-2 estágios: morte E ressurreição).
+**4 de 4 visualizações mínimas prontas e verificadas** (título narrativo,
+build limpo, dado real conferido, sem erro de console). O bônus "ciclo se
+repete" fica como próximo passo opcional, não bloqueia a narrativa mínima.
+
+**Nota sobre "aliados e inimigos":** não existe dataset de rede de
+coaparições pronto pra Batman/DC (só existe pra Marvel, ver
+`fontes-dados.md`). Em vez de forçar uma rede sem dado real por trás,
+optamos por uma linha do tempo honesta de vilão×ano×ator — menos
+sofisticada tecnicamente, mas 100% sustentada por dado real e verificável.
 
 ## STAR Moment candidato
 
@@ -47,8 +53,10 @@ cobrimos 2 dos 6 estágios candidatos com 1 gráfico (o de bilheteria conta
   adaptados pros exemplos deste projeto.
 
 ## Próximos passos
-1. Verificar visualmente o `BatmanBoxOfficeChart` num navegador de verdade
-   (rodar `npm run dev`).
+1. Ver os 4 gráficos rodando num navegador de verdade (`npm run dev` →
+   `localhost:5174`) — a verificação automatizada confirmou dado e título
+   corretos, mas não substitui olhar de verdade.
 2. Decidir se o projeto vai ter apresentação/entrega própria ou fica só
    como exploração pessoal.
-3. Se seguir: montar os gráficos que faltam da tabela acima.
+3. Opcional: gráfico bônus "o ciclo se repete" (bilheteria por ator,
+   ajustada por inflação).

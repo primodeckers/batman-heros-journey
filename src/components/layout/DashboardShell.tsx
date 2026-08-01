@@ -1,19 +1,29 @@
 import { useState } from 'react'
-import { Clapperboard } from 'lucide-react'
+import { Clapperboard, Skull, Swords, TrendingUp } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { BatmanBoxOfficeChart } from '@/components/charts/BatmanBoxOfficeChart'
+import { DeathPollChart } from '@/components/charts/DeathPollChart'
+import { EraComparisonCards } from '@/components/charts/EraComparisonCards'
+import { VillainsTimelineChart } from '@/components/charts/VillainsTimelineChart'
 import { useBatmanBoxOffice } from '@/hooks/useBatmanBoxOffice'
+import { useBatmanVillains } from '@/hooks/useBatmanVillains'
+import { useDeathPoll } from '@/hooks/useDeathPoll'
 import { ChartSwitcher, type ChartSwitcherItem } from './ChartSwitcher'
 
-type VizId = 'boxOffice'
+type VizId = 'deathPoll' | 'boxOffice' | 'villains' | 'eraComparison'
 
 /** `label` = item curto da barra lateral. `title` = título narrativo
  * completo mostrado no card principal (afirma uma conclusão, não só
- * descreve o eixo — ver docs/best-practices/checklist-narrativo.md,
- * copiado do storytelling-dashboard). */
+ * descreve o eixo — ver docs/best-practices/checklist-narrativo.md). */
 const VIZ_ITEMS: (ChartSwitcherItem<VizId> & { title: string })[] = [
+  {
+    id: 'deathPoll',
+    label: 'Por 72 votos, mataram o Robin',
+    title: 'Em 1988, os fãs decidiram por telefone matar o Robin — por uma margem de só 72 votos',
+    icon: Skull,
+  },
   {
     id: 'boxOffice',
     label: 'Batman quase morreu no cinema',
@@ -21,22 +31,43 @@ const VIZ_ITEMS: (ChartSwitcherItem<VizId> & { title: string })[] = [
       'Batman & Robin (12% no Rotten Tomatoes) quase matou a franquia — Batman Begins a ressuscitou',
     icon: Clapperboard,
   },
+  {
+    id: 'villains',
+    label: 'Os vilões que sempre voltam',
+    title: 'Coringa, Duas-Caras e Charada são os únicos vilões que já voltaram mais de uma vez',
+    icon: Swords,
+  },
+  {
+    id: 'eraComparison',
+    label: 'A recompensa da ressurreição',
+    title: 'Depois de quase morrer, o Batman virou 2,6x mais bilheteria e saiu de "podre" pra "certificado fresco"',
+    icon: TrendingUp,
+  },
 ]
 
 const SOURCES = [
   { name: 'Box Office Mojo', url: 'https://www.boxofficemojo.com/' },
   { name: 'Rotten Tomatoes', url: 'https://www.rottentomatoes.com/' },
   { name: 'Wikipedia — filmes do Batman', url: 'https://en.wikipedia.org/wiki/Batman_in_film' },
+  {
+    name: 'A Death in the Family (1988)',
+    url: 'https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)',
+  },
 ]
 
 const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
 
 export function DashboardShell() {
-  const [selected, setSelected] = useState<VizId>('boxOffice')
+  const [selected, setSelected] = useState<VizId>('deathPoll')
   const boxOffice = useBatmanBoxOffice()
+  const deathPoll = useDeathPoll()
+  const villains = useBatmanVillains()
 
   const content: Record<VizId, React.ReactNode> = {
+    deathPoll: deathPoll ? <DeathPollChart data={deathPoll} /> : Loading,
     boxOffice: boxOffice ? <BatmanBoxOfficeChart data={boxOffice} /> : Loading,
+    villains: villains ? <VillainsTimelineChart data={villains} /> : Loading,
+    eraComparison: boxOffice ? <EraComparisonCards data={boxOffice} /> : Loading,
   }
 
   const selectedItem = VIZ_ITEMS.find((i) => i.id === selected)
@@ -49,8 +80,8 @@ export function DashboardShell() {
             A jornada do herói de Batman segue o monomito de Campbell — e os dados provam isso?
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Bilheteria, crítica e uma enquete real de 1988 contam a mesma história: queda, morte e
-            ressurreição.
+            Uma enquete real de 1988, bilheteria e crítica de 86 anos de cinema contam a mesma
+            história: provação, morte e ressurreição.
           </p>
         </header>
 

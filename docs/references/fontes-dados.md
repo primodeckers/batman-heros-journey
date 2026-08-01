@@ -7,6 +7,8 @@
 | Box Office Mojo | [boxofficemojo.com](https://www.boxofficemojo.com/) | Bilheteria mundial de cada filme live-action do Batman (1989-2022) | 01/08/2026 | `public/data/batman-boxoffice.csv` |
 | Rotten Tomatoes | [rottentomatoes.com](https://www.rottentomatoes.com/) | Nota do Tomatometer (crítica) de cada filme | 01/08/2026 | `public/data/batman-boxoffice.csv` |
 | Wikipedia (verificado contra Box Office Mojo/Wikipedia por filme) | [en.wikipedia.org/wiki/Batman_in_film](https://en.wikipedia.org/wiki/Batman_in_film) | Orçamento de produção de cada filme | 01/08/2026 | `public/data/batman-boxoffice.csv` |
+| Wikipedia — *A Death in the Family (comics)* | [en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)](https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)) | Resultado da enquete de 1988 (votos por telefone) | 01/08/2026 | `public/data/batman-death-poll.csv` |
+| Créditos de elenco de cada filme (Wikipedia) | [en.wikipedia.org/wiki/Batman_in_film](https://en.wikipedia.org/wiki/Batman_in_film) | Vilão principal e ator de cada filme (1989-2022) | 01/08/2026 | `public/data/batman-villains.csv` |
 
 **Nota sobre orçamento de *Batman & Robin* (1997):** fontes divergem entre
 US$ 125 mi e US$ 160 mi (a diferença provavelmente é produção vs.
@@ -14,16 +16,13 @@ produção+marketing). Usamos US$ 125 mi (o valor mais citado como orçamento
 de produção) — mencionar a divergência se o número for citado na
 apresentação (ver `linguagem-e-clareza.md`, item 6).
 
-## Números-chave já conferidos (não estão em CSV ainda — candidatos a
-próximo gráfico)
+**Detalhe da enquete "A Death in the Family" (1988):** 10.614 votos totais
+— 5.343 a favor da morte do Robin (Jason Todd), 5.271 a favor de salvá-lo.
+Margem de 72 votos. Ligações por 36h a 50¢ cada, para um de dois números
+1-900. Amplamente documentado (ex.: cobertura da ComicBook.com, Gizmodo, TV
+Tropes, além da Wikipedia).
 
-- **Enquete "A Death in the Family" (1988):** 10.614 votos totais — 5.343 a
-  favor da morte do Robin (Jason Todd), 5.271 a favor de salvá-lo. Margem
-  de 72 votos. Ligações por 36h a 50¢ cada, para um de dois números 1-900.
-  Amplamente documentado (ex.: cobertura da ComicBook.com, Gizmodo, TV
-  Tropes, Wikipedia — *A Death in the Family (comics)*).
-
-## Fontes pesquisadas pra próximos gráficos (ainda não baixadas/processadas)
+## Fontes pesquisadas pro gráfico bônus (ainda não usadas)
 
 - **[FiveThirtyEight — Comic Characters Dataset](https://github.com/fivethirtyeight/data/tree/master/comic-characters)**:
   23.272 personagens Marvel+DC (16.376 Marvel / 6.896 DC), raspado das
