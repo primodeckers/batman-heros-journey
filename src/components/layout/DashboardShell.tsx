@@ -3,7 +3,7 @@ import { Clapperboard, History, Skull, Sparkles, Swords, TrendingUp } from 'luci
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { comicBackgroundStyle } from './ComicBackground'
+import { ComicBackground } from './ComicBackground'
 import { AdaptationsTimelineChart } from '@/components/charts/AdaptationsTimelineChart'
 import { BatmanBoxOfficeChart } from '@/components/charts/BatmanBoxOfficeChart'
 import { ComicsTimelineChart } from '@/components/charts/ComicsTimelineChart'
@@ -102,9 +102,10 @@ export function DashboardShell() {
   const selectedItem = VIZ_ITEMS.find((i) => i.id === selected)
 
   return (
-    <div className="min-h-screen text-foreground" style={comicBackgroundStyle}>
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col gap-6 px-6 py-8">
-        <header>
+    <div className="relative min-h-screen text-foreground">
+      <ComicBackground />
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col gap-6 px-6 py-8">
+        <header className="rounded-lg border-2 border-foreground/10 bg-background/85 px-4 py-3 shadow-sm backdrop-blur-sm">
           <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             A jornada do herói de Batman segue o monomito de Campbell — e os dados provam isso?
           </h1>
@@ -115,17 +116,17 @@ export function DashboardShell() {
         </header>
 
         <main className="flex flex-1 flex-col gap-4 lg:flex-row">
-          <Card className="comic-panel min-h-[420px] flex-1 rounded-lg">
+          <Card className="comic-panel h-[640px] flex-1 overflow-hidden rounded-lg">
             <CardHeader>
               <CardTitle>{selectedItem?.title}</CardTitle>
             </CardHeader>
-            <CardContent className="flex-1">{content[selected]}</CardContent>
+            <CardContent className="min-h-0 flex-1 overflow-hidden">{content[selected]}</CardContent>
           </Card>
 
           <ChartSwitcher items={VIZ_ITEMS} selected={selected} onSelect={setSelected} />
         </main>
 
-        <footer className="flex flex-wrap items-center gap-2 border-t pt-4 text-xs text-muted-foreground">
+        <footer className="flex flex-wrap items-center gap-2 rounded-lg border-2 border-foreground/10 bg-background/85 px-4 py-3 text-xs text-muted-foreground backdrop-blur-sm">
           <span>Fontes:</span>
           {SOURCES.map((source) => (
             <a key={source.name} href={source.url} target="_blank" rel="noreferrer">

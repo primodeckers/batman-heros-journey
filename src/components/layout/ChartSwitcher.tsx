@@ -21,7 +21,7 @@ export function ChartSwitcher<Id extends string>({
   onSelect,
 }: ChartSwitcherProps<Id>) {
   return (
-    <div className="flex flex-row gap-3 overflow-x-auto lg:w-56 lg:shrink-0 lg:flex-col lg:overflow-visible">
+    <div className="flex flex-row gap-3 overflow-x-auto lg:w-64 lg:shrink-0 lg:flex-col lg:overflow-visible">
       {items.map(({ id, label, icon: Icon }) => {
         const isActive = id === selected
         return (
@@ -31,8 +31,10 @@ export function ChartSwitcher<Id extends string>({
             onClick={() => onSelect(id)}
             aria-pressed={isActive}
             className={cn(
-              'flex min-w-[160px] shrink-0 items-center gap-2 rounded-xl border p-3 text-left text-sm transition-colors lg:min-w-0',
-              isActive ? 'font-medium' : 'border-border hover:bg-muted',
+              'flex min-w-[160px] shrink-0 items-center gap-2 rounded-xl border p-3 text-left text-sm transition-colors backdrop-blur-sm lg:min-w-0',
+              isActive
+                ? 'font-medium'
+                : 'border-border bg-background/90 hover:bg-muted',
             )}
             style={
               isActive

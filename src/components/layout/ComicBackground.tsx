@@ -1,29 +1,72 @@
-import { neutral } from '@/theme/palette'
-
 /**
- * Fundo neutro (só textura de pontos, técnica halftone de impressão de
- * HQ) — estado provisório enquanto esperamos imagens reais do usuário
- * pra usar como fundo ilustrado. Tentativa anterior de desenhar cenas de
- * luta à mão livre em SVG não ficou boa o suficiente; melhor usar arte
- * de verdade quando ela chegar do que forçar um desenho tosco.
+ * Parede de capas de gibis do Batman como fundo do dashboard.
+ * Fileiras intercaladas (estilo tijolo): cada linha começa na metade da capa de cima.
  */
-function buildComicBackgroundSvg() {
-  return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-      <defs>
-        <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1.6" fill="${neutral[900]}" opacity="0.1" />
-        </pattern>
-      </defs>
-      <rect width="400" height="400" fill="${neutral[50]}" />
-      <rect width="400" height="400" fill="url(#dots)" />
-    </svg>`
+const COVER_FILES = [
+  'cover-01.jpg',
+  'cover-02.jpg',
+  'cover-03.jpg',
+  'cover-04.jpg',
+  'cover-05.jpg',
+  'cover-06.jpg',
+  'cover-07.jpg',
+  'cover-08.jpg',
+  'cover-09.jpg',
+  'cover-10.jpg',
+  'cover-11.jpg',
+  'cover-12.jpg',
+  'cover-13.jpg',
+  'cover-14.jpg',
+  'cover-15.jpg',
+  'cover-16.jpg',
+  'cover-17.jpg',
+  'cover-19.png',
+] as const
+
+/** Capas por fileira — um pouco a mais pra sobrar nas linhas deslocadas. */
+const COVERS_PER_ROW = 10
+const ROW_COUNT = 8
+
+function buildRows(): string[][] {
+  const pool = Array.from(
+    { length: ROW_COUNT * COVERS_PER_ROW },
+    (_, i) => COVER_FILES[i % COVER_FILES.length],
+  )
+  const rows: string[][] = []
+  for (let r = 0; r < ROW_COUNT; r++) {
+    const start = r * COVERS_PER_ROW
+    rows.push(pool.slice(start, start + COVERS_PER_ROW))
+  }
+  return rows
 }
 
-const COMIC_BACKGROUND_URL = `url("data:image/svg+xml,${encodeURIComponent(buildComicBackgroundSvg())}")`
+const ROWS = buildRows()
 
-export const comicBackgroundStyle: React.CSSProperties = {
-  backgroundImage: COMIC_BACKGROUND_URL,
-  backgroundSize: '200px 200px',
-  backgroundRepeat: 'repeat',
+export function ComicBackground() {
+  return (
+    <div className="comic-covers-bg" aria-hidden="true">
+      <div className="comic-covers-grid">
+        {ROWS.map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            className={
+              rowIndex % 2 === 1 ? 'comic-covers-row comic-covers-row--offset' : 'comic-covers-row'
+            }
+          >
+            {row.map((file, colIndex) => (
+              <img
+                key={`${rowIndex}-${colIndex}-${file}`}
+                src={`/covers/${file}`}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+      <div className="comic-covers-overlay" />
+    </div>
+  )
 }

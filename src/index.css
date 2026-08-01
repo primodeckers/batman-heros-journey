@@ -108,4 +108,79 @@
   border-width: 3px;
   border-color: var(--foreground);
   box-shadow: 6px 6px 0 0 var(--foreground);
+  background-color: color-mix(in oklab, var(--card) 94%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+/** Parede de capas — fixa atrás do conteúdo, scroll independente. */
+.comic-covers-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #1a1a1a;
+}
+
+.comic-covers-grid {
+  --cover-w: 140px;
+  --cover-gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cover-gap);
+  padding: var(--cover-gap);
+  width: max-content;
+  min-width: 100%;
+  min-height: 100%;
+  transform: scale(1.08) rotate(-1.5deg);
+  transform-origin: center center;
+}
+
+.comic-covers-row {
+  display: flex;
+  gap: var(--cover-gap);
+  width: max-content;
+}
+
+/** Fileira ímpar deslocada meia capa — encaixa no vão da de cima. */
+.comic-covers-row--offset {
+  margin-left: calc((var(--cover-w) + var(--cover-gap)) / -2);
+}
+
+.comic-covers-row img {
+  width: var(--cover-w);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  border: 2px solid #111;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 35%);
+}
+
+.comic-covers-overlay {
+  position: absolute;
+  inset: 0;
+  /* Escala ~0–1000: 780 ≈ bem lavado; sobe pra clarear, desce pra ver mais capas. */
+  --cover-veil: 880;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(250 248 244 / calc(var(--cover-veil) / 1000)) 0%,
+      rgb(245 242 235 / calc(var(--cover-veil) / 1000)) 45%,
+      rgb(250 248 244 / calc(var(--cover-veil) / 1000)) 100%
+    ),
+    radial-gradient(ellipse at 50% 20%, rgb(255 255 255 / 0.45), transparent 55%);
+}
+
+@media (min-width: 768px) {
+  .comic-covers-grid {
+    --cover-w: 170px;
+    --cover-gap: 8px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .comic-covers-grid {
+    --cover-w: 190px;
+  }
 }
