@@ -8,6 +8,8 @@
 ## Storytelling de dados
 - Cole Nussbaumer Knaflic — *Storytelling with Data* (2015)
 - Nancy Duarte — *DataStory: Explain Data and Inspire Action Through Story* (2019) — foco em estruturar a narrativa dos dados (contexto → conflito → resolução), muito alinhado ao arco pedido em `WORK_RULES.md`
+- Nancy Duarte — *Resonate: Present Visual Stories that Transform Audiences* (2010) — origem do conceito **STAR Moment** ("Something They'll Always Remember"), aplicado ao roteiro da apresentação oral deste projeto (ver `linguagem-e-clareza.md`)
+- Brent Dykes — *Effective Data Storytelling: How to Drive Change with Data, Narrative, and Visuals* (2019) — técnicas de linguagem, escala relacionável e humanização de números, base de `linguagem-e-clareza.md`
 - Duarte — [What Is Data Storytelling?](https://www.duarte.com/resources/communication-skills/what-is-data-storytelling/) — framework de 3 atos (contexto → problema/oportunidade → recomendação) e o conceito de **DataPOV** (ponto de vista claro que enquadra os dados pra audiência); reforça a ideia de título como "observação do dado", não só rótulo
 - Alberto Cairo — *The Truthful Art* (2016) e *How Charts Lie* (2019)
 - Edward Tufte — *The Visual Display of Quantitative Information* (1983)
