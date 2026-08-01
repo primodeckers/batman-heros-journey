@@ -28,7 +28,7 @@ export function EraComparisonCards({ data }: { data: BatmanBoxOfficeRow[] }) {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="rounded-xl border p-5 text-center"
+          className="rounded-md border p-5 text-center"
           style={{ borderColor: neutral[300] }}
         >
           <p className="text-xs font-medium text-muted-foreground">
@@ -48,7 +48,7 @@ export function EraComparisonCards({ data }: { data: BatmanBoxOfficeRow[] }) {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15 }}
-          className="rounded-xl border p-5 text-center"
+          className="rounded-md border p-5 text-center"
           style={{ borderColor: accent[500], backgroundColor: accent[50] }}
         >
           <p className="text-xs font-medium" style={{ color: accent[800] }}>

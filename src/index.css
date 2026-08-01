@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.375rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -107,6 +107,7 @@
 .comic-panel {
   border-width: 3px;
   border-color: var(--foreground);
+  border-radius: var(--radius);
   box-shadow: 6px 6px 0 0 var(--foreground);
   background-color: color-mix(in oklab, var(--card) 94%, transparent);
   backdrop-filter: blur(2px);

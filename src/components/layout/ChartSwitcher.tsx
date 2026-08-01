@@ -31,14 +31,14 @@ export function ChartSwitcher<Id extends string>({
             onClick={() => onSelect(id)}
             aria-pressed={isActive}
             className={cn(
-              'flex min-w-[160px] shrink-0 items-center gap-2 rounded-xl border p-3 text-left text-sm transition-colors backdrop-blur-sm lg:min-w-0',
+              'flex min-w-[160px] shrink-0 items-center gap-2 rounded-md border p-3 text-left text-sm transition-colors backdrop-blur-sm lg:min-w-0',
               isActive
-                ? 'font-medium'
+                ? 'comic-panel font-medium'
                 : 'border-border bg-background/90 hover:bg-muted',
             )}
             style={
               isActive
-                ? { borderColor: accent[500], backgroundColor: accent[50], color: accent[800] }
+                ? { backgroundColor: accent[50], color: accent[800] }
                 : undefined
             }
           >

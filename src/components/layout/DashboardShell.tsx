@@ -3,6 +3,7 @@ import { Clapperboard, History, Skull, Sparkles, Swords, TrendingUp } from 'luci
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ChapterIndicator } from './ChapterIndicator'
 import { ComicBackground } from './ComicBackground'
 import { AdaptationsTimelineChart } from '@/components/charts/AdaptationsTimelineChart'
 import { BatmanBoxOfficeChart } from '@/components/charts/BatmanBoxOfficeChart'
@@ -27,24 +28,30 @@ type VizId =
 
 /** `label` = item curto da barra lateral. `title` = título narrativo
  * completo mostrado no card principal (afirma uma conclusão, não só
- * descreve o eixo — ver docs/best-practices/checklist-narrativo.md). */
-const VIZ_ITEMS: (ChartSwitcherItem<VizId> & { title: string })[] = [
+ * descreve o eixo — ver docs/best-practices/checklist-narrativo.md).
+ * `chapter` = nome curto do estágio do monomito, usado no indicador de
+ * capítulo (`ChapterIndicator`) — a ordem deste array É a ordem da
+ * jornada do herói (mundo comum → provação → recompensa). */
+const VIZ_ITEMS: (ChartSwitcherItem<VizId> & { title: string; chapter: string })[] = [
   {
     id: 'adaptations',
     label: '86 anos de Batman',
     title: '86 anos depois da estreia em quadrinhos, o Batman ainda está na tela grande',
+    chapter: 'Mundo comum',
     icon: Sparkles,
   },
   {
     id: 'deathPoll',
     label: 'Por 72 votos, mataram o Robin',
     title: 'Em 1988, os fãs decidiram por telefone matar o Robin — por uma margem de só 72 votos',
+    chapter: 'Provação suprema',
     icon: Skull,
   },
   {
     id: 'comicsTimeline',
     label: 'O padrão se repete nos quadrinhos',
     title: 'Batman "morreu" e voltou 3 vezes em 22 anos de quadrinhos — não foi só uma vez',
+    chapter: 'Padrão se repete',
     icon: History,
   },
   {
@@ -52,18 +59,21 @@ const VIZ_ITEMS: (ChartSwitcherItem<VizId> & { title: string })[] = [
     label: 'Batman quase morreu no cinema',
     title:
       'Batman & Robin (12% no Rotten Tomatoes) quase matou a franquia — Batman Begins a ressuscitou',
+    chapter: 'Morte no cinema',
     icon: Clapperboard,
   },
   {
     id: 'villains',
     label: 'Os vilões que sempre voltam',
     title: 'Coringa, Duas-Caras e Charada são os únicos vilões que já voltaram mais de uma vez',
+    chapter: 'Vilões',
     icon: Swords,
   },
   {
     id: 'eraComparison',
     label: 'A recompensa da ressurreição',
     title: 'Depois de quase morrer, o Batman virou 2,6x mais bilheteria e saiu de "podre" pra "certificado fresco"',
+    chapter: 'Recompensa',
     icon: TrendingUp,
   },
 ]
@@ -99,13 +109,18 @@ export function DashboardShell() {
     eraComparison: boxOffice ? <EraComparisonCards data={boxOffice} /> : Loading,
   }
 
-  const selectedItem = VIZ_ITEMS.find((i) => i.id === selected)
+  const selectedIndex = VIZ_ITEMS.findIndex((i) => i.id === selected)
+  const selectedItem = VIZ_ITEMS[selectedIndex]
+
+  const handleSelectIndex = (index: number) => {
+    setSelected(VIZ_ITEMS[index].id)
+  }
 
   return (
     <div className="relative min-h-screen text-foreground">
       <ComicBackground />
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col gap-6 px-6 py-8">
-        <header className="rounded-lg border-2 border-foreground/10 bg-background/85 px-4 py-3 shadow-sm backdrop-blur-sm">
+        <header className="rounded-md border-2 border-foreground/10 bg-background/85 px-4 py-3 shadow-sm backdrop-blur-sm">
           <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             A jornada do herói de Batman segue o monomito de Campbell — e os dados provam isso?
           </h1>
@@ -116,17 +131,24 @@ export function DashboardShell() {
         </header>
 
         <main className="flex flex-1 flex-col gap-4 lg:flex-row">
-          <Card className="comic-panel h-[640px] flex-1 overflow-hidden rounded-lg">
+          <Card className="comic-panel h-[640px] flex-1 overflow-hidden rounded-md">
             <CardHeader>
               <CardTitle>{selectedItem?.title}</CardTitle>
             </CardHeader>
+            <div className="px-6 pb-4">
+              <ChapterIndicator
+                items={VIZ_ITEMS}
+                selectedIndex={selectedIndex}
+                onSelect={handleSelectIndex}
+              />
+            </div>
             <CardContent className="min-h-0 flex-1 overflow-hidden">{content[selected]}</CardContent>
           </Card>
 
           <ChartSwitcher items={VIZ_ITEMS} selected={selected} onSelect={setSelected} />
         </main>
 
-        <footer className="flex flex-wrap items-center gap-2 rounded-lg border-2 border-foreground/10 bg-background/85 px-4 py-3 text-xs text-muted-foreground backdrop-blur-sm">
+        <footer className="flex flex-wrap items-center gap-2 rounded-md border-2 border-foreground/10 bg-background/85 px-4 py-3 text-xs text-muted-foreground backdrop-blur-sm">
           <span>Fontes:</span>
           {SOURCES.map((source) => (
             <a key={source.name} href={source.url} target="_blank" rel="noreferrer">
