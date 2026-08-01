@@ -1,6 +1,18 @@
 # Temas candidatos — análise comparativa
 
-> ## ✅ Tema escolhido: A — GitHub / agentes de código
+> ## ⏸️ ATUALIZAÇÃO (01/08/2026): entrega oficial mudou pro tema Batman
+> Este dashboard (Tema A) ficou **completo e funcional** (9 visualizações,
+> mapa-múndi interativo, fontes citadas) mas deixou de ser a entrega
+> oficial da disciplina. Depois de desenvolver uma segunda proposta —
+> "A jornada do herói de Batman segue o monomito de Campbell?", num
+> projeto separado (`../batman-heros-journey`) — o professor viu as duas
+> e sinalizou preferência pela do Batman ("achei a 2 a tua cara, daria
+> pra fazer algo massa"). Ver `BRIEF.md` e `WORK_RULES.md` nesse outro
+> repositório pro estado atual da entrega oficial. Este repositório fica
+> arquivado, intacto, como está — não precisa de mais trabalho a menos
+> que a decisão volte atrás.
+
+> ## ✅ Tema escolhido (histórico): A — GitHub / agentes de código
 > **Pergunta central:** "78% dos programadores já usam IA todo dia — mas
 > a maioria não confia nela. Por quê?"
 >
