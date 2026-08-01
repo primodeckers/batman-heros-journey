@@ -20,8 +20,8 @@ export function ComicsTimelineChart({ data }: { data: ComicsTimelineRow[] }) {
   const radius = 38
 
   return (
-    <div className="flex h-full min-h-0 items-center gap-6">
-      <div className="relative aspect-square w-full max-w-[190px] shrink-0">
+    <div className="flex h-full min-h-0 items-center justify-center gap-12">
+      <div className="relative aspect-square w-full max-w-[300px] shrink-0">
         <div
           className="absolute inset-[8%] rounded-full border-2 border-dashed"
           style={{ borderColor: neutral[200] }}
@@ -41,17 +41,17 @@ export function ComicsTimelineChart({ data }: { data: ComicsTimelineRow[] }) {
               style={{ left: `${left}%`, top: `${top}%` }}
             >
               <span
-                className="flex size-7 items-center justify-center rounded-full shadow-sm"
+                className="flex size-10 items-center justify-center rounded-full shadow-sm"
                 style={{ backgroundColor: isReturn ? accent[500] : neutral[700] }}
               >
                 {isReturn ? (
-                  <Sunrise className="size-3.5 text-white" />
+                  <Sunrise className="size-5 text-white" />
                 ) : (
-                  <Skull className="size-3.5 text-white" />
+                  <Skull className="size-5 text-white" />
                 )}
               </span>
               <span
-                className="mt-1 text-[10px] font-semibold"
+                className="mt-1.5 text-xs font-semibold"
                 style={{ color: isReturn ? accent[700] : neutral[700] }}
               >
                 {row.year}
@@ -61,8 +61,8 @@ export function ComicsTimelineChart({ data }: { data: ComicsTimelineRow[] }) {
         })}
       </div>
 
-      <div className="flex h-full min-w-0 flex-1 flex-col justify-center gap-3">
-        <ol className="space-y-2 text-sm">
+      <div className="flex h-full max-w-lg min-w-0 flex-col justify-center gap-3">
+        <ol className="space-y-2.5 text-sm">
           {data.map((row) => {
             const isReturn = row.type === 'retorno'
             return (
