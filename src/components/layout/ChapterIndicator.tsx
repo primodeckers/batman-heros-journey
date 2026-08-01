@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 import { accent, neutral } from '@/theme/palette'
 import { cn } from '@/lib/utils'
 
@@ -12,9 +14,7 @@ type ChapterIndicatorProps = {
 /**
  * Indicador de capítulo — reforça que o dashboard conta UMA história com
  * começo, meio e fim (a jornada do herói), não uma lista solta de
- * gráficos que dá pra ver em qualquer ordem. Convive com o
- * `ChartSwitcher` lateral, que continua permitindo pular direto pra
- * qualquer gráfico.
+ * gráficos que dá pra ver em qualquer ordem.
  */
 export function ChapterIndicator({ items, selectedIndex, onSelect }: ChapterIndicatorProps) {
   const total = items.length
@@ -35,16 +35,19 @@ export function ChapterIndicator({ items, selectedIndex, onSelect }: ChapterIndi
           className="absolute top-[13px] right-5 left-5 h-0.5"
           style={{ backgroundColor: neutral[200] }}
         />
-        <div
-          className="absolute top-[13px] left-5 h-0.5 transition-all duration-300"
-          style={{
+        <motion.div
+          className="absolute top-[13px] left-5 h-0.5 origin-left"
+          initial={false}
+          animate={{
             width: `calc(${progressPct}% * (100% - 2.5rem) / 100)`,
-            backgroundColor: accent[600],
           }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          style={{ backgroundColor: accent[600] }}
         />
 
         {items.map((item, i) => {
           const isActive = i === selectedIndex
+          const isPast = i < selectedIndex
           return (
             <button
               key={item.id}
@@ -53,29 +56,45 @@ export function ChapterIndicator({ items, selectedIndex, onSelect }: ChapterIndi
               className="relative z-10 flex w-[16.6%] flex-col items-center gap-1.5"
               aria-current={isActive ? 'step' : undefined}
             >
-              <span
+              <motion.span
                 className={cn(
-                  'flex items-center justify-center rounded-full text-xs font-medium transition-all',
+                  'relative flex items-center justify-center rounded-full text-xs font-medium',
                   isActive ? 'size-[30px] -mt-0.5' : 'size-[26px]',
                 )}
+                initial={false}
+                animate={
+                  isActive
+                    ? { scale: [1, 1.12, 1], backgroundColor: accent[600], color: accent[50] }
+                    : {
+                        scale: 1,
+                        backgroundColor: isPast ? accent[100] : neutral[50],
+                        color: isPast ? accent[700] : neutral[500],
+                      }
+                }
+                transition={
+                  isActive
+                    ? { duration: 0.9, repeat: Infinity, repeatDelay: 1.4, ease: 'easeInOut' }
+                    : { duration: 0.25 }
+                }
                 style={
                   isActive
-                    ? {
-                        backgroundColor: accent[600],
-                        color: accent[50],
-                        boxShadow: `0 0 0 3px ${accent[100]}`,
-                      }
-                    : { backgroundColor: neutral[50], border: `1px solid ${neutral[300]}`, color: neutral[500] }
+                    ? { boxShadow: `0 0 0 3px ${accent[100]}` }
+                    : { border: `1px solid ${isPast ? accent[300] : neutral[300]}` }
                 }
               >
                 {i + 1}
-              </span>
-              <span
+              </motion.span>
+              <motion.span
                 className="text-center text-[11px] leading-tight"
-                style={{ color: isActive ? neutral[900] : neutral[500], fontWeight: isActive ? 500 : 400 }}
+                initial={false}
+                animate={{
+                  color: isActive ? neutral[900] : neutral[500],
+                  fontWeight: isActive ? 500 : 400,
+                }}
+                transition={{ duration: 0.25 }}
               >
                 {item.chapter}
-              </span>
+              </motion.span>
             </button>
           )
         })}

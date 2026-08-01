@@ -113,6 +113,11 @@
   backdrop-filter: blur(2px);
 }
 
+.group\/chart .carousel-nav-btn {
+  z-index: 50;
+  pointer-events: auto;
+}
+
 /** Parede de capas — fixa atrás do conteúdo, scroll independente. */
 .comic-covers-bg {
   position: fixed;

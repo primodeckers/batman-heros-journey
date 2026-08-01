@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react'
+import { motion } from 'framer-motion'
 
 import { accent, neutral } from '@/theme/palette'
 import { cn } from '@/lib/utils'
@@ -25,13 +26,18 @@ export function ChartSwitcher<Id extends string>({
       {items.map(({ id, label, icon: Icon }) => {
         const isActive = id === selected
         return (
-          <button
+          <motion.button
             key={id}
             type="button"
             onClick={() => onSelect(id)}
             aria-pressed={isActive}
+            layout
+            initial={false}
+            whileHover={isActive ? { scale: 1.01 } : { x: 4 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 420, damping: 28 }}
             className={cn(
-              'flex min-w-[160px] shrink-0 items-center gap-2 rounded-md border p-3 text-left text-sm transition-colors backdrop-blur-sm lg:min-w-0',
+              'flex min-w-[160px] shrink-0 items-center gap-2 rounded-md border p-3 text-left text-sm backdrop-blur-sm lg:min-w-0',
               isActive
                 ? 'comic-panel font-medium'
                 : 'border-border bg-background/90 hover:bg-muted',
@@ -39,15 +45,28 @@ export function ChartSwitcher<Id extends string>({
             style={
               isActive
                 ? { backgroundColor: accent[50], color: accent[800] }
-                : undefined
+                : { color: neutral[800] }
             }
           >
-            <Icon
-              className="size-4 shrink-0"
-              style={{ color: isActive ? accent[600] : neutral[500] }}
-            />
-            <span>{label}</span>
-          </button>
+            <motion.span
+              initial={false}
+              animate={isActive ? { scale: [1, 1.22, 1], x: [0, -3, 0] } : { scale: 1, x: 0 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="flex shrink-0"
+            >
+              <Icon
+                className="size-4"
+                style={{ color: isActive ? accent[600] : neutral[500] }}
+              />
+            </motion.span>
+            <motion.span
+              initial={false}
+              animate={isActive ? { x: [8, 0], opacity: [0.55, 1] } : { x: 0, opacity: 1 }}
+              transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {label}
+            </motion.span>
+          </motion.button>
         )
       })}
     </div>

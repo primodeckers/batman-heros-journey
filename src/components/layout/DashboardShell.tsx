@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Clapperboard, History, Skull, Sparkles, Swords, TrendingUp } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -6,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CarouselNav } from './CarouselNav'
 import { ChapterIndicator } from './ChapterIndicator'
 import { ComicBackground } from './ComicBackground'
+import { ComicPageFlip } from './ComicPageFlip'
 import { AdaptationsTimelineChart } from '@/components/charts/AdaptationsTimelineChart'
 import { BatmanBoxOfficeChart } from '@/components/charts/BatmanBoxOfficeChart'
 import { ComicsTimelineChart } from '@/components/charts/ComicsTimelineChart'
@@ -95,6 +97,8 @@ const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
 
 export function DashboardShell() {
   const [selected, setSelected] = useState<VizId>('adaptations')
+  const [flipDirection, setFlipDirection] = useState(1)
+  const [chartHovered, setChartHovered] = useState(false)
   const boxOffice = useBatmanBoxOffice()
   const deathPoll = useDeathPoll()
   const villains = useBatmanVillains()
@@ -115,7 +119,14 @@ export function DashboardShell() {
 
   const handleSelectIndex = (index: number) => {
     const clamped = Math.min(Math.max(index, 0), VIZ_ITEMS.length - 1)
+    if (clamped === selectedIndex) return
+    setFlipDirection(clamped > selectedIndex ? 1 : -1)
     setSelected(VIZ_ITEMS[clamped].id)
+  }
+
+  const handleSelectId = (id: VizId) => {
+    const index = VIZ_ITEMS.findIndex((item) => item.id === id)
+    handleSelectIndex(index)
   }
 
   return (
@@ -133,9 +144,19 @@ export function DashboardShell() {
         </header>
 
         <main className="flex flex-1 flex-col gap-4 lg:flex-row">
-          <Card className="comic-panel h-[760px] flex-1 overflow-hidden rounded-md">
+          <Card className="comic-panel flex h-[760px] flex-1 flex-col overflow-hidden rounded-md">
             <CardHeader>
-              <CardTitle>{selectedItem?.title}</CardTitle>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={selected}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.45 }}
+                >
+                  <CardTitle>{selectedItem?.title}</CardTitle>
+                </motion.div>
+              </AnimatePresence>
             </CardHeader>
             <div className="px-6 pb-4">
               <ChapterIndicator
@@ -144,18 +165,35 @@ export function DashboardShell() {
                 onSelect={handleSelectIndex}
               />
             </div>
-            <div className="group/chart relative min-h-0 flex-1 overflow-hidden">
-              <CardContent className="h-full">{content[selected]}</CardContent>
+            <div
+              className="group/chart relative min-h-0 flex-1 overflow-hidden"
+              onMouseEnter={() => setChartHovered(true)}
+              onMouseLeave={() => setChartHovered(false)}
+              onFocusCapture={() => setChartHovered(true)}
+              onBlurCapture={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                  setChartHovered(false)
+                }
+              }}
+            >
+              <ComicPageFlip
+                pageKey={selected}
+                direction={flipDirection}
+                className="h-full overflow-hidden"
+              >
+                <CardContent className="h-full">{content[selected]}</CardContent>
+              </ComicPageFlip>
               <CarouselNav
                 onPrev={() => handleSelectIndex(selectedIndex - 1)}
                 onNext={() => handleSelectIndex(selectedIndex + 1)}
                 hasPrev={selectedIndex > 0}
                 hasNext={selectedIndex < VIZ_ITEMS.length - 1}
+                visible={chartHovered}
               />
             </div>
           </Card>
 
-          <ChartSwitcher items={VIZ_ITEMS} selected={selected} onSelect={setSelected} />
+          <ChartSwitcher items={VIZ_ITEMS} selected={selected} onSelect={handleSelectId} />
         </main>
 
         <footer className="flex flex-wrap items-center gap-2 rounded-md border-2 border-foreground/10 bg-background/85 px-4 py-3 text-xs text-muted-foreground backdrop-blur-sm">
