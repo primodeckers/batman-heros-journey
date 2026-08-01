@@ -97,3 +97,31 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/**
+ * Textura halftone (trama de pontos, técnica clássica de impressão de HQ)
+ * — dá "clima" de quadrinho sem imagem nenhuma (sem risco de direito
+ * autoral) e sem competir com o dado, já que fica bem sutil. Ver
+ * conversa do projeto / docs/best-practices/atributos-pre-atentivos.md.
+ */
+.comic-halftone {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklch, var(--foreground) 8%, transparent) 1px,
+    transparent 1.4px
+  );
+  background-size: 11px 11px;
+  background-position: 0 0;
+}
+
+/**
+ * Cards com moldura de painel de HQ: borda grossa preta + sombra "dura"
+ * deslocada (sem blur), estilo pop-art/Lichtenstein. Aplicar só nos
+ * cards principais, não em todo componente Card — é decoração de
+ * enquadramento, não deve competir com o dado dentro do card.
+ */
+.comic-panel {
+  border-width: 3px;
+  border-color: var(--foreground);
+  box-shadow: 6px 6px 0 0 var(--foreground);
+}

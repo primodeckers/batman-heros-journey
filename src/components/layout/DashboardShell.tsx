@@ -101,7 +101,7 @@ export function DashboardShell() {
   const selectedItem = VIZ_ITEMS.find((i) => i.id === selected)
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="comic-halftone min-h-screen bg-background text-foreground">
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col gap-6 px-6 py-8">
         <header>
           <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -114,7 +114,7 @@ export function DashboardShell() {
         </header>
 
         <main className="flex flex-1 flex-col gap-4 lg:flex-row">
-          <Card className="min-h-[420px] flex-1">
+          <Card className="comic-panel min-h-[420px] flex-1 rounded-lg">
             <CardHeader>
               <CardTitle>{selectedItem?.title}</CardTitle>
             </CardHeader>
