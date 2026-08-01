@@ -9,6 +9,9 @@
 | Wikipedia (verificado contra Box Office Mojo/Wikipedia por filme) | [en.wikipedia.org/wiki/Batman_in_film](https://en.wikipedia.org/wiki/Batman_in_film) | Orçamento de produção de cada filme | 01/08/2026 | `public/data/batman-boxoffice.csv` |
 | Wikipedia — *A Death in the Family (comics)* | [en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)](https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)) | Resultado da enquete de 1988 (votos por telefone) | 01/08/2026 | `public/data/batman-death-poll.csv` |
 | Créditos de elenco de cada filme (Wikipedia) | [en.wikipedia.org/wiki/Batman_in_film](https://en.wikipedia.org/wiki/Batman_in_film) | Vilão principal e ator de cada filme (1989-2022) | 01/08/2026 | `public/data/batman-villains.csv` |
+| Wikipedia — *Batman: Knightfall* | [en.wikipedia.org/wiki/Batman:_Knightfall](https://dc.fandom.com/wiki/Batman:_Knightfall) | Bane quebra a coluna do Batman em *Batman* #497 (jul/1993) | 01/08/2026 | `public/data/batman-comics-timeline.csv` |
+| Wikipedia — *Batman: Under the Hood* | [en.wikipedia.org/wiki/Batman:_Under_the_Hood](https://en.wikipedia.org/wiki/Batman:_Under_the_Hood) | Ressurreição de Jason Todd (fev/2005) | 01/08/2026 | `public/data/batman-comics-timeline.csv` |
+| CBR — *The Return of Bruce Wayne* | [cbr.com/batman-bruce-wayne-return-explainer](https://www.cbr.com/batman-bruce-wayne-return-explainer/) | Batman R.I.P. (2008) → Final Crisis (2008-09) → retorno de Bruce Wayne (2010) | 01/08/2026 | `public/data/batman-comics-timeline.csv` |
 
 **Nota sobre orçamento de *Batman & Robin* (1997):** fontes divergem entre
 US$ 125 mi e US$ 160 mi (a diferença provavelmente é produção vs.
@@ -21,6 +24,17 @@ apresentação (ver `linguagem-e-clareza.md`, item 6).
 Margem de 72 votos. Ligações por 36h a 50¢ cada, para um de dois números
 1-900. Amplamente documentado (ex.: cobertura da ComicBook.com, Gizmodo, TV
 Tropes, além da Wikipedia).
+
+## Descartado por inconsistência entre fontes
+
+- **Bilheteria por ator ajustada por inflação** (candidato ao gráfico
+  bônus "o ciclo se repete"): ScreenRant e Box Office Mojo têm números que
+  não batem entre si pros mesmos filmes — parece que umas fontes ajustam
+  só a bilheteria doméstica e outras tentam ajustar a mundial (metodologia
+  não é comparável entre ticket-price inflation dos EUA e câmbio
+  internacional). Em vez de montar gráfico com número que não fecha,
+  deixamos esse de fora até achar uma fonte única e consistente pros 8
+  filmes.
 
 ## Fontes pesquisadas pro gráfico bônus (ainda não usadas)
 

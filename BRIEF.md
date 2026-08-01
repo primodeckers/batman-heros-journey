@@ -24,14 +24,22 @@ provam isso?"**
 | --- | --- | --- | --- |
 | Mundo comum / Chamado | 1ª aparição (*Detective Comics* #27, 1939) | Wikipedia | Não iniciado |
 | Provação suprema (quadrinhos) | Enquete "A Death in the Family" (1988) — 5.343 × 5.271 votos, margem de 72 | Wikipedia / ComicBook.com / Gizmodo | **Feito** — `DeathPollChart` |
+| Provação se repete (quadrinhos) | Linha do tempo 1988→2010: morte, Knightfall (Bane quebra a coluna), ressurreição, R.I.P./Final Crisis, retorno — 3 ciclos morte/retorno em 22 anos | Wikipedia / DC Database / CBR | **Feito** — `ComicsTimelineChart` |
 | Morte (cinema) → Ressurreição | Bilheteria/orçamento/RT de *Batman & Robin* (1997) → *Batman Begins* (2005) | Box Office Mojo / Rotten Tomatoes | **Feito** — `BatmanBoxOfficeChart` |
 | Recompensa / Retorno com o elixir | Média de bilheteria/RT antes (1989-97) vs. depois (2005-22): +158% bilheteria, 51%→88% RT | Agregado do mesmo CSV do `BatmanBoxOfficeChart` | **Feito** — `EraComparisonCards` |
 | Aliados e inimigos | Vilão principal de cada filme + quais voltaram mais de uma vez (Coringa, Duas-Caras, Charada) | Créditos de elenco, Wikipedia | **Feito** — `VillainsTimelineChart` (linha do tempo, não rede — ver nota abaixo) |
 | Bônus: o ciclo se repete | Bilheteria de todos os atores (Keaton→Pattinson), ajustada por inflação | Box Office Mojo | Não iniciado |
 
-**4 de 4 visualizações mínimas prontas e verificadas** (título narrativo,
-build limpo, dado real conferido, sem erro de console). O bônus "ciclo se
-repete" fica como próximo passo opcional, não bloqueia a narrativa mínima.
+**5 visualizações prontas e verificadas** (mínimo era 4) — título
+narrativo, build limpo, dado real conferido, sem erro de console. O bônus
+"ciclo se repete por ator" fica como próximo passo opcional.
+
+**Nota sobre o gráfico bônus (bilheteria por ator ajustada por
+inflação):** pesquisado mas **não construído** — as fontes encontradas
+(ScreenRant, Box Office Mojo) divergem sobre metodologia (doméstico vs.
+mundial ajustado) e não fecham um conjunto limpo pros 8 filmes. Preferimos
+não montar gráfico com números que não bateram entre si — ver
+`fontes-dados.md`.
 
 **Nota sobre "aliados e inimigos":** não existe dataset de rede de
 coaparições pronto pra Batman/DC (só existe pra Marvel, ver

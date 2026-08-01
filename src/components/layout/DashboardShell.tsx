@@ -1,18 +1,20 @@
 import { useState } from 'react'
-import { Clapperboard, Skull, Swords, TrendingUp } from 'lucide-react'
+import { Clapperboard, History, Skull, Swords, TrendingUp } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { BatmanBoxOfficeChart } from '@/components/charts/BatmanBoxOfficeChart'
+import { ComicsTimelineChart } from '@/components/charts/ComicsTimelineChart'
 import { DeathPollChart } from '@/components/charts/DeathPollChart'
 import { EraComparisonCards } from '@/components/charts/EraComparisonCards'
 import { VillainsTimelineChart } from '@/components/charts/VillainsTimelineChart'
 import { useBatmanBoxOffice } from '@/hooks/useBatmanBoxOffice'
 import { useBatmanVillains } from '@/hooks/useBatmanVillains'
+import { useComicsTimeline } from '@/hooks/useComicsTimeline'
 import { useDeathPoll } from '@/hooks/useDeathPoll'
 import { ChartSwitcher, type ChartSwitcherItem } from './ChartSwitcher'
 
-type VizId = 'deathPoll' | 'boxOffice' | 'villains' | 'eraComparison'
+type VizId = 'deathPoll' | 'comicsTimeline' | 'boxOffice' | 'villains' | 'eraComparison'
 
 /** `label` = item curto da barra lateral. `title` = título narrativo
  * completo mostrado no card principal (afirma uma conclusão, não só
@@ -23,6 +25,12 @@ const VIZ_ITEMS: (ChartSwitcherItem<VizId> & { title: string })[] = [
     label: 'Por 72 votos, mataram o Robin',
     title: 'Em 1988, os fãs decidiram por telefone matar o Robin — por uma margem de só 72 votos',
     icon: Skull,
+  },
+  {
+    id: 'comicsTimeline',
+    label: 'O padrão se repete nos quadrinhos',
+    title: 'Batman "morreu" e voltou 3 vezes em 22 anos de quadrinhos — não foi só uma vez',
+    icon: History,
   },
   {
     id: 'boxOffice',
@@ -53,6 +61,7 @@ const SOURCES = [
     name: 'A Death in the Family (1988)',
     url: 'https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)',
   },
+  { name: 'DC Database (Fandom)', url: 'https://dc.fandom.com/wiki/Batman:_Knightfall' },
 ]
 
 const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
@@ -62,9 +71,11 @@ export function DashboardShell() {
   const boxOffice = useBatmanBoxOffice()
   const deathPoll = useDeathPoll()
   const villains = useBatmanVillains()
+  const comicsTimeline = useComicsTimeline()
 
   const content: Record<VizId, React.ReactNode> = {
     deathPoll: deathPoll ? <DeathPollChart data={deathPoll} /> : Loading,
+    comicsTimeline: comicsTimeline ? <ComicsTimelineChart data={comicsTimeline} /> : Loading,
     boxOffice: boxOffice ? <BatmanBoxOfficeChart data={boxOffice} /> : Loading,
     villains: villains ? <VillainsTimelineChart data={villains} /> : Loading,
     eraComparison: boxOffice ? <EraComparisonCards data={boxOffice} /> : Loading,
