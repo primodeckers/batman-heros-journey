@@ -3,6 +3,7 @@ import { Clapperboard, History, Skull, Sparkles, Swords, TrendingUp } from 'luci
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { comicBackgroundStyle } from './ComicBackground'
 import { AdaptationsTimelineChart } from '@/components/charts/AdaptationsTimelineChart'
 import { BatmanBoxOfficeChart } from '@/components/charts/BatmanBoxOfficeChart'
 import { ComicsTimelineChart } from '@/components/charts/ComicsTimelineChart'
@@ -101,7 +102,7 @@ export function DashboardShell() {
   const selectedItem = VIZ_ITEMS.find((i) => i.id === selected)
 
   return (
-    <div className="comic-halftone min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground" style={comicBackgroundStyle}>
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col gap-6 px-6 py-8">
         <header>
           <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
