@@ -47,7 +47,6 @@ export function ChapterIndicator({ items, selectedIndex, onSelect }: ChapterIndi
 
         {items.map((item, i) => {
           const isActive = i === selectedIndex
-          const isDone = i < selectedIndex
           return (
             <button
               key={item.id}
@@ -62,11 +61,11 @@ export function ChapterIndicator({ items, selectedIndex, onSelect }: ChapterIndi
                   isActive ? 'size-[30px] -mt-0.5' : 'size-[26px]',
                 )}
                 style={
-                  isActive || isDone
+                  isActive
                     ? {
                         backgroundColor: accent[600],
                         color: accent[50],
-                        boxShadow: isActive ? `0 0 0 3px ${accent[100]}` : undefined,
+                        boxShadow: `0 0 0 3px ${accent[100]}`,
                       }
                     : { backgroundColor: neutral[50], border: `1px solid ${neutral[300]}`, color: neutral[500] }
                 }
