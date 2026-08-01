@@ -9,14 +9,19 @@ import type { ComicsTimelineRow } from '@/data/loaders/loadComicsTimeline'
  * (morte -> retorno -> morte -> retorno) é literalmente um ciclo, então o
  * formato reforça o argumento em vez de só listar datas de novo — ver
  * docs/best-practices/selecao-de-graficos.md.
+ *
+ * Layout lado a lado (não empilhado): com o indicador de capítulo
+ * ocupando espaço no topo do card, altura vertical é mais escassa que
+ * largura — diagrama + legenda dividindo a largura aproveita melhor o
+ * espaço disponível do que diagrama em cima da legenda.
  */
 export function ComicsTimelineChart({ data }: { data: ComicsTimelineRow[] }) {
   const n = data.length
   const radius = 38
 
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-4">
-      <div className="relative aspect-square w-full max-w-[260px]">
+    <div className="flex h-full min-h-0 items-center gap-6">
+      <div className="relative aspect-square w-full max-w-[190px] shrink-0">
         <div
           className="absolute inset-[8%] rounded-full border-2 border-dashed"
           style={{ borderColor: neutral[200] }}
@@ -36,17 +41,17 @@ export function ComicsTimelineChart({ data }: { data: ComicsTimelineRow[] }) {
               style={{ left: `${left}%`, top: `${top}%` }}
             >
               <span
-                className="flex size-8 items-center justify-center rounded-full shadow-sm"
+                className="flex size-7 items-center justify-center rounded-full shadow-sm"
                 style={{ backgroundColor: isReturn ? accent[500] : neutral[700] }}
               >
                 {isReturn ? (
-                  <Sunrise className="size-4 text-white" />
+                  <Sunrise className="size-3.5 text-white" />
                 ) : (
-                  <Skull className="size-4 text-white" />
+                  <Skull className="size-3.5 text-white" />
                 )}
               </span>
               <span
-                className="mt-1 text-[11px] font-semibold"
+                className="mt-1 text-[10px] font-semibold"
                 style={{ color: isReturn ? accent[700] : neutral[700] }}
               >
                 {row.year}
@@ -56,30 +61,35 @@ export function ComicsTimelineChart({ data }: { data: ComicsTimelineRow[] }) {
         })}
       </div>
 
-      <ol className="w-full max-w-md space-y-1.5 overflow-y-auto text-xs">
-        {data.map((row) => {
-          const isReturn = row.type === 'retorno'
-          return (
-            <li key={row.year + row.title} className="flex gap-2">
-              <span
-                className="mt-0.5 size-1.5 shrink-0 rounded-full"
-                style={{ backgroundColor: isReturn ? accent[500] : neutral[700] }}
-              />
-              <span>
-                <span className="font-semibold" style={{ color: isReturn ? accent[700] : neutral[700] }}>
-                  {row.year} · {row.title}:
-                </span>{' '}
-                {row.event}
-              </span>
-            </li>
-          )
-        })}
-      </ol>
+      <div className="flex h-full min-w-0 flex-1 flex-col justify-center gap-3">
+        <ol className="space-y-2 text-sm">
+          {data.map((row) => {
+            const isReturn = row.type === 'retorno'
+            return (
+              <li key={row.year + row.title} className="flex gap-2">
+                <span
+                  className="mt-1.5 size-1.5 shrink-0 rounded-full"
+                  style={{ backgroundColor: isReturn ? accent[500] : neutral[700] }}
+                />
+                <span>
+                  <span
+                    className="font-semibold"
+                    style={{ color: isReturn ? accent[700] : neutral[700] }}
+                  >
+                    {row.year} · {row.title}:
+                  </span>{' '}
+                  {row.event}
+                </span>
+              </li>
+            )
+          })}
+        </ol>
 
-      <p className="text-center text-xs text-muted-foreground">
-        Preto = queda/quase-morte · dourado = retorno. O padrão se fecha em ciclo 3 vezes em 22
-        anos — não é um caso isolado.
-      </p>
+        <p className="text-sm text-muted-foreground">
+          Preto = queda/quase-morte · dourado = retorno. O padrão se fecha em ciclo 3 vezes em 22
+          anos — não é um caso isolado.
+        </p>
+      </div>
     </div>
   )
 }

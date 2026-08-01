@@ -131,7 +131,7 @@ export function DashboardShell() {
         </header>
 
         <main className="flex flex-1 flex-col gap-4 lg:flex-row">
-          <Card className="comic-panel h-[640px] flex-1 overflow-hidden rounded-md">
+          <Card className="comic-panel h-[760px] flex-1 overflow-hidden rounded-md">
             <CardHeader>
               <CardTitle>{selectedItem?.title}</CardTitle>
             </CardHeader>
