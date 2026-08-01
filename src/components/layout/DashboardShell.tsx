@@ -1,25 +1,39 @@
 import { useState } from 'react'
-import { Clapperboard, History, Skull, Swords, TrendingUp } from 'lucide-react'
+import { Clapperboard, History, Skull, Sparkles, Swords, TrendingUp } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { AdaptationsTimelineChart } from '@/components/charts/AdaptationsTimelineChart'
 import { BatmanBoxOfficeChart } from '@/components/charts/BatmanBoxOfficeChart'
 import { ComicsTimelineChart } from '@/components/charts/ComicsTimelineChart'
 import { DeathPollChart } from '@/components/charts/DeathPollChart'
 import { EraComparisonCards } from '@/components/charts/EraComparisonCards'
 import { VillainsTimelineChart } from '@/components/charts/VillainsTimelineChart'
+import { useAdaptationsTimeline } from '@/hooks/useAdaptationsTimeline'
 import { useBatmanBoxOffice } from '@/hooks/useBatmanBoxOffice'
 import { useBatmanVillains } from '@/hooks/useBatmanVillains'
 import { useComicsTimeline } from '@/hooks/useComicsTimeline'
 import { useDeathPoll } from '@/hooks/useDeathPoll'
 import { ChartSwitcher, type ChartSwitcherItem } from './ChartSwitcher'
 
-type VizId = 'deathPoll' | 'comicsTimeline' | 'boxOffice' | 'villains' | 'eraComparison'
+type VizId =
+  | 'adaptations'
+  | 'deathPoll'
+  | 'comicsTimeline'
+  | 'boxOffice'
+  | 'villains'
+  | 'eraComparison'
 
 /** `label` = item curto da barra lateral. `title` = título narrativo
  * completo mostrado no card principal (afirma uma conclusão, não só
  * descreve o eixo — ver docs/best-practices/checklist-narrativo.md). */
 const VIZ_ITEMS: (ChartSwitcherItem<VizId> & { title: string })[] = [
+  {
+    id: 'adaptations',
+    label: '86 anos de Batman',
+    title: '86 anos depois da estreia em quadrinhos, o Batman ainda está na tela grande',
+    icon: Sparkles,
+  },
   {
     id: 'deathPoll',
     label: 'Por 72 votos, mataram o Robin',
@@ -62,18 +76,21 @@ const SOURCES = [
     url: 'https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)',
   },
   { name: 'DC Database (Fandom)', url: 'https://dc.fandom.com/wiki/Batman:_Knightfall' },
+  { name: 'Wikipedia — Batman (personagem)', url: 'https://en.wikipedia.org/wiki/Batman' },
 ]
 
 const Loading = <p className="text-sm text-muted-foreground">Carregando…</p>
 
 export function DashboardShell() {
-  const [selected, setSelected] = useState<VizId>('deathPoll')
+  const [selected, setSelected] = useState<VizId>('adaptations')
   const boxOffice = useBatmanBoxOffice()
   const deathPoll = useDeathPoll()
   const villains = useBatmanVillains()
   const comicsTimeline = useComicsTimeline()
+  const adaptations = useAdaptationsTimeline()
 
   const content: Record<VizId, React.ReactNode> = {
+    adaptations: adaptations ? <AdaptationsTimelineChart data={adaptations} /> : Loading,
     deathPoll: deathPoll ? <DeathPollChart data={deathPoll} /> : Loading,
     comicsTimeline: comicsTimeline ? <ComicsTimelineChart data={comicsTimeline} /> : Loading,
     boxOffice: boxOffice ? <BatmanBoxOfficeChart data={boxOffice} /> : Loading,

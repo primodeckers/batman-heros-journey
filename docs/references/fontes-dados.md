@@ -12,6 +12,7 @@
 | Wikipedia — *Batman: Knightfall* | [en.wikipedia.org/wiki/Batman:_Knightfall](https://dc.fandom.com/wiki/Batman:_Knightfall) | Bane quebra a coluna do Batman em *Batman* #497 (jul/1993) | 01/08/2026 | `public/data/batman-comics-timeline.csv` |
 | Wikipedia — *Batman: Under the Hood* | [en.wikipedia.org/wiki/Batman:_Under_the_Hood](https://en.wikipedia.org/wiki/Batman:_Under_the_Hood) | Ressurreição de Jason Todd (fev/2005) | 01/08/2026 | `public/data/batman-comics-timeline.csv` |
 | CBR — *The Return of Bruce Wayne* | [cbr.com/batman-bruce-wayne-return-explainer](https://www.cbr.com/batman-bruce-wayne-return-explainer/) | Batman R.I.P. (2008) → Final Crisis (2008-09) → retorno de Bruce Wayne (2010) | 01/08/2026 | `public/data/batman-comics-timeline.csv` |
+| Wikipedia — *Detective Comics* #27, *Batman (serial)*, *Batman (1966 TV series)* | [en.wikipedia.org/wiki/Batman](https://en.wikipedia.org/wiki/Batman) | 6 marcos de adaptação em quadrinhos/cinema/TV (1939-2022) | 01/08/2026 | `public/data/batman-adaptations-timeline.csv` |
 
 **Nota sobre orçamento de *Batman & Robin* (1997):** fontes divergem entre
 US$ 125 mi e US$ 160 mi (a diferença provavelmente é produção vs.

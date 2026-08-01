@@ -22,7 +22,7 @@ provam isso?"**
 
 | Estágio | Dado real | Fonte | Status |
 | --- | --- | --- | --- |
-| Mundo comum / Chamado | 1ª aparição (*Detective Comics* #27, 1939) | Wikipedia | Não iniciado |
+| Mundo comum / Chamado | 86 anos de marcos em quadrinhos/cinema/TV (1939→2022) | Wikipedia | **Feito** — `AdaptationsTimelineChart` |
 | Provação suprema (quadrinhos) | Enquete "A Death in the Family" (1988) — 5.343 × 5.271 votos, margem de 72 | Wikipedia / ComicBook.com / Gizmodo | **Feito** — `DeathPollChart` |
 | Provação se repete (quadrinhos) | Linha do tempo 1988→2010: morte, Knightfall (Bane quebra a coluna), ressurreição, R.I.P./Final Crisis, retorno — 3 ciclos morte/retorno em 22 anos | Wikipedia / DC Database / CBR | **Feito** — `ComicsTimelineChart` |
 | Morte (cinema) → Ressurreição | Bilheteria/orçamento/RT de *Batman & Robin* (1997) → *Batman Begins* (2005) | Box Office Mojo / Rotten Tomatoes | **Feito** — `BatmanBoxOfficeChart` |
@@ -30,7 +30,7 @@ provam isso?"**
 | Aliados e inimigos | Vilão principal de cada filme + quais voltaram mais de uma vez (Coringa, Duas-Caras, Charada) | Créditos de elenco, Wikipedia | **Feito** — `VillainsTimelineChart` (linha do tempo, não rede — ver nota abaixo) |
 | Bônus: o ciclo se repete | Bilheteria de todos os atores (Keaton→Pattinson), ajustada por inflação | Box Office Mojo | Não iniciado |
 
-**5 visualizações prontas e verificadas** (mínimo era 4) — título
+**6 visualizações prontas e verificadas** (mínimo era 4) — título
 narrativo, build limpo, dado real conferido, sem erro de console. O bônus
 "ciclo se repete por ator" fica como próximo passo opcional.
 
