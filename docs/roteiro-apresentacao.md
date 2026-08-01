@@ -1,9 +1,18 @@
 # Roteiro da apresentação (10 minutos)
 
-Baseado no arco dos 6 capítulos = 6 estágios do monomito de Campbell.
 Meta: **9-9,5 min falados**, deixando folga pro aviso aos 8 min e o
 encerramento aos 10. Cronometragem abaixo é estimativa — ensaiar com
 cronômetro de verdade e ajustar.
+
+**Nota sobre o mapeamento com Campbell:** os 6 capítulos não são uma
+correspondência 1:1 com os 7 estágios clássicos do monomito — os
+capítulos 2, 3 e 4 são todos variações da mesma etapa ("provação
+suprema"), mostrada em domínios diferentes (quadrinho único → quadrinho
+em ciclo → cinema), e o capítulo 5 (vilões) tecnicamente viria antes da
+provação na ordem "oficial". Isso é normal pra qualquer adaptação real
+do arco — **não** tentar explicar isso ao público nem numerar
+estágios em voz alta, só deixar a estrutura geral (mundo comum →
+provação → recompensa) aparecer pelos nomes dos capítulos.
 
 **Regra de ouro (WORK_RULES.md):** narrar a história, não ler o
 dashboard tela por tela. O roteiro abaixo é o que você diz OLHANDO pra
@@ -11,16 +20,22 @@ audiência — o gráfico é apoio visual, não o script.
 
 ---
 
-## Abertura (0:00 → 0:40) — sem gráfico ainda
+## Abertura (0:00 → 0:45) — sem gráfico ainda
 
-> "A jornada do herói é uma estrutura que aparece em praticamente toda
-> mitologia — Joseph Campbell chamou de monomito: um herói sai do mundo
-> comum, passa por provações, quase morre, e volta transformado. Hoje
-> eu vou testar essa estrutura com um personagem que todo mundo conhece
-> — e com dado real, não só interpretação: **será que a jornada do
-> Batman segue literalmente o monomito de Campbell?**"
+> "Vocês já viram essa história centenas de vezes: Star Wars, Harry
+> Potter, O Rei Leão. Um herói sai do mundo em que vive, passa por uma
+> provação que quase o destrói, e volta transformado. Joseph Campbell
+> chamou isso de 'jornada do herói'. Hoje eu vou testar se a trajetória
+> real do Batman — 86 anos, quadrinhos e cinema — segue literalmente
+> esse mesmo padrão. Com dado, não só spoiler de filme: **a jornada do
+> Batman segue o monomito de Campbell?**"
 
 Clica pra abrir o dashboard (pergunta central já visível no topo).
+
+**Por que citar Star Wars/Harry Potter/Rei Leão**: ninguém no público
+precisa saber quem é Joseph Campbell — só precisa reconhecer o padrão
+de uma história que já viu. O nome "jornada do herói" gruda melhor
+ancorado em exemplo do que em definição abstrata.
 
 ---
 
@@ -111,11 +126,16 @@ não se assuste, é o esperado, só siga direto pro fechamento)*
 
 ## Fechamento (8:40 → 9:30)
 
-> "Então, voltando à pergunta: a jornada do Batman segue o monomito de
-> Campbell? Mundo comum, provação por 72 votos, um padrão que se repete
-> três vezes, uma morte real no cinema, e uma recompensa mensurável
-> depois da ressurreição — os dados dizem que sim. E talvez seja por
-> isso que, 86 anos depois, a gente ainda está contando essa história."
+> "Reparem no que vocês acabaram de ver: mundo comum, uma provação por
+> 72 votos, esse mesmo padrão se repetindo três vezes, uma quase-morte
+> real no cinema, e uma recompensa que dá pra medir em número. É a
+> mesma estrutura de Star Wars, de Harry Potter — só que dessa vez com
+> dado real por trás de cada etapa. A jornada do Batman segue o
+> monomito de Campbell? Os dados dizem que sim."
+
+Fechar citando os mesmos exemplos da abertura (Star Wars/Harry Potter)
+cria um "fecha o círculo" — reforça o padrão retroativamente sem gastar
+tempo explicando de novo.
 
 ---
 
