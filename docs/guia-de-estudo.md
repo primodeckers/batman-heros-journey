@@ -125,6 +125,34 @@ quadrinhos justamente por isso — foi a primeira vez que os fãs tiveram
 esse tipo de poder direto e mensurável sobre o destino de um
 personagem principal.
 
+### 0.5 Por que isso conta como "Provação Suprema" (o Batman nem morreu)
+
+Pergunta natural: se quem morre é o Robin, não o Batman, por que esse
+capítulo representa a provação suprema *do Batman*?
+
+Porque, na estrutura de Vogler, a Provação Suprema não exige que o
+**herói** morra literalmente — o clássico é o herói **enfrentar a
+morte de perto**, muitas vezes através de alguém insubstituível pra
+ele. É o mesmo mecanismo de: o Tio Ben morre e é isso que transforma o
+Peter Parker em Homem-Aranha; o Obi-Wan morre e empurra o Luke
+Skywalker pro resto da jornada. O herói sobrevive, mas fica marcado pra
+sempre pela perda.
+
+O Robin é o pupilo do próprio Batman — perder ele é o mais perto de uma
+"morte" que o mito consegue chegar sem matar o personagem principal (o
+que encerraria a franquia). E de fato, nos quadrinhos, esse evento é
+apontado como o ponto em que o Batman fica visivelmente mais duro e
+sombrio dali pra frente — a marca de uma provação de verdade, não só
+um enredo qualquer.
+
+**Por que esse evento e não o R.I.P./Final Crisis de 2008** (onde o
+*próprio* Batman "morre"): os dois são a mesma categoria — só que 1988
+é o mais forte pra abrir a apresentação: mais dramático, mais
+documentado (número exato, 72 votos), e decidido pelos fãs de
+verdade, não só por roteiro de um autor. O evento de 2008 entra no
+capítulo seguinte ("padrão se repete"), como prova de que essa mesma
+provação **se repete** — não foi caso único.
+
 ---
 
 ## 1. Cheat sheet — todos os números em um lugar só
