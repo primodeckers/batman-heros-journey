@@ -94,6 +94,37 @@ dos capítulos, que já comunicam a estrutura sozinhos (ver
 `roteiro-apresentacao.md`). Esse item 0 aqui é só pra você se sentir
 seguro se alguém perguntar algo mais técnico depois.
 
+### 0.4 A história completa — o que rolou em 1988 (pra não travar contando)
+
+Isso aconteceu **inteiramente nos quadrinhos** — não tem nada a ver com
+filme ou TV. É importante não confundir com o capítulo "morte no
+cinema" (que é sobre *Batman & Robin*, 1997, quase 10 anos depois e em
+mídia diferente).
+
+1. O Robin da época não era o Dick Grayson original — era o **Jason
+   Todd**, o segundo a usar o nome.
+2. A DC publicou a história em quadrinhos **"A Death in the Family"**
+   (*Batman* #426-429, 1988), onde o Coringa espanca o Jason Todd com
+   um pé de cabra e o deixa num armazém que explode.
+3. A DC fez algo inédito pra época: escreveu **dois finais diferentes**
+   — um onde ele sobrevive, outro onde ele morre — e deixou os
+   **leitores decidirem qual final seria publicado de verdade**.
+4. A votação foi por telefone: dois números 1-900, um pra "deixar
+   viver", outro pra "deixar morrer". Cada ligação custava 50 centavos.
+   Linhas abertas por **36 horas**, em setembro de 1988.
+5. **10.614 pessoas ligaram** no total. **5.343** votaram pela morte,
+   **5.271** votaram pela sobrevivência.
+6. "Matar" venceu por **72 votos** — menos de 1% de diferença — e a DC
+   publicou o final onde o Jason Todd morre na explosão (*Batman*
+   #428).
+
+Resultado: um personagem principal morreu de verdade e pra sempre na
+continuidade da editora, decidido por uma votação por telefone com
+margem de menos de 1%. É um dos eventos mais famosos da história dos
+quadrinhos justamente por isso — foi a primeira vez que os fãs tiveram
+esse tipo de poder direto e mensurável sobre o destino de um
+personagem principal.
+
 ---
 
 ## 1. Cheat sheet — todos os números em um lugar só
