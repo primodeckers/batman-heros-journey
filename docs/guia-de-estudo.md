@@ -153,6 +153,37 @@ verdade, não só por roteiro de um autor. O evento de 2008 entra no
 capítulo seguinte ("padrão se repete"), como prova de que essa mesma
 provação **se repete** — não foi caso único.
 
+### 0.6 Por que os vilões recorrentes se encaixam em "Testes, Aliados e Inimigos"
+
+No estágio 6 de Vogler, a ideia central não é só "o herói encontra
+oponentes" — é o herói **descobrir quem realmente importa** no mundo em
+que entrou: quem é só um obstáculo passageiro (teste) e quem se torna
+um inimigo de verdade, que volta e define a jornada.
+
+É exatamente isso que os dados mostram: em 86 anos e 8 filmes, a
+maioria dos vilões aparece **uma vez e desaparece** — são testes,
+obstáculos de uma história só. Mas três — Coringa, Duas-Caras e
+Charada — **voltam**. É isso que separa um "teste" de um "inimigo" na
+estrutura de Vogler: o inimigo de verdade é o que a narrativa considera
+importante o bastante pra trazer de volta.
+
+**Uma camada a mais, se quiser aprofundar**: os três que voltam não são
+aleatórios — cada um é uma espécie de espelho temático do próprio
+Batman:
+- **Coringa** = o caos contra a ordem que o Batman representa
+- **Duas-Caras** = a dualidade, ecoando a própria identidade secreta do
+  Batman (Bruce Wayne/Batman)
+- **Charada** = testa a inteligência dele, não a força física
+
+Não são só "vilões fortes" — são os que desafiam quem o Batman **é**,
+não só o que ele consegue vencer na luta.
+
+**Lembrete de ordem**: esse estágio, na sequência "oficial" de Vogler,
+viria **antes** da provação suprema, não depois — no dashboard ficou
+depois porque funciona melhor como "agora que vimos a provação, vamos
+ver quem são os inimigos que ganharam esse status ao longo da jornada
+toda" (mesma lógica da nota em 0.3).
+
 ---
 
 ## 1. Cheat sheet — todos os números em um lugar só
