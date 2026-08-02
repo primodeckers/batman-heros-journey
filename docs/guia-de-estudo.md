@@ -94,7 +94,36 @@ dos capítulos, que já comunicam a estrutura sozinhos (ver
 `roteiro-apresentacao.md`). Esse item 0 aqui é só pra você se sentir
 seguro se alguém perguntar algo mais técnico depois.
 
-### 0.4 A história completa — o que rolou em 1988 (pra não travar contando)
+### 0.4 Por que os 86 anos representam o "Mundo Comum"
+
+"Mundo Comum" na estrutura clássica é a vida normal do herói antes de
+qualquer aventura — a régua de comparação que dá peso a tudo que vem
+depois. Star Wars mostra o Luke fazendeiro em Tatooine antes de
+qualquer coisa acontecer; Harry Potter mostra a vida dele com os
+Dursley antes de Hogwarts. Sem esse ponto de partida, a transformação
+do herói não tem contra o que ser medida.
+
+Aqui a adaptação é de escala: em vez da vida diária de uma pessoa, é a
+presença cultural de um mito inteiro. O gráfico mostra que o Batman
+nunca saiu de cena — quadrinho em 1939, seriado de cinema em 1943, TV
+em 1966, cinema outra vez até 2022. Essa continuidade ininterrupta É o
+"normal" dessa história: uma presença tão constante que parece
+garantida.
+
+E é exatamente essa aparência de garantia que dá função narrativa ao
+capítulo. Sem ele, "a franquia quase morreu em 1997" (capítulo 4) seria
+só uma informação isolada — quase morrer só é dramático se antes você
+mostrou o tamanho do que estava em jogo. O capítulo 1 não é sobre
+nostalgia ou curiosidade, é o que estabelece a escala da ameaça que vem
+depois.
+
+Reparem também no título do próprio gráfico: "86 anos depois... o
+Batman **ainda** está na tela grande". Essa palavra "ainda" não é
+neutra — ela indica que continuar existindo não foi garantido, planta a
+semente de que essa permanência vai ser testada, sem entregar spoiler
+nenhum.
+
+### 0.5 A história completa — o que rolou em 1988 (pra não travar contando)
 
 Isso aconteceu **inteiramente nos quadrinhos** — não tem nada a ver com
 filme ou TV. É importante não confundir com o capítulo "morte no
@@ -125,7 +154,7 @@ quadrinhos justamente por isso — foi a primeira vez que os fãs tiveram
 esse tipo de poder direto e mensurável sobre o destino de um
 personagem principal.
 
-### 0.5 Por que isso conta como "Provação Suprema" (o Batman nem morreu)
+### 0.6 Por que isso conta como "Provação Suprema" (o Batman nem morreu)
 
 Pergunta natural: se quem morre é o Robin, não o Batman, por que esse
 capítulo representa a provação suprema *do Batman*?
@@ -153,7 +182,7 @@ verdade, não só por roteiro de um autor. O evento de 2008 entra no
 capítulo seguinte ("padrão se repete"), como prova de que essa mesma
 provação **se repete** — não foi caso único.
 
-### 0.6 Por que os vilões recorrentes se encaixam em "Testes, Aliados e Inimigos"
+### 0.7 Por que os vilões recorrentes se encaixam em "Testes, Aliados e Inimigos"
 
 No estágio 6 de Vogler, a ideia central não é só "o herói encontra
 oponentes" — é o herói **descobrir quem realmente importa** no mundo em
