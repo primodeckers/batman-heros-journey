@@ -7,14 +7,21 @@
 - Christopher Vogler — *The Writer's Journey* (1992) — consolidação do
   monomito de Campbell em 12 estágios, mais aplicável a roteiro/narrativa
   moderna.
-- Xu et al. — [*Telling Data Stories with the Hero's Journey: Design
-  Guidance for...*](https://xxuxian.github.io/assets/pdf/Vis_24.pdf) (IEEE
-  VIS 2024) — pesquisa acadêmica aplicando as 3 macro-fases de Campbell
-  (Partida/Iniciação/Retorno) a design de "data videos". Nota importante: os
-  autores observam que esse modelo funciona melhor em vídeo narrado do que
-  em dashboards de múltiplos painéis, por ser centrado num protagonista
-  único com arco contínuo — atrito real a considerar no design deste
-  projeto.
+- Zheng Wei, Huamin Qu e Xian Xu — [*Telling Data Stories with the Hero's
+  Journey: Design Guidance for Creating Data
+  Videos*](https://xxuxian.github.io/assets/pdf/Vis_24.pdf) — IEEE
+  Transactions on Visualization and Computer Graphics, apresentado no IEEE
+  VIS 2024. Cópia local em
+  [`xu-2024-hero-journey-data-videos.pdf`](./xu-2024-hero-journey-data-videos.pdf).
+  Os autores codificaram 48 data videos que seguem a jornada do herói
+  (dentre 109 analisados) e derivaram um espaço de design pras 3 macro-fases
+  de Campbell — Partida, Iniciação e Retorno — cobrindo narrativa, imagem e
+  som. Resumo em português em
+  [`resumo-artigo-jornada-do-heroi.md`](./resumo-artigo-jornada-do-heroi.md).
+  Nota importante: o artigo é sobre **data videos**, e os autores limitam a
+  orientação a narrativas lineares conduzidas pelo autor, com dados de série
+  temporal — aplicá-la a um dashboard de múltiplos painéis é extrapolação
+  nossa, e é o atrito real a considerar no design deste projeto.
 
 ## Storytelling de dados
 - Cole Nussbaumer Knaflic — *Storytelling with Data* (2015)
