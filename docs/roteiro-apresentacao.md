@@ -39,7 +39,7 @@ ancorado em exemplo do que em definição abstrata.
 
 ---
 
-## Capítulo 1 — Mundo comum (0:40 → 1:40) · clica em "86 anos de Batman"
+## Capítulo 1 — Mundo comum (0:40 → 2:10) · clica em "86 anos de Batman"
 
 > "Primeiro, o mundo comum: um herói que já existe há tanto tempo que
 > vira parte da cultura. Batman estreou em 1939, na Detective Comics
@@ -53,7 +53,7 @@ extremos: 1939 e 2022, e o gap de 23 anos entre 1943-1966 se der tempo).
 
 ---
 
-## Capítulo 2 — Provação suprema (1:40 → 3:10) · clica em "Por 72 votos, mataram o Robin" — **STAR MOMENT**
+## Capítulo 2 — Provação suprema (2:10 → 3:40) · clica em "Por 72 votos, mataram o Robin" — **STAR MOMENT**
 
 > "Mas nem tudo foi fácil pra esse herói continuar existindo. Em 1988, a
 > DC fez uma coisa impensável hoje: deixou os próprios fãs decidirem,
@@ -70,7 +70,7 @@ frase depois, é essa.
 
 ---
 
-## Capítulo 3 — Padrão se repete (3:10 → 4:40) · clica em "O padrão se repete nos quadrinhos"
+## Capítulo 3 — Padrão se repete (3:40 → 4:40) · clica em "O padrão se repete nos quadrinhos"
 
 > "E o mais interessante: essa morte de 1988 não foi um caso isolado —
 > virou um padrão. Cinco anos depois, em *Knightfall*, o vilão Bane
@@ -83,7 +83,7 @@ frase depois, é essa.
 
 ---
 
-## Capítulo 4 — Morte no cinema (4:40 → 6:10) · clica em "Batman quase morreu no cinema"
+## Capítulo 4 — Morte no cinema (4:40 → 6:40) · clica em "Batman quase morreu no cinema"
 
 > "Esse padrão não ficou só nos quadrinhos — se repetiu no cinema
 > também, com número de bilheteria pra provar. De 1989 até 1997, quatro
@@ -98,7 +98,7 @@ falar o número.
 
 ---
 
-## Capítulo 5 — Vilões (6:10 → 7:10) · clica em "Os vilões que sempre voltam"
+## Capítulo 5 — Vilões (6:40 → 7:40) · clica em "Os vilões que sempre voltam"
 
 > "Uma coisa curiosa que os dados mostram: em 86 anos e 8 filmes, quase
 > todo vilão apareceu uma vez só e nunca mais voltou. Só três
@@ -110,10 +110,10 @@ Capítulo mais curto de propósito — é um ponto de apoio, não o clímax.
 
 ---
 
-## Capítulo 6 — Recompensa (7:10 → 8:40) · clica em "A recompensa da ressurreição"
+## Capítulo 6 — Recompensa (7:40 → 8:40) · clica em "A recompensa da ressurreição"
 
-*(o aviso dos 8 minutos deve tocar bem no meio desse capítulo —
-não se assuste, é o esperado, só siga direto pro fechamento)*
+*(o aviso dos 8 minutos toca logo no começo desse capítulo — não se
+assuste, é o esperado, só siga direto pro fechamento)*
 
 > "E aqui fecha o monomito: depois de quase morrer, o herói volta mais
 > forte que antes. Comparando a era de antes (1989-97) com a de depois

@@ -7,13 +7,17 @@ export type BatmanBoxOfficeRow = {
   budgetUsd: number
   rtScore: number
   era: string
+  director: string
+  /** Quem vestiu o manto — a troca de ator marca cada reinício da franquia. */
+  batmanActor: string
+  supportingCast: string[]
 }
 
 /**
- * Bilheteria mundial / orçamento / nota do Rotten Tomatoes de cada filme
- * live-action do Batman (1989-2022). Números conferidos contra Box Office
- * Mojo, Rotten Tomatoes e Wikipedia em 01/08/2026 — ver
- * docs/references/fontes-dados.md pras fontes específicas de cada número.
+ * Bilheteria mundial / orçamento / nota do Rotten Tomatoes / direção e
+ * elenco de cada filme live-action do Batman (1989-2022). Números
+ * conferidos contra Box Office Mojo, Rotten Tomatoes e Wikipedia em
+ * 01/08/2026 — ver docs/references/fontes-dados.md pras fontes específicas.
  */
 export async function loadBatmanBoxOffice(): Promise<BatmanBoxOfficeRow[]> {
   const res = await fetch('/data/batman-boxoffice.csv')
@@ -26,5 +30,12 @@ export async function loadBatmanBoxOffice(): Promise<BatmanBoxOfficeRow[]> {
     budgetUsd: Number(row['budget_usd']),
     rtScore: Number(row['rt_score']),
     era: row['era'] ?? '',
+    director: row['director'] ?? '',
+    batmanActor: row['batman_actor'] ?? '',
+    // Separado por ';' no CSV justamente pra não conflitar com a vírgula.
+    supportingCast: (row['supporting_cast'] ?? '')
+      .split(';')
+      .map((name) => name.trim())
+      .filter(Boolean),
   }))
 }

@@ -9,14 +9,15 @@ import { accent, neutral } from '@/theme/palette'
 import { truncateToWidth } from '@/utils/text'
 import type { VillainRow } from '@/data/loaders/loadBatmanVillains'
 
-type ChartProps = { data: VillainRow[]; width: number; height: number }
+type ChartProps = { data: VillainRow[]; width: number; height: number; compact?: boolean }
 
-function Chart({ data, width, height }: ChartProps) {
+function Chart({ data, width, height, compact = false }: ChartProps) {
   const villainNames = Array.from(new Set(data.map((d) => d.villain)))
   const countByVillain = new Map<string, number>()
   for (const d of data) countByVillain.set(d.villain, (countByVillain.get(d.villain) ?? 0) + 1)
 
-  const margin = { top: 8, right: 16, bottom: 24, left: 108 }
+  const labelFontSize = compact ? 10 : 11
+  const margin = { top: 8, right: 16, bottom: 24, left: compact ? 78 : 108 }
   const innerWidth = Math.max(width - margin.left - margin.right, 0)
   const innerHeight = Math.max(height - margin.top - margin.bottom, 0)
 
@@ -53,11 +54,11 @@ function Chart({ data, width, height }: ChartProps) {
                   y={y}
                   dy=".35em"
                   textAnchor="end"
-                  fontSize={11}
+                  fontSize={labelFontSize}
                   fontWeight={isRecurring ? 600 : 400}
                   fill={isRecurring ? accent[700] : neutral[600]}
                 >
-                  {truncateToWidth(name, margin.left - 16, 11)}
+                  {truncateToWidth(name, margin.left - 16, labelFontSize)}
                 </text>
                 <line
                   x1={0}
@@ -98,7 +99,7 @@ function Chart({ data, width, height }: ChartProps) {
                 key={`${d.villain}-${d.year}`}
                 cx={cx}
                 cy={cy}
-                r={6}
+                r={compact ? 4.5 : 6}
                 fill={isRecurring ? accent[500] : neutral[400]}
                 stroke="white"
                 strokeWidth={1.5}
@@ -136,19 +137,28 @@ function Chart({ data, width, height }: ChartProps) {
   )
 }
 
-export function VillainsTimelineChart({ data }: { data: VillainRow[] }) {
+export function VillainsTimelineChart({
+  data,
+  compact = false,
+}: {
+  data: VillainRow[]
+  compact?: boolean
+}) {
   return (
     <div className="flex h-full flex-col gap-2">
       <div style={{ flex: 1, minHeight: 0 }}>
         <ParentSize>
           {({ width, height }) =>
-            width > 0 && height > 0 ? <Chart data={data} width={width} height={height} /> : null
+            width > 0 && height > 0 ? (
+              <Chart data={data} width={width} height={height} compact={compact} />
+            ) : null
           }
         </ParentSize>
       </div>
-      <p className="text-center text-xs text-muted-foreground">
-        Pontos dourados e conectados = vilão que voltou mais de uma vez. Passe o mouse pra ver o
-        filme e o ator.
+      <p className={`text-center text-muted-foreground ${compact ? 'text-[11px]' : 'text-xs'}`}>
+        {compact
+          ? 'Pontos dourados e conectados = vilão que voltou mais de uma vez.'
+          : 'Pontos dourados e conectados = vilão que voltou mais de uma vez. Passe o mouse pra ver o filme e o ator.'}
       </p>
     </div>
   )

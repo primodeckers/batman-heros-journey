@@ -1,19 +1,50 @@
 import { Group } from '@visx/group'
 import { ParentSize } from '@visx/responsive'
-import { scaleBand, scaleLinear, scaleQuantize } from '@visx/scale'
+import { scaleBand, scaleLinear } from '@visx/scale'
 import { TooltipWithBounds, useTooltip } from '@visx/tooltip'
 import { motion } from 'framer-motion'
 
 import { accent, neutral } from '@/theme/palette'
+import { formatUsd } from '@/utils/format'
 import type { BatmanBoxOfficeRow } from '@/data/loaders/loadBatmanBoxOffice'
 
-function formatUsd(v: number) {
-  return `US$ ${(v / 1_000_000).toFixed(0)} mi`
+/**
+ * Faixas oficiais do Tomatometer, não um degradê arbitrário: a RT trata 60%
+ * como a fronteira entre podre e fresco, e 75% como o piso do selo
+ * "certificado fresco". Codificar a cor por essas faixas faz o cinza virar
+ * informação ("a crítica reprovou") em vez de só "tom mais escuro" — ver
+ * docs/best-practices/atributos-pre-atentivos.md.
+ */
+const RT_BANDS = [
+  {
+    label: 'Podre',
+    short: 'Podre',
+    range: 'abaixo de 60% — tomate esmagado',
+    color: neutral[500],
+  },
+  { label: 'Fresco', short: 'Fresco', range: '60% a 74% — tomate inteiro', color: accent[400] },
+  {
+    label: 'Certificado fresco',
+    short: 'Certificado',
+    range: '75% ou mais + volume mínimo de críticas',
+    color: accent[600],
+  },
+] as const
+
+function rtBand(score: number) {
+  if (score < 60) return RT_BANDS[0]
+  if (score < 75) return RT_BANDS[1]
+  return RT_BANDS[2]
 }
 
-type ChartProps = { data: BatmanBoxOfficeRow[]; width: number; height: number }
+type ChartProps = {
+  data: BatmanBoxOfficeRow[]
+  width: number
+  height: number
+  compact?: boolean
+}
 
-function Chart({ data, width, height }: ChartProps) {
+function Chart({ data, width, height, compact = false }: ChartProps) {
   const { tooltipData, tooltipLeft, tooltipTop, tooltipOpen, showTooltip, hideTooltip } =
     useTooltip<BatmanBoxOfficeRow>()
 
@@ -31,10 +62,6 @@ function Chart({ data, width, height }: ChartProps) {
     range: [innerHeight, 0],
     nice: true,
   })
-  const colorScale = scaleQuantize<string>({
-    domain: [0, 100],
-    range: [neutral[600], neutral[400], accent[300], accent[400], accent[500], accent[600]],
-  })
 
   const barWidth = xScale.bandwidth()
 
@@ -44,7 +71,7 @@ function Chart({ data, width, height }: ChartProps) {
         width={width}
         height={height}
         role="img"
-        aria-label="Bilheteria mundial de cada filme do Batman (1989-2022), colorida pela nota no Rotten Tomatoes"
+        aria-label="Bilheteria mundial de cada filme do Batman (1989-2022), colorida pela faixa da nota no Rotten Tomatoes: cinza para podre, dourado claro para fresco e dourado escuro para 75% ou mais"
       >
         <Group left={margin.left} top={margin.top}>
           {data.map((d) => {
@@ -58,7 +85,7 @@ function Chart({ data, width, height }: ChartProps) {
                   x={barX}
                   width={barWidth}
                   rx={3}
-                  fill={colorScale(d.rtScore)}
+                  fill={rtBand(d.rtScore).color}
                   stroke={isLowPoint ? neutral[900] : 'none'}
                   strokeWidth={isLowPoint ? 1.5 : 0}
                   style={{ cursor: 'pointer' }}
@@ -100,13 +127,71 @@ function Chart({ data, width, height }: ChartProps) {
         </Group>
       </svg>
 
+      {/* Só na apresentação: o espaço vazio acima das barras curtas dos anos
+          90 cabe a explicação; no card do dashboard sobra só a tira de cores. */}
+      {!compact && (
+        <div
+          className="absolute rounded-md border bg-background/90 px-3 py-2 shadow-sm backdrop-blur-sm"
+          style={{ left: margin.left, top: margin.top, maxWidth: 440 }}
+        >
+          <p className="text-xs font-semibold">Como ler a cor: o Tomatômetro</p>
+          <p className="mt-1 text-[11px] leading-snug text-muted-foreground">
+            Não é uma nota de 0 a 10: é o percentual de críticos que aprovaram o filme. Cada
+            crítica vale só "aprovou" ou "não aprovou", então 80% quer dizer 80 de cada 100 críticos
+            positivos.
+          </p>
+          <ul className="mt-2 space-y-1">
+            {RT_BANDS.map((band) => (
+              <li key={band.label} className="flex items-center gap-2 text-[11px] whitespace-nowrap">
+                <span
+                  className="size-3 shrink-0 rounded-sm"
+                  style={{ backgroundColor: band.color }}
+                />
+                <span className="w-28 shrink-0 font-medium">{band.label}</span>
+                <span className="text-muted-foreground">{band.range}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {tooltipOpen && tooltipData && (
         <TooltipWithBounds left={(tooltipLeft ?? 0) + 12} top={(tooltipTop ?? 0) + 12}>
-          <div className="text-xs">
-            <p className="font-semibold">{tooltipData.title}</p>
-            <p>Bilheteria mundial: {formatUsd(tooltipData.worldwideGrossUsd)}</p>
-            <p>Orçamento: {formatUsd(tooltipData.budgetUsd)}</p>
-            <p>Rotten Tomatoes: {tooltipData.rtScore}%</p>
+          <div className="max-w-56 text-xs">
+            <p className="font-semibold">
+              {tooltipData.title} ({tooltipData.year})
+            </p>
+            <p className="mt-1">
+              <span className="text-muted-foreground">Direção:</span> {tooltipData.director}
+            </p>
+            <p>
+              <span className="text-muted-foreground">Batman:</span> {tooltipData.batmanActor}
+            </p>
+            {tooltipData.supportingCast.length > 0 && (
+              <p>
+                <span className="text-muted-foreground">Com:</span>{' '}
+                {tooltipData.supportingCast.join(', ')}
+              </p>
+            )}
+            <p className="mt-1">
+              <span className="text-muted-foreground">Bilheteria mundial:</span>{' '}
+              {formatUsd(tooltipData.worldwideGrossUsd)}
+            </p>
+            <p>
+              <span className="text-muted-foreground">Custou:</span>{' '}
+              {formatUsd(tooltipData.budgetUsd)}
+            </p>
+            <p>
+              <span className="text-muted-foreground">Rendeu:</span>{' '}
+              {(tooltipData.worldwideGrossUsd / tooltipData.budgetUsd).toLocaleString('pt-BR', {
+                maximumFractionDigits: 1,
+              })}
+              x o orçamento
+            </p>
+            <p>
+              <span className="text-muted-foreground">Rotten Tomatoes:</span>{' '}
+              {tooltipData.rtScore}% — {rtBand(tooltipData.rtScore).label.toLowerCase()}
+            </p>
           </div>
         </TooltipWithBounds>
       )}
@@ -114,20 +199,40 @@ function Chart({ data, width, height }: ChartProps) {
   )
 }
 
-export function BatmanBoxOfficeChart({ data }: { data: BatmanBoxOfficeRow[] }) {
+export function BatmanBoxOfficeChart({
+  data,
+  compact = false,
+}: {
+  data: BatmanBoxOfficeRow[]
+  compact?: boolean
+}) {
   return (
     <div className="flex h-full flex-col gap-2">
       <div style={{ flex: 1, minHeight: 0 }}>
         <ParentSize>
           {({ width, height }) =>
-            width > 0 && height > 0 ? <Chart data={data} width={width} height={height} /> : null
+            width > 0 && height > 0 ? (
+              <Chart data={data} width={width} height={height} compact={compact} />
+            ) : null
           }
         </ParentSize>
       </div>
-      <p className="text-center text-xs text-muted-foreground">
-        Altura = bilheteria mundial · cor = nota no Rotten Tomatoes (cinza-escuro = ruim, dourado =
-        aclamado). Passe o mouse pra ver orçamento e título completo.
-      </p>
+
+      {compact ? (
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[10px] text-muted-foreground">
+          <span>Tomatometer (% de críticos que aprovaram):</span>
+          {RT_BANDS.map((band) => (
+            <span key={band.label} className="flex items-center gap-1">
+              <span className="size-2.5 rounded-sm" style={{ backgroundColor: band.color }} />
+              {band.short}
+            </span>
+          ))}
+        </div>
+      ) : (
+        <p className="text-center text-xs text-muted-foreground">
+          Altura da barra = bilheteria mundial. Passe o mouse pra ver direção, elenco e orçamento.
+        </p>
+      )}
     </div>
   )
 }
