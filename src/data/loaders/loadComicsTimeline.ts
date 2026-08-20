@@ -1,5 +1,7 @@
 import { csvParse } from 'd3-dsv'
 
+import { asset } from '@/utils/asset'
+
 export type ComicsTimelineRow = {
   year: number
   title: string
@@ -15,7 +17,7 @@ export type ComicsTimelineRow = {
  * CBR em 01/08/2026 — ver docs/references/fontes-dados.md.
  */
 export async function loadComicsTimeline(): Promise<ComicsTimelineRow[]> {
-  const res = await fetch('/data/batman-comics-timeline.csv')
+  const res = await fetch(asset('data/batman-comics-timeline.csv'))
   const text = await res.text()
 
   return csvParse(text, (row) => ({

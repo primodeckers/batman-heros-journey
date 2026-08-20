@@ -1,5 +1,7 @@
 import { csvParse } from 'd3-dsv'
 
+import { asset } from '@/utils/asset'
+
 export type BatmanBoxOfficeRow = {
   year: number
   title: string
@@ -20,7 +22,7 @@ export type BatmanBoxOfficeRow = {
  * 01/08/2026 — ver docs/references/fontes-dados.md pras fontes específicas.
  */
 export async function loadBatmanBoxOffice(): Promise<BatmanBoxOfficeRow[]> {
-  const res = await fetch('/data/batman-boxoffice.csv')
+  const res = await fetch(asset('data/batman-boxoffice.csv'))
   const text = await res.text()
 
   return csvParse(text, (row) => ({

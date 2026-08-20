@@ -1,5 +1,7 @@
 import { csvParse } from 'd3-dsv'
 
+import { asset } from '@/utils/asset'
+
 export type AdaptationRow = {
   year: number
   title: string
@@ -14,7 +16,7 @@ export type AdaptationRow = {
  * docs/references/fontes-dados.md.
  */
 export async function loadAdaptationsTimeline(): Promise<AdaptationRow[]> {
-  const res = await fetch('/data/batman-adaptations-timeline.csv')
+  const res = await fetch(asset('data/batman-adaptations-timeline.csv'))
   const text = await res.text()
 
   return csvParse(text, (row) => ({

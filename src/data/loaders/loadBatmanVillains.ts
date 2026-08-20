@@ -1,5 +1,7 @@
 import { csvParse } from 'd3-dsv'
 
+import { asset } from '@/utils/asset'
+
 export type VillainRow = { year: number; title: string; villain: string; actor: string }
 
 /**
@@ -8,7 +10,7 @@ export type VillainRow = { year: number; title: string; villain: string; actor: 
  * ver docs/references/fontes-dados.md.
  */
 export async function loadBatmanVillains(): Promise<VillainRow[]> {
-  const res = await fetch('/data/batman-villains.csv')
+  const res = await fetch(asset('data/batman-villains.csv'))
   const text = await res.text()
 
   return csvParse(text, (row) => ({

@@ -1,3 +1,5 @@
+import { asset } from '@/utils/asset'
+
 /**
  * Parede de capas de gibis do Batman como fundo do dashboard.
  * Fileiras intercaladas (estilo tijolo): cada linha começa na metade da capa de cima.
@@ -56,7 +58,7 @@ export function ComicBackground() {
             {row.map((file, colIndex) => (
               <img
                 key={`${rowIndex}-${colIndex}-${file}`}
-                src={`/covers/${file}`}
+                src={asset(`covers/${file}`)}
                 alt=""
                 loading="lazy"
                 decoding="async"

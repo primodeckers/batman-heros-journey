@@ -1,5 +1,7 @@
 import { csvParse } from 'd3-dsv'
 
+import { asset } from '@/utils/asset'
+
 export type DeathPollRow = { outcome: string; votes: number }
 
 /**
@@ -9,7 +11,7 @@ export type DeathPollRow = { outcome: string; votes: number }
  * docs/references/fontes-dados.md.
  */
 export async function loadDeathPoll(): Promise<DeathPollRow[]> {
-  const res = await fetch('/data/batman-death-poll.csv')
+  const res = await fetch(asset('data/batman-death-poll.csv'))
   const text = await res.text()
 
   return csvParse(text, (row) => ({

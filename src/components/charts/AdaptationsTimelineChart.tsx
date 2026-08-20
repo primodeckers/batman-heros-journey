@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { BookOpen, Film, Tv } from 'lucide-react'
 
 import { accent, neutral } from '@/theme/palette'
+import { asset } from '@/utils/asset'
 import type { AdaptationRow } from '@/data/loaders/loadAdaptationsTimeline'
 import { ThemeSongButton } from './ThemeSongButton'
 
@@ -10,7 +11,7 @@ const MEDIUM_ICON = { Quadrinho: BookOpen, Cinema: Film, TV: Tv } as const
 /** Marco da linha do tempo que vira botão de trilha na apresentação.
  * Os arquivos moram em `public/audio/`. */
 const THEME_SONG_YEAR = 1966
-const THEME_SONG_SRC = '/audio/coringa-2019-danca.mp3'
+const THEME_SONG_SRC = asset('audio/coringa-2019-danca.mp3')
 const THEME_SONG_LABEL = 'Feira da Fruta'
 
 /** `compact` = card do grid do dashboard: sobra pouca largura por marco,
