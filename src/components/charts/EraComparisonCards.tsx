@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion'
 
 import { accent, neutral } from '@/theme/palette'
+import { asset } from '@/utils/asset'
 import { formatUsd } from '@/utils/format'
 import type { BatmanBoxOfficeRow } from '@/data/loaders/loadBatmanBoxOffice'
+import { ChapterSoundtrack } from './ChapterSoundtrack'
+
+/** Faixa do último capítulo — trecho de 100s já recortado a partir do refrão
+ * (0:55 da original), que é o que cabe no minuto reservado ao capítulo. */
+const THEME_SRC = asset('audio/nirvana-something-in-the-way.mp3')
 
 function average(values: number[]) {
   return values.reduce((a, b) => a + b, 0) / values.length
@@ -88,6 +94,12 @@ export function EraComparisonCards({
         +{grossChangePct}% de bilheteria média — e de "podre" ({beforeRt.toFixed(0)}%) pra
         "certificado fresco" ({afterRt.toFixed(0)}%) no Rotten Tomatoes.
       </motion.p>
+
+      {/* Só na apresentação: no grid do dashboard os seis cards dividem a
+          tela, e trilha tocando sozinha ali seria ruído sem contexto. */}
+      {!compact && (
+        <ChapterSoundtrack src={THEME_SRC} label="Something in the Way" />
+      )}
     </div>
   )
 }

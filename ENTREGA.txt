@@ -1,0 +1,180 @@
+A JORNADA DO BATMAN, EM DADOS
+Trabalho Final - Dashboard Narrativo
+
+
+LINKS
+-----
+
+Dashboard (abrir no navegador):
+https://primodeckers.github.io/batman-heros-journey/
+
+Codigo-fonte e documentacao:
+https://github.com/primodeckers/batman-heros-journey
+
+
+PERGUNTA CENTRAL
+----------------
+
+"A jornada do heroi de Batman segue o monomito de Campbell - e os dados
+provam isso?"
+
+A pergunta esta no cabecalho do painel, visivel o tempo todo. A resposta
+curta e sim: os dados de 86 anos de quadrinhos, cinema e TV desenham o
+mesmo arco que Joseph Campbell descreveu em 1949 - o heroi enfrenta uma
+provacao, quase morre, e volta mais forte. So que aqui isso nao e leitura
+literaria: e bilheteria, nota de critica e voto de fa.
+
+
+COMO O PAINEL ESTA ORGANIZADO
+-----------------------------
+
+Duas abas, a mesma historia em dois formatos:
+
+  DASHBOARD - as 6 visualizacoes em uma tela so, para consulta rapida.
+  E a aba que abre por padrao.
+
+  APRESENTACAO - um capitulo por vez, na ordem da jornada do heroi, com
+  navegacao por setas e um cronometro por capitulo. E a aba que uso para
+  narrar os 10 minutos.
+
+As 6 visualizacoes, na ordem do arco narrativo:
+
+  1. MUNDO COMUM
+     "86 anos depois da estreia em quadrinhos, o Batman ainda esta na
+     tela grande" - linha do tempo de marcos em quadrinho, cinema e TV
+     (1939-2022).
+
+  2. PROVACAO SUPREMA
+     "Em 1988, os fas decidiram por telefone matar o Robin - por uma
+     margem de so 72 votos" - a enquete de "A Death in the Family":
+     10.614 ligacoes em 36 horas, 5.343 a favor da morte contra 5.271
+     pela sobrevivencia. Cada morcego no grafico e um dos 72 votos que
+     decidiram a historia.
+
+  3. O PADRAO SE REPETE
+     "Batman 'morreu' e voltou 3 vezes em 22 anos de quadrinhos" - nao
+     foi um caso isolado: Knightfall, R.I.P., Final Crisis.
+
+  4. MORTE NO CINEMA
+     "Batman & Robin (12% no Rotten Tomatoes) quase matou a franquia -
+     Batman Begins a ressuscitou" - bilheteria, orcamento e nota da
+     critica dos 8 filmes live-action (1989-2022).
+
+  5. ALIADOS E INIMIGOS
+     "Coringa, Duas-Caras e Charada sao os unicos viloes que ja voltaram
+     mais de uma vez" - vilao principal de cada filme e o ator.
+
+  6. RECOMPENSA
+     "Depois de quase morrer, o Batman virou 2,6x mais bilheteria e saiu
+     de 'podre' para 'certificado fresco'" - comparacao entre a era
+     1989-1997 e a era 2005-2022.
+
+Todo titulo afirma uma conclusao, em vez de rotular o eixo. As fontes
+ficam citadas no rodape do proprio painel.
+
+
+COMO FOI FEITO
+--------------
+
+Nao usei ferramenta de dashboard pronta. Construi uma aplicacao web do
+zero, o que me deu controle total sobre a narrativa - especialmente sobre
+a ordem em que a informacao aparece e sobre a identidade visual de gibi.
+
+Tecnologia: React 19 com TypeScript, Vite como empacotador, Visx (D3 por
+baixo) para desenhar os graficos em SVG, Framer Motion para as transicoes
+e Tailwind CSS para o estilo. Os dados moram em arquivos CSV lidos pela
+propria aplicacao, entao qualquer pessoa pode conferir os numeros direto
+no repositorio, na pasta public/data.
+
+O processo seguiu quatro etapas:
+
+  1. DEFINIR A HISTORIA. Mapear cada estagio do monomito de Campbell e
+     procurar um dado real que sustentasse aquele estagio. Estagio sem
+     dado ficou de fora - preferi seis capitulos bem apoiados a doze
+     inventados.
+
+  2. LEVANTAR E CONFERIR OS DADOS. Cada numero foi conferido em pelo
+     menos duas fontes e registrado em docs/references/fontes-dados.md,
+     com link e data de acesso.
+
+  3. MONTAR O PAINEL. Escolher o tipo de grafico pela pergunta que cada
+     um responde, escrever titulos que concluem e aplicar a paleta.
+
+  4. ROTEIRO E ENSAIO. O roteiro dos 10 minutos esta em
+     docs/roteiro-apresentacao.md, com o tempo de cada capitulo. Esses
+     tempos alimentam o cronometro que aparece no proprio painel durante
+     a apresentacao.
+
+
+SOBRE A COR
+-----------
+
+O dourado nao e escolha estetica arbitraria: e a cor do simbolo do
+morcego, que a franquia usa desde 1939. No painel ele tem funcao fixa -
+marca sempre o dado que a frase do titulo esta afirmando. Todo o resto
+fica em cinza neutro. No grafico de bilheteria, as cores seguem as
+categorias oficiais do Rotten Tomatoes (podre, fresco e certificado
+fresco), para nao inventar um codigo de cor que o publico teria de
+aprender do zero.
+
+O fundo de capas de gibi e a diagramacao em quadros existem para situar o
+publico no universo do personagem, mas ficam esmaecidos para nunca
+competir com os graficos.
+
+
+FONTES DOS DADOS
+----------------
+
+  Box Office Mojo - bilheteria mundial dos 8 filmes
+  Rotten Tomatoes - nota da critica (Tomatometer)
+  Wikipedia - orcamentos, elenco, direcao e marcos historicos
+  Wikipedia / ComicBook.com / Gizmodo - resultado da enquete de 1988
+  DC Database e CBR - linha do tempo dos quadrinhos
+
+A lista completa, com link e data de acesso de cada uma, esta em
+docs/references/fontes-dados.md.
+
+
+REFERENCIA DE METODO
+--------------------
+
+A estrutura narrativa se apoia no artigo "Telling Data Stories with the
+Hero's Journey: Design Guidance for Creating Data Videos", de Zheng Wei,
+Huamin Qu e Xian Xu (IEEE VIS 2024). Os autores analisaram 48 videos de
+dados que seguem a jornada do heroi e propuseram um guia de etapas
+narrativas. Vale a ressalva: o artigo trata de video narrado, e nao de
+dashboard - adaptar isso para um painel foi decisao minha. O PDF e um
+resumo em portugues estao em docs/references/.
+
+
+O QUE FICOU DE FORA, E POR QUE
+------------------------------
+
+Duas ideias foram pesquisadas e descartadas por honestidade com o dado:
+
+  Bilheteria ajustada pela inflacao por ator - as fontes divergem na
+  metodologia (umas ajustam so a bilheteria domestica, outras a mundial)
+  e os numeros nao fecham entre si. Preferi nao publicar grafico com
+  numero que nao bate.
+
+  Rede de coaparicoes de personagens - existe dataset pronto para a
+  Marvel, mas nao para a DC. Em vez de forcar uma rede sem dado por
+  tras, entreguei uma linha do tempo de vilao por ano, menos sofisticada
+  e 100% verificavel.
+
+Tambem vale registrar que o orcamento de Batman & Robin (1997) aparece
+como US$ 125 milhoes ou US$ 160 milhoes conforme a fonte, provavelmente
+por incluir ou nao o marketing. Adotei US$ 125 milhoes, o valor mais
+citado como orcamento de producao.
+
+
+PARA RODAR LOCALMENTE (OPCIONAL)
+--------------------------------
+
+  git clone https://github.com/primodeckers/batman-heros-journey.git
+  cd batman-heros-journey
+  npm install
+  npm run dev
+
+O site publicado e atualizado automaticamente a cada alteracao enviada ao
+repositorio.
