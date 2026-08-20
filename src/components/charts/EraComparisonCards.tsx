@@ -37,7 +37,7 @@ export function EraComparisonCards({
 
   return (
     <div
-      className={`flex h-full flex-col items-center justify-center ${compact ? 'gap-3' : 'gap-6'}`}
+      className={`relative flex h-full flex-col items-center justify-center ${compact ? 'gap-3' : 'gap-6'}`}
     >
       <div className="grid w-full max-w-xl grid-cols-2 gap-4">
         <motion.div
@@ -98,7 +98,9 @@ export function EraComparisonCards({
       {/* Só na apresentação: no grid do dashboard os seis cards dividem a
           tela, e trilha tocando sozinha ali seria ruído sem contexto. */}
       {!compact && (
-        <ChapterSoundtrack src={THEME_SRC} label="Something in the Way" />
+        <div className="absolute right-0 bottom-0">
+          <ChapterSoundtrack src={THEME_SRC} label="Something in the Way" />
+        </div>
       )}
     </div>
   )

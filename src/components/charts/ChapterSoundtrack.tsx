@@ -107,28 +107,28 @@ export function ChapterSoundtrack({
   }
 
   return (
-    <button
+    <motion.button
       type="button"
       onClick={toggle}
       aria-label={playing ? `Parar ${label}` : `Tocar ${label}`}
       aria-pressed={playing}
       title={blocked ? `Clique pra tocar ${label}` : label}
-      className="flex cursor-pointer items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-      style={{
-        ['--tw-ring-color' as string]: accent[500],
-        borderColor: playing ? accent[500] : neutral[300],
-        backgroundColor: playing ? accent[50] : 'transparent',
-        color: playing ? accent[700] : neutral[500],
-      }}
+      className="flex size-6 cursor-pointer items-center justify-center rounded-full outline-none focus-visible:ring-2"
+      style={{ ['--tw-ring-color' as string]: accent[500] }}
+      // Fica quase invisível até passarem o mouse: é um controle de
+      // emergência pro apresentador, não um elemento da narrativa.
+      initial={false}
+      animate={{ opacity: blocked ? 0.7 : 0.25 }}
+      whileHover={{ opacity: 1 }}
+      whileFocus={{ opacity: 1 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ duration: 0.2 }}
     >
-      <motion.span
-        className="flex items-center"
-        animate={{ scale: playing ? [1, 1.15, 1] : 1 }}
-        transition={{ duration: 1.8, repeat: playing ? Infinity : 0, ease: 'easeInOut' }}
-      >
-        {playing ? <Volume2 className="size-3.5" /> : <VolumeX className="size-3.5" />}
-      </motion.span>
-      {label}
-    </button>
+      {playing ? (
+        <Volume2 className="size-3.5" style={{ color: accent[600] }} />
+      ) : (
+        <VolumeX className="size-3.5" style={{ color: neutral[400] }} />
+      )}
+    </motion.button>
   )
 }
