@@ -12,8 +12,10 @@ dist
 dist-ssr
 *.local
 
-# Áudio bruto (WAV, faixa inteira) — só o arquivo servido fica em public/audio
-.audio-src
+# Originais brutos (WAV, faixa inteira, memes sem recorte) — só o arquivo
+# já tratado vai pra public/
+.raw-assets
+.scratch
 
 # Editor directories and files
 .vscode/*
