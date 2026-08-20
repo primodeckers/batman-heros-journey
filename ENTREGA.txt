@@ -30,10 +30,10 @@ COMO O PAINEL ESTA ORGANIZADO
 
 Duas abas, a mesma historia em dois formatos:
 
-  DASHBOARD - as 6 visualizacoes em uma tela so, para consulta rapida.
+  BATDASH - as 6 visualizacoes em uma tela so, para consulta rapida.
   E a aba que abre por padrao.
 
-  APRESENTACAO - um capitulo por vez, na ordem da jornada do heroi, com
+  BATSTORY - um capitulo por vez, na ordem da jornada do heroi, com
   navegacao por setas e um cronometro por capitulo. E a aba que uso para
   narrar os 10 minutos.
 
