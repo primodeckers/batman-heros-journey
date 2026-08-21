@@ -9,10 +9,11 @@ import { ChapterSoundtrack } from './ChapterSoundtrack'
 import { SlapMeme } from './SlapMeme'
 
 /** Piada de fechamento: a tese do trabalho inteiro dita pelo Batman. Em
- * inglês de propósito — é o idioma do meme original. Texto curto por
- * necessidade — os balões da imagem são pequenos. */
-const MEME_SETUP = "It's just data storytelling"
-const MEME_PUNCHLINE = "It's a hero's journey"
+ * inglês de propósito — é o idioma do meme original. Os balões da imagem
+ * são pequenos, então o texto precisou de fonte reduzida (`SlapMeme.tsx`)
+ * pra caber sem sair do desenho. */
+const MEME_SETUP = "It's just a dashboard with charts"
+const MEME_PUNCHLINE = "It's a hero's journey with data, you idiot!"
 
 /** Faixa do último capítulo — trecho de 100s já recortado a partir do refrão
  * (0:55 da original), que é o que cabe no minuto reservado ao capítulo. */

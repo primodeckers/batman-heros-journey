@@ -65,7 +65,7 @@ export function SlapMeme({ setup, punchline }: { setup: string; punchline: strin
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.9, type: 'spring', stiffness: 320, damping: 18 }}
-        className="absolute flex items-center justify-center text-center text-[11px] leading-[1.15] font-black uppercase"
+        className="absolute flex items-center justify-center text-center text-[9px] leading-[1.08] font-black uppercase"
         style={{ ...SETUP_BALLOON, color: neutral[900] }}
       >
         {setup}
@@ -75,7 +75,7 @@ export function SlapMeme({ setup, punchline }: { setup: string; punchline: strin
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, type: 'spring', stiffness: 340, damping: 15 }}
-        className="absolute flex items-center justify-center text-center text-[12px] leading-[1.12] font-black uppercase"
+        className="absolute flex items-center justify-center text-center text-[9px] leading-[1.08] font-black uppercase"
         style={{ ...PUNCHLINE_BALLOON, color: neutral[900] }}
       >
         {punchline}

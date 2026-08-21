@@ -129,30 +129,55 @@ function Chart({ data, width, height, compact = false }: ChartProps) {
 
       {/* Só na apresentação: o espaço vazio acima das barras curtas dos anos
           90 cabe a explicação; no card do dashboard sobra só a tira de cores. */}
+      {/* Cada linha entra com seu próprio atraso — título, depois a
+          explicação, depois cada faixa de cor — em vez da caixa inteira
+          aparecer de uma vez, que é mais dado pra digerir de golpe do que
+          o resto da narrativa em volta. */}
       {!compact && (
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
           className="absolute rounded-md border bg-background/90 px-3 py-2 shadow-sm backdrop-blur-sm"
           style={{ left: margin.left, top: margin.top, maxWidth: 440 }}
         >
-          <p className="text-xs font-semibold">Como ler a cor: o Tomatômetro</p>
-          <p className="mt-1 text-[11px] leading-snug text-muted-foreground">
+          <motion.p
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
+            className="text-xs font-semibold"
+          >
+            Como ler a cor: o Tomatômetro
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28, duration: 0.3 }}
+            className="mt-1 text-[11px] leading-snug text-muted-foreground"
+          >
             Não é uma nota de 0 a 10: é o percentual de críticos que aprovaram o filme. Cada
             crítica vale só "aprovou" ou "não aprovou", então 80% quer dizer 80 de cada 100 críticos
             positivos.
-          </p>
+          </motion.p>
           <ul className="mt-2 space-y-1">
-            {RT_BANDS.map((band) => (
-              <li key={band.label} className="flex items-center gap-2 text-[11px] whitespace-nowrap">
+            {RT_BANDS.map((band, i) => (
+              <motion.li
+                key={band.label}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.14, duration: 0.3 }}
+                className="flex items-center gap-2 text-[11px] whitespace-nowrap"
+              >
                 <span
                   className="size-3 shrink-0 rounded-sm"
                   style={{ backgroundColor: band.color }}
                 />
                 <span className="w-28 shrink-0 font-medium">{band.label}</span>
                 <span className="text-muted-foreground">{band.range}</span>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       )}
 
       {tooltipOpen && tooltipData && (
