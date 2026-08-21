@@ -17,3 +17,16 @@ export function formatUsd(value: number) {
   const texto = milhoes.toLocaleString('pt-BR', { maximumFractionDigits: 0 })
   return `US$ ${texto} ${milhoes >= 2 ? 'milhões' : 'milhão'}`
 }
+
+/**
+ * Versão compacta pra rótulo dentro do gráfico, onde o espaço acima da
+ * barra é mínimo — "$/M/B" é abreviação padrão em eixos e rótulos de
+ * gráfico (diferente do "mi" em português, ambíguo, que motivou o
+ * `formatUsd` completo usado no tooltip).
+ */
+export function formatUsdCompact(value: number) {
+  if (value >= 1_000_000_000) {
+    return `$${(value / 1_000_000_000).toLocaleString('en-US', { maximumFractionDigits: 1 })}B`
+  }
+  return `$${Math.round(value / 1_000_000)}M`
+}
