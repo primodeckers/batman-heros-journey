@@ -15,10 +15,14 @@ export function VizContent({
   id,
   data,
   compact = false,
+  durationSec,
 }: {
   id: VizId
   data: VizData
   compact?: boolean
+  /** Segundos reservados pro capítulo atual (ver `vizConfig.ts`) — só usado
+   * pela `EraComparisonCards`, pra saber quando revelar o meme final. */
+  durationSec?: number
 }) {
   switch (id) {
     case 'adaptations':
@@ -45,7 +49,7 @@ export function VizContent({
       return data.villains ? <VillainsTimelineChart data={data.villains} compact={compact} /> : Loading
     case 'eraComparison':
       return data.boxOffice ? (
-        <EraComparisonCards data={data.boxOffice} compact={compact} />
+        <EraComparisonCards data={data.boxOffice} compact={compact} durationSec={durationSec} />
       ) : (
         Loading
       )

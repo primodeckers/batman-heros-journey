@@ -75,7 +75,7 @@ export function PresentationView({
             className="h-full overflow-hidden"
           >
             <CardContent className="h-full">
-              <VizContent id={selected} data={data} />
+              <VizContent id={selected} data={data} durationSec={selectedItem?.durationSec} />
             </CardContent>
           </ComicPageFlip>
           <CarouselNav

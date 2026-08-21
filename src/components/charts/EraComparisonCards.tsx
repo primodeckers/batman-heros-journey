@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { accent, neutral } from '@/theme/palette'
 import { asset } from '@/utils/asset'
@@ -17,6 +18,11 @@ const MEME_PUNCHLINE = "It's a hero's journey"
  * (0:55 da original), que é o que cabe no minuto reservado ao capítulo. */
 const THEME_SRC = asset('audio/nirvana-something-in-the-way.mp3')
 
+/** O meme só entra faltando 10s pro fim da fala do capítulo — os cards
+ * abrem sozinhos, "sisudos" com os números, e o tapa chega bem no fecho da
+ * piada, não distraindo do dado durante o resto da explicação. */
+const REVEAL_BEFORE_END_SEC = 10
+
 function average(values: number[]) {
   return values.reduce((a, b) => a + b, 0) / values.length
 }
@@ -24,10 +30,32 @@ function average(values: number[]) {
 export function EraComparisonCards({
   data,
   compact = false,
+  durationSec,
 }: {
   data: BatmanBoxOfficeRow[]
   compact?: boolean
+  /** Duração reservada pro capítulo (`vizConfig.ts`). Sem ela, o meme
+   * aparece direto — é o caso do grid compacto, que nunca chega a
+   * renderizar o meme mesmo assim (ver `if (compact)` abaixo). */
+  durationSec?: number
 }) {
+  /**
+   * Revela o meme só nos últimos `REVEAL_BEFORE_END_SEC` segundos do
+   * capítulo. O componente é remontado a cada troca de capítulo (o
+   * `ComicPageFlip` usa `key={pageKey}`), então o `setTimeout` disparado no
+   * mount sempre coincide com o início real da contagem regressiva do
+   * `ChapterIndicator`.
+   */
+  const [showMeme, setShowMeme] = useState(!durationSec)
+
+  useEffect(() => {
+    if (!durationSec) return
+    setShowMeme(false)
+    const delayMs = Math.max(0, (durationSec - REVEAL_BEFORE_END_SEC) * 1000)
+    const id = setTimeout(() => setShowMeme(true), delayMs)
+    return () => clearTimeout(id)
+  }, [durationSec])
+
   const before = data.filter((d) => d.year <= 1997)
   const after = data.filter((d) => d.year >= 2005)
 
@@ -38,9 +66,9 @@ export function EraComparisonCards({
 
   const grossChangePct = Math.round(((afterGross - beforeGross) / beforeGross) * 100)
 
-  const cardClass = `rounded-md border text-center ${compact ? 'p-3' : 'p-5'}`
-  const grossClass = compact ? 'mt-2 text-2xl font-semibold' : 'mt-3 text-3xl font-semibold'
-  const scoreClass = compact ? 'mt-1.5 text-base font-semibold' : 'mt-2 text-xl font-semibold'
+  const cardClass = `rounded-md border text-center ${compact ? 'p-3' : 'p-6'}`
+  const grossClass = compact ? 'mt-2 text-2xl font-semibold' : 'mt-3 text-4xl font-semibold'
+  const scoreClass = compact ? 'mt-1.5 text-base font-semibold' : 'mt-2 text-2xl font-semibold'
 
   const beforeCard = (
     <motion.div
@@ -116,12 +144,23 @@ export function EraComparisonCards({
 
   // O meme entra entre as duas eras porque o tapa é a própria transição: o
   // Batman está do lado da era nova, o Robin do lado da era que levou o tapa.
+  // Antes de revelado, os cards ficam colados (sem `gap` extra pro meme) —
+  // quando `showMeme` liga, o `layout` nos dois cards anima o afastamento
+  // sozinho, no mesmo instante em que o meme entra no meio.
   return (
     <div className="relative flex h-full flex-col items-center justify-center gap-6">
       <div className="flex items-center justify-center gap-2">
-        <div className="w-[240px]">{beforeCard}</div>
-        <SlapMeme setup={MEME_SETUP} punchline={MEME_PUNCHLINE} />
-        <div className="w-[240px]">{afterCard}</div>
+        <motion.div layout transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="w-[300px]">
+          {beforeCard}
+        </motion.div>
+        <AnimatePresence>
+          {showMeme ? (
+            <SlapMeme key="meme" setup={MEME_SETUP} punchline={MEME_PUNCHLINE} />
+          ) : null}
+        </AnimatePresence>
+        <motion.div layout transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="w-[300px]">
+          {afterCard}
+        </motion.div>
       </div>
 
       {summary}
